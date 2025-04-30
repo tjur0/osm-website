@@ -40,21 +40,21 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
-  const events = await getAllEvents();
+// export async function generateStaticParams() {
+//   const events = await getAllEvents();
 
-  const eventClasses: EventClass[] = events.map(
-    (event) => new EventClass(event)
-  );
+//   const eventClasses: EventClass[] = events.map(
+//     (event) => new EventClass(event)
+//   );
 
-  const params = eventClasses.map((event) => {
-    return {
-      slug: [event.toHash(), event.id],
-    };
-  });
+//   const params = eventClasses.map((event) => {
+//     return {
+//       slug: [event.toHash(), event.id],
+//     };
+//   });
 
-  return params;
-}
+//   return params;
+// }
 
 const getFutureEvents = async () => {
   const response = await fetch("https://osmcal.org/api/v2/events?in=nl", {

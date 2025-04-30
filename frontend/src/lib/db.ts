@@ -5,8 +5,10 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Save to a known folder like ./db/test.sqlite
-const dbPath = path.join(__dirname, "pois.sqlite");
+const dbPath = path.join(
+  __dirname,
+  "https://osm-website.vercel.app/pois.sqlite"
+);
 
 const { default: BetterSqlite3 } = await import("better-sqlite3");
 
