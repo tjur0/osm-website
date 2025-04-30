@@ -1,5 +1,5 @@
 import { Title } from "@/components/elements/title";
-import db from "@/lib/db";
+import db from "../../../../../../static/db";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";

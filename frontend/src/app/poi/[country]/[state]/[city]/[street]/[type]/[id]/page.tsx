@@ -1,5 +1,5 @@
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
-import db from "@/lib/db";
+import db from "../../../../../../../../../static/db";
 import { getName } from "@/lib/tag-parsers/name";
 import { rawPoiToPoi } from "@/lib/utils";
 import { RawPoi } from "@/types/poi";

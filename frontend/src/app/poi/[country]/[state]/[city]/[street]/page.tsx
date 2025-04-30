@@ -1,6 +1,6 @@
 import { Title } from "@/components/elements/title";
 import PoiCard from "@/components/poi/poi-card";
-import db from "@/lib/db";
+import db from "../../../../../../../static/db";
 import { rawPoisToPois } from "@/lib/utils";
 import { RawPoi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";

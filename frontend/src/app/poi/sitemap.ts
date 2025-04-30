@@ -1,4 +1,4 @@
-import db from "@/lib/db";
+import db from "../../../static/db";
 import { MetadataRoute } from "next";
 
 const BASE_URL = "http://localhost:3000";
