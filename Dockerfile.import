@@ -1,0 +1,13 @@
+FROM ubuntu:24.04
+
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    ca-certificates curl gnupg && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    osm2pgsql gdal-bin python3-psycopg2 python3-yaml unzip \
+    python3-requests postgresql-client && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /app
+WORKDIR /app
+
+CMD sh scripts/docker-startup.sh import

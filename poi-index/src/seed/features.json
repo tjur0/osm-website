@@ -1,0 +1,8158 @@
+[
+  {
+    "key": "amenity",
+    "value": "bench",
+    "name": "Bankje"
+  },
+  {
+    "key": "amenity",
+    "value": "parking",
+    "name": "Parkeerplaats"
+  },
+  {
+    "key": "amenity",
+    "value": "waste_basket",
+    "name": "Prullenbak"
+  },
+  {
+    "key": "leisure",
+    "value": "playground",
+    "name": "Speeltuin"
+  },
+  {
+    "key": "amenity",
+    "value": "bicycle_parking",
+    "name": "Fietsenstalling"
+  },
+  {
+    "key": "amenity",
+    "value": "recycling",
+    "name": "Gescheiden afval inzameling"
+  },
+  {
+    "key": "amenity",
+    "value": "restaurant",
+    "name": "Restaurant"
+  },
+  {
+    "key": "amenity",
+    "value": "charging_station",
+    "name": "Oplaadpunt"
+  },
+  {
+    "key": "tourism",
+    "value": "information",
+    "name": "Informatie"
+  },
+  {
+    "key": "leisure",
+    "value": "picnic_table",
+    "name": "Picknicktafel"
+  },
+  {
+    "key": "shop",
+    "value": "clothes",
+    "name": "Kledingwinkel"
+  },
+  {
+    "key": "tourism",
+    "value": "artwork",
+    "name": "Kunstwerk"
+  },
+  {
+    "key": "amenity",
+    "value": "school",
+    "name": "School"
+  },
+  {
+    "key": "amenity",
+    "value": "post_box",
+    "name": "Postbus"
+  },
+  {
+    "key": "office",
+    "value": "company",
+    "name": "Bedrijf"
+  },
+  {
+    "key": "amenity",
+    "value": "fast_food",
+    "name": "Fastfood"
+  },
+  {
+    "key": "amenity",
+    "value": "place_of_worship",
+    "name": "Plaats van aanbidding"
+  },
+  {
+    "key": "tourism",
+    "value": "chalet",
+    "name": "Chalet"
+  },
+  {
+    "key": "amenity",
+    "value": "cafe",
+    "name": "Café"
+  },
+  {
+    "key": "shop",
+    "value": "hairdresser",
+    "name": "Kapper"
+  },
+  {
+    "key": "amenity",
+    "value": "shelter",
+    "name": "Schuilplaats"
+  },
+  {
+    "key": "leisure",
+    "value": "sports_centre",
+    "name": "Sportcentrum"
+  },
+  {
+    "key": "amenity",
+    "value": "waste_disposal",
+    "name": "Aval container"
+  },
+  {
+    "key": "shop",
+    "value": "supermarket",
+    "name": "Supermarkt"
+  },
+  {
+    "key": "leisure",
+    "value": "park",
+    "name": "Park"
+  },
+  {
+    "key": "historic",
+    "value": "memorial",
+    "name": "Gedenkteken"
+  },
+  {
+    "key": "amenity",
+    "value": "hunting_stand",
+    "name": "Jachtstand"
+  },
+  {
+    "key": "amenity",
+    "value": "fuel",
+    "name": "Tankstation"
+  },
+  {
+    "key": "place",
+    "value": "hamlet",
+    "name": "Gehucht"
+  },
+  {
+    "key": "amenity",
+    "value": "vending_machine",
+    "name": "Automaat"
+  },
+  {
+    "key": "tourism",
+    "value": "camp_site",
+    "name": "Campeerplaats"
+  },
+  {
+    "key": "place",
+    "value": "neighbourhood",
+    "name": "Buurt"
+  },
+  {
+    "key": "amenity",
+    "value": "pub",
+    "name": "Kroeg"
+  },
+  {
+    "key": "amenity",
+    "value": "toilets",
+    "name": "Toiletten"
+  },
+  {
+    "key": "amenity",
+    "value": "community_centre",
+    "name": "Gemeenschapscentrum"
+  },
+  {
+    "key": "shop",
+    "value": "bakery",
+    "name": "Bakker"
+  },
+  {
+    "key": "leisure",
+    "value": "outdoor_seating",
+    "name": "Terras"
+  },
+  {
+    "key": "amenity",
+    "value": "parking_entrance",
+    "name": "Parkeerplaats ingang"
+  },
+  {
+    "key": "shop",
+    "value": "bicycle",
+    "name": "Fietsenwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "drinking_water",
+    "name": "Drinkwaterpunt"
+  },
+  {
+    "key": "shop",
+    "value": "car_repair",
+    "name": "Autoreparatie"
+  },
+  {
+    "key": "tourism",
+    "value": "hotel",
+    "name": "Hotel"
+  },
+  {
+    "key": "shop",
+    "value": "car",
+    "name": "Autogarage"
+  },
+  {
+    "key": "amenity",
+    "value": "atm",
+    "name": "Geldautomaat"
+  },
+  {
+    "key": "tourism",
+    "value": "picnic_site",
+    "name": "Picknickplaats"
+  },
+  {
+    "key": "amenity",
+    "value": "social_facility",
+    "name": "Sociale faciliteit"
+  },
+  {
+    "key": "shop",
+    "value": "convenience",
+    "name": "Buurtwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "chemist",
+    "name": "Apotheek"
+  },
+  {
+    "key": "place",
+    "value": "village",
+    "name": "Dorp"
+  },
+  {
+    "key": "tourism",
+    "value": "guest_house",
+    "name": "Pension"
+  },
+  {
+    "key": "tourism",
+    "value": "attraction",
+    "name": "Attractie"
+  },
+  {
+    "key": "amenity",
+    "value": "doctors",
+    "name": "Dokterspraktijk"
+  },
+  {
+    "key": "tourism",
+    "value": "viewpoint",
+    "name": "Uitzichtpunt"
+  },
+  {
+    "key": "shop",
+    "value": "florist",
+    "name": "Bloemist"
+  },
+  {
+    "key": "shop",
+    "value": "optician",
+    "name": "Opticien"
+  },
+  {
+    "key": "shop",
+    "value": "beauty",
+    "name": "Schoonheidssalon"
+  },
+  {
+    "key": "shop",
+    "value": "furniture",
+    "name": "Meubelwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "shoes",
+    "name": "Schoenenwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "dentist",
+    "name": "Tandarts"
+  },
+  {
+    "key": "amenity",
+    "value": "pharmacy",
+    "name": "Apotheek"
+  },
+  {
+    "key": "leisure",
+    "value": "nature_reserve",
+    "name": "Beschermd natuurgebied"
+  },
+  {
+    "key": "tourism",
+    "value": "camp_pitch",
+    "name": "Kampeerplaats"
+  },
+  {
+    "key": "amenity",
+    "value": "fountain",
+    "name": "Fontein"
+  },
+  {
+    "key": "historic",
+    "value": "boundary_stone",
+    "name": "Historiche grenssteen"
+  },
+  {
+    "key": "historic",
+    "value": "yes",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "archaeological_site",
+    "name": "Archeologische site"
+  },
+  {
+    "key": "shop",
+    "value": "butcher",
+    "name": "Slager"
+  },
+  {
+    "key": "amenity",
+    "value": "bar",
+    "name": "Club"
+  },
+  {
+    "key": "leisure",
+    "value": "fitness_centre",
+    "name": "Fitnesscentrum"
+  },
+  {
+    "key": "historic",
+    "value": "house",
+    "name": "Historich huis"
+  },
+  {
+    "key": "tourism",
+    "value": "museum",
+    "name": "Museum"
+  },
+  {
+    "key": "shop",
+    "value": "jewelry",
+    "name": "Juwelier"
+  },
+  {
+    "key": "amenity",
+    "value": "car_wash",
+    "name": "Autowas"
+  },
+  {
+    "key": "amenity",
+    "value": "public_bookcase",
+    "name": "Open boekenkast"
+  },
+  {
+    "key": "shop",
+    "value": "gift",
+    "name": "Cadeauwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "alcohol",
+    "name": "Slijterij"
+  },
+  {
+    "key": "leisure",
+    "value": "marina",
+    "name": "Jachthaven"
+  },
+  {
+    "key": "shop",
+    "value": "books",
+    "name": "Boekwinkel"
+  },
+  {
+    "key": "leisure",
+    "value": "dog_park",
+    "name": "Hondenuitlaatplaats"
+  },
+  {
+    "key": "amenity",
+    "value": "kindergarten",
+    "name": "Kleuterschool"
+  },
+  {
+    "key": "shop",
+    "value": "doityourself",
+    "name": "Doe-het-zelf winkel"
+  },
+  {
+    "key": "office",
+    "value": "estate_agent",
+    "name": "Makelaardij"
+  },
+  {
+    "key": "amenity",
+    "value": "library",
+    "name": "Bibliotheek"
+  },
+  {
+    "key": "amenity",
+    "value": "childcare",
+    "name": "Kindcentrum"
+  },
+  {
+    "key": "amenity",
+    "value": "fire_station",
+    "name": "Brandweerkazerne"
+  },
+  {
+    "key": "shop",
+    "value": "mobile_phone",
+    "name": "Mobiele telefoon winkel"
+  },
+  {
+    "key": "shop",
+    "value": "interior_decoration",
+    "name": "Woondecoratie winkel"
+  },
+  {
+    "key": "place",
+    "value": "quarter",
+    "name": "Wijk"
+  },
+  {
+    "key": "historic",
+    "value": "wayside_cross",
+    "name": "Historich wegkruis"
+  },
+  {
+    "key": "place",
+    "value": "islet",
+    "name": "Eilandje"
+  },
+  {
+    "key": "amenity",
+    "value": "ferry_terminal",
+    "name": "Veerboot terminal"
+  },
+  {
+    "key": "historic",
+    "value": "farm",
+    "name": "Historiche boerderij"
+  },
+  {
+    "key": "leisure",
+    "value": "slipway",
+    "name": "Scheepshelling"
+  },
+  {
+    "key": "amenity",
+    "value": "ice_cream",
+    "name": "IJssalon"
+  },
+  {
+    "key": "leisure",
+    "value": "fitness_station",
+    "name": "Fitnessstation"
+  },
+  {
+    "key": "shop",
+    "value": "second_hand",
+    "name": "Kringloopwinkel"
+  },
+  {
+    "key": "office",
+    "value": "government",
+    "name": "Overheidsinstelling"
+  },
+  {
+    "key": "shop",
+    "value": "garden_centre",
+    "name": "Tuincentrum"
+  },
+  {
+    "key": "shop",
+    "value": "pet",
+    "name": "Dierenwinkel"
+  },
+  {
+    "key": "tourism",
+    "value": "apartment",
+    "name": "Appartement"
+  },
+  {
+    "key": "shop",
+    "value": "electronics",
+    "name": "Electornica winkel"
+  },
+  {
+    "key": "amenity",
+    "value": "theatre",
+    "name": "Theater"
+  },
+  {
+    "key": "shop",
+    "value": "newsagent",
+    "name": "Kiosk"
+  },
+  {
+    "key": "amenity",
+    "value": "veterinary",
+    "name": "Dierenarts"
+  },
+  {
+    "key": "shop",
+    "value": "variety_store",
+    "name": "Voordeelwinkel"
+  },
+  {
+    "key": "tourism",
+    "value": "zoo",
+    "name": "Dierentuin"
+  },
+  {
+    "key": "shop",
+    "value": "sports",
+    "name": "Sportwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "clock",
+    "name": "Klok"
+  },
+  {
+    "key": "shop",
+    "value": "seafood",
+    "name": "Vishandel"
+  },
+  {
+    "key": "shop",
+    "value": "department_store",
+    "name": "Warenhuis"
+  },
+  {
+    "key": "leisure",
+    "value": "bird_hide",
+    "name": "Vogelhut"
+  },
+  {
+    "key": "shop",
+    "value": "greengrocer",
+    "name": "Groentewinkel"
+  },
+  {
+    "key": "railway",
+    "value": "station",
+    "name": "Treinstation"
+  },
+  {
+    "key": "amenity",
+    "value": "bank",
+    "name": "Bank"
+  },
+  {
+    "key": "place",
+    "value": "square",
+    "name": "Plein"
+  },
+  {
+    "key": "shop",
+    "value": "kitchen",
+    "name": "Kookwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "college",
+    "name": "Hogeschool"
+  },
+  {
+    "key": "amenity",
+    "value": "loading_dock",
+    "name": "Laadkade"
+  },
+  {
+    "key": "shop",
+    "value": "toys",
+    "name": "Speelgoedwinkel"
+  },
+  {
+    "key": "office",
+    "value": "employment_agency",
+    "name": "Uitzendbureau"
+  },
+  {
+    "key": "historic",
+    "value": "bomb_crater",
+    "name": "Historiche bomkrater"
+  },
+  {
+    "key": "office",
+    "value": "it",
+    "name": "Softwarebedrijf"
+  },
+  {
+    "key": "amenity",
+    "value": "shower",
+    "name": "Douches"
+  },
+  {
+    "key": "shop",
+    "value": "farm",
+    "name": "Boerderijwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "grave_yard",
+    "name": "Kerkhof"
+  },
+  {
+    "key": "shop",
+    "value": "cheese",
+    "name": "Kaaswinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "clinic",
+    "name": "Kliniek"
+  },
+  {
+    "key": "leisure",
+    "value": "horse_riding",
+    "name": "Manage"
+  },
+  {
+    "key": "amenity",
+    "value": "townhall",
+    "name": "Gemeentehuis"
+  },
+  {
+    "key": "amenity",
+    "value": "parcel_locker",
+    "name": "Pakketkluis"
+  },
+  {
+    "key": "shop",
+    "value": "deli",
+    "name": "Delicatessen"
+  },
+  {
+    "key": "shop",
+    "value": "houseware",
+    "name": "Huishoudwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "bicycle_rental",
+    "name": "Fietsverhuur"
+  },
+  {
+    "key": "amenity",
+    "value": "post_office",
+    "name": "Postkantoor"
+  },
+  {
+    "key": "amenity",
+    "value": "police",
+    "name": "Politie"
+  },
+  {
+    "key": "shop",
+    "value": "bed",
+    "name": "Beddenwinkel"
+  },
+  {
+    "key": "leisure",
+    "value": "ice_rink",
+    "name": "Schaatsbaan"
+  },
+  {
+    "key": "shop",
+    "value": "trade",
+    "name": "Handel"
+  },
+  {
+    "key": "office",
+    "value": "lawyer",
+    "name": "Advocaat"
+  },
+  {
+    "key": "shop",
+    "value": "travel_agency",
+    "name": "Reisbureau"
+  },
+  {
+    "key": "tourism",
+    "value": "caravan_site",
+    "name": "Caravanplaats"
+  },
+  {
+    "key": "historic",
+    "value": "castle",
+    "name": "Historich kasteel"
+  },
+  {
+    "key": "shop",
+    "value": "wholesale",
+    "name": "Groothandel"
+  },
+  {
+    "key": "shop",
+    "value": "hardware",
+    "name": "Bouwmarkt"
+  },
+  {
+    "key": "shop",
+    "value": "mall",
+    "name": "Winkelcentrum"
+  },
+  {
+    "key": "shop",
+    "value": "computer",
+    "name": "Computerwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "arts_centre",
+    "name": "Cultuurcentrum"
+  },
+  {
+    "key": "historic",
+    "value": "building",
+    "name": "Historich gebouw"
+  },
+  {
+    "key": "shop",
+    "value": "art",
+    "name": "Kunstwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "massage",
+    "name": "Massage"
+  },
+  {
+    "key": "historic",
+    "value": "tomb",
+    "name": "Historiche tombe"
+  },
+  {
+    "key": "shop",
+    "value": "tattoo",
+    "name": "Tatoeagestudio"
+  },
+  {
+    "key": "shop",
+    "value": "perfumery",
+    "name": "Parfumerie"
+  },
+  {
+    "key": "shop",
+    "value": "tailor",
+    "name": "Kledingmaker"
+  },
+  {
+    "key": "shop",
+    "value": "car_parts",
+    "name": "Auto-onderdelen"
+  },
+  {
+    "key": "shop",
+    "value": "hearing_aids",
+    "name": "Hoorwinkel"
+  },
+  {
+    "key": "historic",
+    "value": "wayside_shrine",
+    "name": "Historiche wegkapel"
+  },
+  {
+    "key": "amenity",
+    "value": "trolley_bay",
+    "name": "Winkelwagentjes"
+  },
+  {
+    "key": "shop",
+    "value": "cannabis",
+    "name": "Coffeeshop"
+  },
+  {
+    "key": "tourism",
+    "value": "gallery",
+    "name": "Galerij"
+  },
+  {
+    "key": "historic",
+    "value": "ruins",
+    "name": "Historiche ruïne"
+  },
+  {
+    "key": "shop",
+    "value": "pastry",
+    "name": "Banketbakkerij"
+  },
+  {
+    "key": "amenity",
+    "value": "taxi",
+    "name": "Taxistandplaats"
+  },
+  {
+    "key": "shop",
+    "value": "confectionery",
+    "name": "Snoepwinkel"
+  },
+  {
+    "key": "office",
+    "value": "accountant",
+    "name": "Boekhouder"
+  },
+  {
+    "key": "shop",
+    "value": "cosmetics",
+    "name": "Cosmetica"
+  },
+  {
+    "key": "shop",
+    "value": "motorcycle",
+    "name": "Motorfiets winkel"
+  },
+  {
+    "key": "shop",
+    "value": "dry_cleaning",
+    "name": "Stomerij"
+  },
+  {
+    "key": "leisure",
+    "value": "sports_hall",
+    "name": "Sporthal"
+  },
+  {
+    "key": "shop",
+    "value": "tobacco",
+    "name": "Tabakswinkel"
+  },
+  {
+    "key": "shop",
+    "value": "laundry",
+    "name": "Wasserette"
+  },
+  {
+    "key": "leisure",
+    "value": "golf_course",
+    "name": "Golfbaan"
+  },
+  {
+    "key": "shop",
+    "value": "wine",
+    "name": "Wijnwinkel"
+  },
+  {
+    "key": "place",
+    "value": "town",
+    "name": "Stad"
+  },
+  {
+    "key": "amenity",
+    "value": "events_venue",
+    "name": "Evenementenlocatie"
+  },
+  {
+    "key": "shop",
+    "value": "kiosk",
+    "name": "Kiosk"
+  },
+  {
+    "key": "shop",
+    "value": "photo",
+    "name": "Fotowinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "car_rental",
+    "name": "Autoverhuur"
+  },
+  {
+    "key": "office",
+    "value": "educational_institution",
+    "name": "Onderwijsinstelling"
+  },
+  {
+    "key": "shop",
+    "value": "outdoor",
+    "name": "Buitensportwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "compressed_air",
+    "name": "Perslucht"
+  },
+  {
+    "key": "craft",
+    "value": "shoemaker",
+    "name": "Schoenmaker"
+  },
+  {
+    "key": "leisure",
+    "value": "firepit",
+    "name": "Vuurplaats"
+  },
+  {
+    "key": "amenity",
+    "value": "marketplace",
+    "name": "Markt"
+  },
+  {
+    "key": "amenity",
+    "value": "university",
+    "name": "Universiteit"
+  },
+  {
+    "key": "leisure",
+    "value": "miniature_golf",
+    "name": "Midgetgolf"
+  },
+  {
+    "key": "office",
+    "value": "insurance",
+    "name": "Verzekeringsmaatschappij"
+  },
+  {
+    "key": "shop",
+    "value": "chocolate",
+    "name": "Chocolaterie"
+  },
+  {
+    "key": "shop",
+    "value": "antiques",
+    "name": "Antiek"
+  },
+  {
+    "key": "office",
+    "value": "logistics",
+    "name": "Logistiek"
+  },
+  {
+    "key": "office",
+    "value": "financial_advisor",
+    "name": "Financieel adviseur"
+  },
+  {
+    "key": "shop",
+    "value": "health_food",
+    "name": "Gezondheidsvoeding"
+  },
+  {
+    "key": "leisure",
+    "value": "fishing",
+    "name": "Visplek"
+  },
+  {
+    "key": "shop",
+    "value": "copyshop",
+    "name": "Kopieerwinkel"
+  },
+  {
+    "key": "office",
+    "value": "foundation",
+    "name": "Stichting"
+  },
+  {
+    "key": "amenity",
+    "value": "car_sharing",
+    "name": "Deelauto"
+  },
+  {
+    "key": "amenity",
+    "value": "nursing_home",
+    "name": "Verpleeghuis"
+  },
+  {
+    "key": "amenity",
+    "value": "nightclub",
+    "name": "Nachtclub"
+  },
+  {
+    "key": "historic",
+    "value": "cannon",
+    "name": "Historich kanon"
+  },
+  {
+    "key": "historic",
+    "value": "church",
+    "name": "Historiche kerk"
+  },
+  {
+    "key": "amenity",
+    "value": "cinema",
+    "name": "Bioscoop"
+  },
+  {
+    "key": "office",
+    "value": "diplomatic",
+    "name": "Diplomatiek"
+  },
+  {
+    "key": "amenity",
+    "value": "brothel",
+    "name": "Bordeel"
+  },
+  {
+    "key": "amenity",
+    "value": "ticket_validator",
+    "name": "Kaartjesautomaat"
+  },
+  {
+    "key": "leisure",
+    "value": "swimming_area",
+    "name": "Zwemgebied"
+  },
+  {
+    "key": "shop",
+    "value": "bathroom_furnishing",
+    "name": "Badkamerinrichting"
+  },
+  {
+    "key": "shop",
+    "value": "paint",
+    "name": "Verfwinkel"
+  },
+  {
+    "key": "tourism",
+    "value": "hostel",
+    "name": "Hostel"
+  },
+  {
+    "key": "historic",
+    "value": "fort",
+    "name": "Historich fort"
+  },
+  {
+    "key": "amenity",
+    "value": "casino",
+    "name": "Casino"
+  },
+  {
+    "key": "amenity",
+    "value": "driving_school",
+    "name": "Rijschool"
+  },
+  {
+    "key": "office",
+    "value": "association",
+    "name": "Vereniging"
+  },
+  {
+    "key": "shop",
+    "value": "music",
+    "name": "Muziekwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "hospital",
+    "name": "Ziekenhuis"
+  },
+  {
+    "key": "office",
+    "value": "financial",
+    "name": "Financieele diensten"
+  },
+  {
+    "key": "office",
+    "value": "notary",
+    "name": "Notaris"
+  },
+  {
+    "key": "shop",
+    "value": "carpet",
+    "name": "Tapijtwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "funeral_directors",
+    "name": "Uitvaartverzorging"
+  },
+  {
+    "key": "shop",
+    "value": "rental",
+    "name": "Verhuur"
+  },
+  {
+    "key": "amenity",
+    "value": "boat_rental",
+    "name": "Bootverhuur"
+  },
+  {
+    "key": "amenity",
+    "value": "give_box",
+    "name": "Geefdoos"
+  },
+  {
+    "key": "shop",
+    "value": "bag",
+    "name": "Tassenwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "charity",
+    "name": "Twede handswinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "bus_station",
+    "name": "Busstation"
+  },
+  {
+    "key": "office",
+    "value": "architect",
+    "name": "Architectenbureau"
+  },
+  {
+    "key": "leisure",
+    "value": "bleachers",
+    "name": "Tribune"
+  },
+  {
+    "key": "shop",
+    "value": "coffee",
+    "name": "Koffiehuis"
+  },
+  {
+    "key": "shop",
+    "value": "storage_rental",
+    "name": "Opslagverhuur"
+  },
+  {
+    "key": "amenity",
+    "value": "archive",
+    "name": "Archief"
+  },
+  {
+    "key": "amenity",
+    "value": "motorcycle_parking",
+    "name": "Motorfiets parkeren"
+  },
+  {
+    "key": "shop",
+    "value": "musical_instrument",
+    "name": "Muziek instrumenten winkel"
+  },
+  {
+    "key": "amenity",
+    "value": "vacuum_cleaner",
+    "name": "Stofzuiger"
+  },
+  {
+    "key": "craft",
+    "value": "gardener",
+    "name": "Hoveniers"
+  },
+  {
+    "key": "leisure",
+    "value": "bandstand",
+    "name": "Muziekkoepel"
+  },
+  {
+    "key": "office",
+    "value": "consulting",
+    "name": "Consultancybureau"
+  },
+  {
+    "key": "amenity",
+    "value": "studio",
+    "name": "Studio"
+  },
+  {
+    "key": "leisure",
+    "value": "water_park",
+    "name": "Waterpark"
+  },
+  {
+    "key": "office",
+    "value": "advertising_agency",
+    "name": "Reclamebureau"
+  },
+  {
+    "key": "historic",
+    "value": "manor",
+    "name": "Historich landhuis"
+  },
+  {
+    "key": "office",
+    "value": "therapist",
+    "name": "Therapeut"
+  },
+  {
+    "key": "craft",
+    "value": "photographer",
+    "name": "Fotograaf"
+  },
+  {
+    "key": "leisure",
+    "value": "dance",
+    "name": "Dans"
+  },
+  {
+    "key": "office",
+    "value": "ngo",
+    "name": "Niet-gouvernementele organisatie"
+  },
+  {
+    "key": "shop",
+    "value": "fabric",
+    "name": "Stoffenwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "sanitary_dump_station",
+    "name": "Sanitaire dumpstation"
+  },
+  {
+    "key": "amenity",
+    "value": "weighbridge",
+    "name": "Weegbrug"
+  },
+  {
+    "key": "shop",
+    "value": "craft",
+    "name": "Kunstbenodigheden winkel"
+  },
+  {
+    "key": "craft",
+    "value": "metal_construction",
+    "name": "Metaalconstructie bedrijf"
+  },
+  {
+    "key": "leisure",
+    "value": "resort",
+    "name": "Resort"
+  },
+  {
+    "key": "shop",
+    "value": "flooring",
+    "name": "Vloeren"
+  },
+  {
+    "key": "shop",
+    "value": "tyres",
+    "name": "Bandenwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "hifi",
+    "name": "Audiospeciaalzaak"
+  },
+  {
+    "key": "craft",
+    "value": "brewery",
+    "name": "Brouwerij"
+  },
+  {
+    "key": "leisure",
+    "value": "recreation_ground",
+    "name": "Recreatiegebied"
+  },
+  {
+    "key": "shop",
+    "value": "curtain",
+    "name": "Gordijnenwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "music_school",
+    "name": "Muziekschool"
+  },
+  {
+    "key": "craft",
+    "value": "carpenter",
+    "name": "Timmerman"
+  },
+  {
+    "key": "leisure",
+    "value": "schoolyard",
+    "name": "Schoolplein"
+  },
+  {
+    "key": "shop",
+    "value": "stationery",
+    "name": "Kantoorartikelen"
+  },
+  {
+    "key": "shop",
+    "value": "medical_supply",
+    "name": "Medische benodigdheden"
+  },
+  {
+    "key": "amenity",
+    "value": "water_point",
+    "name": "Waterpunt"
+  },
+  {
+    "key": "craft",
+    "value": "electronics_repair",
+    "name": "Electronicareparatie"
+  },
+  {
+    "key": "craft",
+    "value": "tailor",
+    "name": "Kledingmaker"
+  },
+  {
+    "key": "shop",
+    "value": "lighting",
+    "name": "Verlichting"
+  },
+  {
+    "key": "amenity",
+    "value": "letter_box",
+    "name": "Brievenbus"
+  },
+  {
+    "key": "office",
+    "value": "research",
+    "name": "Onderzoek"
+  },
+  {
+    "key": "shop",
+    "value": "baby_goods",
+    "name": "Baby artikelen"
+  },
+  {
+    "key": "shop",
+    "value": "ticket",
+    "name": "Kaartverkoop"
+  },
+  {
+    "key": "leisure",
+    "value": "sauna",
+    "name": "Sauna"
+  },
+  {
+    "key": "amenity",
+    "value": "crematorium",
+    "name": "Crematorium"
+  },
+  {
+    "key": "craft",
+    "value": "caterer",
+    "name": "Cateraar"
+  },
+  {
+    "key": "office",
+    "value": "engineer",
+    "name": "Ingenieurbureau"
+  },
+  {
+    "key": "craft",
+    "value": "electrician",
+    "name": "Elektricien"
+  },
+  {
+    "key": "historic",
+    "value": "city_gate",
+    "name": "Historiche stadspoort"
+  },
+  {
+    "key": "craft",
+    "value": "painter",
+    "name": "Schilder"
+  },
+  {
+    "key": "place",
+    "value": "isolated_dwelling",
+    "name": "Afgelegen woning"
+  },
+  {
+    "key": "shop",
+    "value": "erotic",
+    "name": "Erotische winkel"
+  },
+  {
+    "key": "shop",
+    "value": "no",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "social_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dressing_room",
+    "name": "Kleedkamer"
+  },
+  {
+    "key": "amenity",
+    "value": "animal_shelter",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "reception_desk",
+    "name": ""
+  },
+  {
+    "key": "place",
+    "value": "suburb",
+    "name": "Voorstad"
+  },
+  {
+    "key": "shop",
+    "value": "estate_agent",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "waste_transfer_station",
+    "name": "Avalverwerking"
+  },
+  {
+    "key": "leisure",
+    "value": "bowling_alley",
+    "name": "Bowlingbaan"
+  },
+  {
+    "key": "historic",
+    "value": "disused",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "boat_storage",
+    "name": "Bootopslag"
+  },
+  {
+    "key": "amenity",
+    "value": "bbq",
+    "name": "Barbecue"
+  },
+  {
+    "key": "shop",
+    "value": "tea",
+    "name": "Theewinkel"
+  },
+  {
+    "key": "place",
+    "value": "island",
+    "name": "Eiland"
+  },
+  {
+    "key": "amenity",
+    "value": "dog_toilet",
+    "name": "Hondentoilet"
+  },
+  {
+    "key": "shop",
+    "value": "party",
+    "name": "Feestwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "conference_centre",
+    "name": "Congrescentrum"
+  },
+  {
+    "key": "amenity",
+    "value": "bicycle_repair_station",
+    "name": "Fietsreparatiestation"
+  },
+  {
+    "key": "craft",
+    "value": "builder",
+    "name": "Bouwbedrijf"
+  },
+  {
+    "key": "shop",
+    "value": "fashion_accessories",
+    "name": "Modeaccessoires"
+  },
+  {
+    "key": "office",
+    "value": "coworking",
+    "name": "Coworking"
+  },
+  {
+    "key": "office",
+    "value": "tax_advisor",
+    "name": "Belastingadviseur"
+  },
+  {
+    "key": "shop",
+    "value": "dairy",
+    "name": "Zuivelwinkel"
+  },
+  {
+    "key": "historic",
+    "value": "citywalls",
+    "name": "Historiche stadsmuur"
+  },
+  {
+    "key": "leisure",
+    "value": "amusement_arcade",
+    "name": "Speelhal"
+  },
+  {
+    "key": "shop",
+    "value": "general",
+    "name": "Algemene winkel"
+  },
+  {
+    "key": "craft",
+    "value": "plumber",
+    "name": "Loodgieter"
+  },
+  {
+    "key": "shop",
+    "value": "shoe_repair",
+    "name": "Schoenreparatie"
+  },
+  {
+    "key": "craft",
+    "value": "upholsterer",
+    "name": "Stoffeerder"
+  },
+  {
+    "key": "leisure",
+    "value": "common",
+    "name": "Gemeenschappelijk"
+  },
+  {
+    "key": "tourism",
+    "value": "theme_park",
+    "name": "Attractiepark"
+  },
+  {
+    "key": "shop",
+    "value": "sewing",
+    "name": "Naaiwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "beverages",
+    "name": "Dranken"
+  },
+  {
+    "key": "shop",
+    "value": "nutrition_supplements",
+    "name": "Voedingssupplementen"
+  },
+  {
+    "key": "amenity",
+    "value": "animal_boarding",
+    "name": "Dierenpension"
+  },
+  {
+    "key": "shop",
+    "value": "pet_grooming",
+    "name": "Dierenverzorging"
+  },
+  {
+    "key": "shop",
+    "value": "window_blind",
+    "name": "Raamdecoratie"
+  },
+  {
+    "key": "leisure",
+    "value": "stadium",
+    "name": "Stadion"
+  },
+  {
+    "key": "office",
+    "value": "healthcare",
+    "name": "Gezondheidszorg"
+  },
+  {
+    "key": "amenity",
+    "value": "healthcare",
+    "name": "Gezondheidszorg"
+  },
+  {
+    "key": "leisure",
+    "value": "tanning_salon",
+    "name": "Zonnebank"
+  },
+  {
+    "key": "amenity",
+    "value": "car_pooling",
+    "name": "Carpoolen"
+  },
+  {
+    "key": "leisure",
+    "value": "escape_game",
+    "name": "Escape room"
+  },
+  {
+    "key": "historic",
+    "value": "aircraft",
+    "name": "Historich vliegtuig"
+  },
+  {
+    "key": "place",
+    "value": "polder",
+    "name": "Polder"
+  },
+  {
+    "key": "shop",
+    "value": "leather",
+    "name": "Lederwaren"
+  },
+  {
+    "key": "craft",
+    "value": "beekeeper",
+    "name": "Imker"
+  },
+  {
+    "key": "shop",
+    "value": "agrarian",
+    "name": "Agrarisch"
+  },
+  {
+    "key": "craft",
+    "value": "window_construction",
+    "name": "Raamconstructie"
+  },
+  {
+    "key": "historic",
+    "value": "warehouse",
+    "name": "Historiche magazijn"
+  },
+  {
+    "key": "office",
+    "value": "construction_company",
+    "name": "Bouwbedrijf"
+  },
+  {
+    "key": "shop",
+    "value": "caravan",
+    "name": "Caravan"
+  },
+  {
+    "key": "shop",
+    "value": "frame",
+    "name": "Fotolijstwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "fishing",
+    "name": "Hengelsportwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "plant_hire",
+    "name": "Machnieverhuur"
+  },
+  {
+    "key": "shop",
+    "value": "smartshop",
+    "name": "Smartshop"
+  },
+  {
+    "key": "amenity",
+    "value": "shelf",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "telecommunication",
+    "name": "Telecommunicatiebedrijf"
+  },
+  {
+    "key": "shop",
+    "value": "games",
+    "name": "Spellenwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "scooter",
+    "name": "Scooter"
+  },
+  {
+    "key": "shop",
+    "value": "tool_hire",
+    "name": "Gereedschapverhuur"
+  },
+  {
+    "key": "tourism",
+    "value": "holiday_village",
+    "name": "Vakantiedorp"
+  },
+  {
+    "key": "shop",
+    "value": "boat",
+    "name": "Botenwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "food_court",
+    "name": "Voedselhal"
+  },
+  {
+    "key": "amenity",
+    "value": "post_depot",
+    "name": "Postdepot"
+  },
+  {
+    "key": "amenity",
+    "value": "prison",
+    "name": "Gevangenis"
+  },
+  {
+    "key": "amenity",
+    "value": "smoking_area",
+    "name": "Rookerszone"
+  },
+  {
+    "key": "office",
+    "value": "travel_agent",
+    "name": "Reisbureau"
+  },
+  {
+    "key": "amenity",
+    "value": "courthouse",
+    "name": "Rechtbank"
+  },
+  {
+    "key": "craft",
+    "value": "hvac",
+    "name": "HVAC"
+  },
+  {
+    "key": "historic",
+    "value": "bridge",
+    "name": "Historiche Brug"
+  },
+  {
+    "key": "amenity",
+    "value": "blood_bank",
+    "name": "Bloedbank"
+  },
+  {
+    "key": "shop",
+    "value": "telecommunication",
+    "name": "Telecommunicatie"
+  },
+  {
+    "key": "shop",
+    "value": "water_sports",
+    "name": "Watersportwinkel"
+  },
+  {
+    "key": "aeroway",
+    "value": "aerodrome",
+    "name": "Vliegveld"
+  },
+  {
+    "key": "craft",
+    "value": "glaziery",
+    "name": "Glaszetter"
+  },
+  {
+    "key": "amenity",
+    "value": "funeral_hall",
+    "name": "Uitvaartcentrum"
+  },
+  {
+    "key": "amenity",
+    "value": "grit_bin",
+    "name": "Zoutcontainer"
+  },
+  {
+    "key": "office",
+    "value": "harbour_master",
+    "name": "Havenmeester"
+  },
+  {
+    "key": "shop",
+    "value": "watches",
+    "name": "Horlogewinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "animal_training",
+    "name": "Dierentraining"
+  },
+  {
+    "key": "amenity",
+    "value": "biergarten",
+    "name": "Biergarten"
+  },
+  {
+    "key": "shop",
+    "value": "hairdresser_supply",
+    "name": "Kappersbenodigdheden"
+  },
+  {
+    "key": "leisure",
+    "value": "indoor_play",
+    "name": "Overdekt speelparadijs"
+  },
+  {
+    "key": "craft",
+    "value": "handicraft",
+    "name": "Ambachtwerkplaats"
+  },
+  {
+    "key": "historic",
+    "value": "heritage",
+    "name": "Erfgoed"
+  },
+  {
+    "key": "historic",
+    "value": "monument",
+    "name": "Monumentaal gedenkteken"
+  },
+  {
+    "key": "shop",
+    "value": "locksmith",
+    "name": "Slotenmaker"
+  },
+  {
+    "key": "shop",
+    "value": "ice_cream",
+    "name": "IJssalon"
+  },
+  {
+    "key": "shop",
+    "value": "repair",
+    "name": "Reparatie"
+  },
+  {
+    "key": "shop",
+    "value": "tiles",
+    "name": "Tegelwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "monastery",
+    "name": "Klooster"
+  },
+  {
+    "key": "shop",
+    "value": "model",
+    "name": "Modelbouwwinkel"
+  },
+  {
+    "key": "shop",
+    "value": "pawnbroker",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bureau_de_change",
+    "name": "Wisselkantoor"
+  },
+  {
+    "key": "historic",
+    "value": "ship",
+    "name": "Historich schip"
+  },
+  {
+    "key": "place",
+    "value": "city",
+    "name": "Stad"
+  },
+  {
+    "key": "shop",
+    "value": "boutique",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dancing_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "warehouse",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "appliance",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "watering_place",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "key_cutter",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "newspaper",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "binoculars",
+    "name": "Verrekijkerwinkel"
+  },
+  {
+    "key": "amenity",
+    "value": "language_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "lounger",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "printer",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "tower",
+    "name": "Historische toren"
+  },
+  {
+    "key": "office",
+    "value": "graphic_design",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "barefootpath",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "chapel",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "barefoot",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "clubhouse",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "roofer",
+    "name": ""
+  },
+  {
+    "key": "place",
+    "value": "city_block",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "video_games",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "power_supply",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "religion",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "e-cigarette",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "glaziery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "hobby",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "bunker",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "stone",
+    "name": "Steen"
+  },
+  {
+    "key": "leisure",
+    "value": "trampoline_park",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "property_management",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "electrical",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "fireplace",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "food",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "garden_furniture",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dojo",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "lifeboat",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "boatbuilder",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "winery",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "adult_gaming_centre",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "hackerspace",
+    "name": "Hackerspace"
+  },
+  {
+    "key": "amenity",
+    "value": "coworking_space",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "barn",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "wildlife_hide",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "radiotechnics",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "pottery",
+    "name": "Pottenbakkerij"
+  },
+  {
+    "key": "historic",
+    "value": "monastery",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "windmill",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "doors",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "atelier",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "collector",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "coast_radar_station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "research_institute",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "blacksmith",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "gate",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "railway_car",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "wool",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "chair",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "lifeboat_station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "washing_machine",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "dressmaker",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "moving_company",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "physician",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "money_transfer",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "technical_monument",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "wreck",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "security",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "scuba_diving",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "truck",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mobility_hub",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "physiotherapist",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "scout_hut",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "agricultural_engines",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "floorer",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "stonemason",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "charity",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "nuts",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "pottery",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mortuary",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "office",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "table",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "anchor",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "industrial",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "water_well",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "stool",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "sailmaker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "tiler",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "milestone",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "marketing",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "gas",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "ship_chandler",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "construction",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "payment_terminal",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "surf_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "telephone",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "wall",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "practice_pitch",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "mortgage",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "camera",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "motorcycle_repair",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "trailer",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "music_venue",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "jeweller",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "camping",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "energy_supplier",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "political_party",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "transport",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "printing",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "pyrotechnics",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "piano",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "workshop",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "confectionery",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "locomotive",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "bathing_place",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "floor",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "herbalist",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "military_surplus",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "trail_riding_station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "locker",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "luggage_locker",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "photo_booth",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "place_of_mourning",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "clockmaker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "interior_work",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "yes",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "guardhouse",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "administration",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "security",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "animal_breeding",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "parking_exit",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "prep_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "refugee_site",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "stripclub",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "beach_resort",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "building_materials",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "religion",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "bakery",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "goldsmith",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "fortification",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "railway_station",
+    "name": ""
+  },
+  {
+    "key": "place",
+    "value": "state",
+    "name": ""
+  },
+  {
+    "key": "place",
+    "value": "unknown",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "energy",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "printer_ink",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bicycle_wash",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "cannabis",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "exhibition_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "trailer_park",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "cleaning",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "dental_technician",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "sculptor",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "watchmaker",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "airplane_shelter",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "school",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "townhall",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "cleaning",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "engineering",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "gold_buyer",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "grocery",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "motel",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "financial_advice",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "harbourmaster",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "traffic_park",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "vehicle_inspection",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "locksmith",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "earthworks",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "courier",
+    "name": ""
+  },
+  {
+    "key": "place",
+    "value": "region",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "household_linen",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "outpost",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "peanut_butter",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "spices",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "sunglasses",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "vacuum_cleaner",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "anchorage",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bell",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "hookah_lounge",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "bookbinder",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "distillery",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "plasterer",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "garden",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "millstone",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "villa",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "publisher",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "water_utility",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "drug_paraphernalia",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "growshop",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dive_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "freezone",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "vacant",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "cabinet_maker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "parquet_layer",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "shoe_repair",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "signmaker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "sun_protection",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "quarry",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "tank",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "quango",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "candles",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "moped",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "baking_oven",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "device_charging_station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "internet_cafe",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "kitchen",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "lavoir",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "stables",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "swingerclub",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "joiner",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "sawmill",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "tinsmith",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "battlefield",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "stronghold",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "wayside_chapel",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "g",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "yes",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "administrative",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "contractor",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "union",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "headshop",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "money_lender",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "video",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "aquarium",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "resort",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "concert_hall",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "health_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "motorcycle_rental",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "sport_school",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "musical_instrument",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "boundary_marker",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "military",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "vehicle",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "hot_tub",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "village_green",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "design",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "bicycle_repair",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "equestrian",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "esoteric",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "groundskeeping",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "haberdashery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "leatherworking",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "piercing",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "sewing_machines",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "ski",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "accupuncture",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "cloakroom",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "events_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "fixme",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "food_sharing",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "hammock",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "lost_found",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "meditation_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "rental",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "social_club",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "stage",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "dental_hygienist",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "insulation",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "interior_decorator",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "machinery",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "welder",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "crash_site",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "factory",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "folly",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "lock",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "place_of_worship",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "pumping_station",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "shelter",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "water_tower",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "watermill",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "construction",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "picnic_site",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "ship",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "table",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "construction",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "guide",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "industrial",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "media",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "recruitment_agency",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "trade_organisation",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "web_design",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "country_store",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "curiosa",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "dentures",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "hvac",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "nails",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "swimming_pool",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "tractor",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "trophy",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "balance_beam",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bungalow_park",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "circuit",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "court_yard",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "cultural_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "elevator",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "festival_grounds",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "fridge",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "funeral_home",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "goal",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "health_post",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "orthodontist",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "pedicure",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "planetarium",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "public_bath",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "ranger_station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "sailing_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "scout_camp",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "toy_library",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "bricklayer",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "embroiderer",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "chimney",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "gallows",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "mine",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "pump",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "roman_road",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "statue",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "unfinished",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "disc_golf_course",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "yoga_studio",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "forestry",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "funeral",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "interior_design",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "occupational_safety",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "surveyor",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "trade_union",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "tutoring",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "agricultural_machinery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "bbq",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "bookmaker",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "garden_machinery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "honey",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "mobility_scooter",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "new_age",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "photography",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "safety_equipment",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "sweets",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "holiday_park",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "art_gallery",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "art_library",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "camping",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "cooking_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "escooter_parking",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "feeding_place",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "first_aid",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "flight_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "hitching_post",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "ice_rink",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "karaoke_box",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "lavatory",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "meeting_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mirror_setting_marks",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "moped_parking",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "motorhome_storage",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "obstetrician",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "proposed",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "rescue_station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "spa",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "thuiszorg",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "tourism",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "venue",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "water",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "yes",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "carpet_layer",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "construction",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "contractor",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "engraver",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "furniture",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "grinding_mill",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "photo_studio",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "photographic_laboratory",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "printmaker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "saddler",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "artwork",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "business",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "castle_wall",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "cattle_crush",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "culvert",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "harbour",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "lighthouse",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "lock_gate",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "prison",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "train_station",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "village_pump",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "clubhouse",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "high_ropes_course",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "music_venue",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "paddling_pool",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "recreation_centre",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "soccer_golf",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "bank",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "communication",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "education",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "housing_association",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "private_investigator",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "reception",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "university",
+    "name": ""
+  },
+  {
+    "key": "place",
+    "value": "archipelago",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "anime",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "baking_supplies",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "catering",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "christmas",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "clothes_repair",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "gold",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "golf",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "household",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "kitchenware",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "sign",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "spare_parts",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "tanning",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "truck_repair",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "wallpaper",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "wigs",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "wood",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "construction",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "meeting_point",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "spa_resort",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "wilderness_hut",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "acupuncture",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "baby_hatch",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bicycle_repair",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bin",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bridge",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "business_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "canteen",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "culture_center",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "customs",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dance_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "daycare",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "deer_feeding",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dog_training",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "driver_training",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "education",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "game_feeding",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "horse_parking",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "housing",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "information",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "juice_bar",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "language_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "lost_property_office",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "maternity_care",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "meetinglocation",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mirror_adjustment_site",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "photographer",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "planned",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "psychotherapist",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "publishing",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "residential_home",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "resthouse",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "riding_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "rv_storage",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "scrapyard",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "seat",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "service",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "smokers_corner",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "sun",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "terrace",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "terras",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "test site",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "tutoring",
+    "name": ""
+  },
+
+  {
+    "key": "amenity",
+    "value": "verloskundige",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "village_pump",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "water_well",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "well",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "wild_insprong",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "yoga",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "car_painter",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "coffee_roaster",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "illustrator",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "lighting",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "machine_repair",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "paver",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "piano_tuner",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "print_shop",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "sewing",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "toolmaker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "woodworking",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "Geniedijk",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "airfield",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "almshouses",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "bell",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "carriage_house",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "earthwork",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "fence",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "ice_house",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "military_storage_room",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "mine_shaft",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "orphanage",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "park",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "pavilion",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "pillory",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "post_box",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "propeller",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "retaining_wall",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "shed",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "shieling",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "stables",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "steps",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "synagogue",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "tree",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "club",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "cultural_centre",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "outdoor_sports",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "razed",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "rugby",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "social_club",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "summer_camp",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "swimming_raft",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "CIB / NINtec",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "auctioneer",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "bridge_tender",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "camp_site",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "commercial",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "cooperative",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "demolition_company",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "educational_support",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "electronics",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "financial_advice",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "human_resources",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "internet",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "laboratory",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "lost_property",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "medical",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "printing",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "public_transport",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "rental",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "taxi",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "training",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "translation",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "utility",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "warehousing",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "webshop",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "3d_printing",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "afro",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "auction",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "audiologist",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "bathroom_furniture",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "business_machines",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "camping",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "ceramics",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "computer_repair",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "conceptstore",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "cookware",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "costume",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "design",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "electronics_repair",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "frozen_food",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "gardener",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "handicraft",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "health",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "interior_design",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "lottery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "machinery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "marihuana",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "mobile_phone_repair",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "motorcycle_parts",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "packaging",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "pasta",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "pharmacy",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "sand",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "seeds",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "signs",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "solar",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "stairs",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "stamps",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "surf",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "tombstone",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "tourist",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "training",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "vintage",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "weapons",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "welding",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "wellness",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "white_goods",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "alpine_hut",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "wine_cellar",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "Mercurius",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "Obstetrician",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "Terrasse",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "Wellness",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "abbey",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "ambulance_station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "angling_club",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "animal_hitch",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "animal_rescue",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "auction",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "audiologist",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "autonomous_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "baggerspecieontwateringsinrichting",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "battery_swap",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "beauty_salon",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bee_hive",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bicycle_pump",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bodytec",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "bowling",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "box_office",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "brewery",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "catering",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "check_in",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "chiropractic",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "churchbell",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "circus_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "club_house",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "coffeehouse",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "company",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "conference_center",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "cooking_workshop",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "copier",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "crematory",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "day_care",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "demi_water",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dental_hygienist",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dishwasher",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "disused",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "disused:place_of_worship",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dog_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dog_wash",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "donation_box",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dressage",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "driving_training",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "dryer",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "duck_decoy",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "education_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "electrician",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "estate",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "excrement_bags",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "fireplace",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "first_aid_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "floron",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "foot_reflexology",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "fraternity",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "freeshop",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "function_room",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "fysiotherapeut",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "gambling",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "gamingzone",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "gas_plant",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "graffiti_wall",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "grass",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "hair_clinic",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "hairdresser",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "hall",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "health",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "hippie_camp",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "homecare",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "homework_support",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "info@hazeduinen.nl",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "kids_area",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "kinderdagverblijf",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "kinesiologist",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "knitting_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "library_dropoff",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "lock_door storage",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "lunchroom",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "meeting_point",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "meeting_rooms",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "meeting_space",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mental_health",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mini library",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mirror_adjustment_station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mobile-crane_rental",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "monument",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "moped rental",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mortgage_bank",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mortgage_broker",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "mouthhygienist",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "museum",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "music_club",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "music_studio",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "natal_care",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "natuur",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "nutritionist",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "office_units",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "participation_council",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "payment_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "pedalo",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "phone_central",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "phone_exchange",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "photo",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "pic_nick",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "pilates",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "podotherapy",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "pregnancy",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "private_fast_food",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "private_tutor",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "product_pickup",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "psychologist",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "public_hall",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "pumping_station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "reception_area",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "rehearsal_studio",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "repair",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "retail",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "river radar station",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "safe_deposit",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "schippersinternaat",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "scooter_parking",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "scooter_rental",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "scout_hall",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "scouting",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "se",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "segway_rental",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "sewer_pump",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "ski_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "skin_specialist",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "social_center",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "speech_therapy",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "speelotheek",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "sports_centre",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "stable",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "stairs",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "stall",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "stand",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "standup_paddleboard_rental",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "storage_area",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "store_pickup",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "stroller_parking",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "studio and meeting",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "tailor_school",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "takeaway",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "tanning_salon",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "teeth_bleaching",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "teeth_whitening",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "theatre_company",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "tourist_bus_parking",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "umpire_chair",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "video_games",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "waiting_room",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "wasf",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "washing_mashine",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "washing_place",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "waste_disposal3",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "wastes",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "wheel_bath",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "wifi",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "yoga_studio",
+    "name": ""
+  },
+  {
+    "key": "amenity",
+    "value": "zalencentrum",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "HVAC",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "agricultural_service",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "arborist",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "art_painter",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "artist",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "barber",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "barrel_organ",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "basket_maker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "bellfounding",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "butcher",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "calligraphy",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "candle_maker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "carpet_cleaner",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "ceiling",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "chocolate",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "cleaner",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "clothes_mending",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "coachbuilder",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "cobbler",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "composites",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "confectionary",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "construction_company",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "construction_worker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "cv_installateur",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "designer",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "diverse",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "door_construction",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "earthworks",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "embroidery",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "engines",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "fence_maker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "flagpole_installer",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "framer",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "furniture_maker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "furniture_painter",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "furniture_restorer",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "furniture_upholstery",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "futon_maker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "glassblowing",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "horse_breeder",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "ice_cream",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "interior_architecture",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "knife_sharpener",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "laboratory",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "landscaper",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "leather",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "luthier",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "mask_maker",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "mechanic",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "nail_boutique",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "organ_builder",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "pastry",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "paving_contractor",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "pest_control",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "photovoltaic",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "physiotherapist",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "pipelines",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "powder_coating",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "prothesis",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "repair",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "rope_making",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "scaffolder",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "solar_panels",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "stairs",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "storage_tanks",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "stove",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "sweep",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "textile factory",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "textile_printing",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "tooth_technician",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "track_construction",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "vinyl_cutter",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "weaver",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "window_cleaner",
+    "name": ""
+  },
+  {
+    "key": "craft",
+    "value": "wine",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "Dungeon",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "Folly",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "Landgraben",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "WWII",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "abandoned",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "aircraft_wreck",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "ambulatory",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "anti-tank_ditch",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "anti-tank_wall",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "armoury",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "bakehouse",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "basin",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "beacon",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "bitts",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "bouy",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "brewery",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "buoy",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "busstop",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "cemetery",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "cityhall",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "coat_of_arms",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "consistory",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "courthouse",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "covered_road",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "crane",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "demolished",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "dragon's_teeth",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "drydock",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "farmhouse",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "farrier",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "fire_equipment",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "foo",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "fortress",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "fund",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "garage",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "garden_ornament",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "gatehouse",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "geological_site",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "graveyard",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "greenhouse",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "gunpowder_house",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "hangar",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "headframe",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "historic_airport_traffic_control",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "hollow_way",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "hospital",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "https://noord-hollandsarchief.nl/beelden/beeldbank/detail/3A15A04EFB8F11DF9E4D523BC2E286E2",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "hunting_lodge",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "inn",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "kalkoven",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "kalkoven_kasteel_haren",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "kanon",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "kiln",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "landmark",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "laundry_works",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "lavoir",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "locomotive_axle",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "mansion",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "market_hall",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "mess",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "military_warehouse",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "missile",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "moat",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "molen",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "museum",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "no",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "nursing_home",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "orangery",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "ped",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "perron",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "pillar",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "pond",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "protected_building",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "pub",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "redoubt",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "road",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "sacristy",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "sheepfold",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "shoeing_shed",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "shooting_range",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "site",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "sluice",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "smithy",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "social_facility",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "stable",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "station",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "stone_fragment",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "sundial",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "telephone",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "toll_stone",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "tomb_stone",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "torture_instrument",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "trade",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "tunnel",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "viaduct",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "vicarage",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "walls",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "waste_disposal",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "water_pump",
+    "name": "Historiche waterpomp"
+  },
+  {
+    "key": "historic",
+    "value": "water_screw",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "watering_place",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "wayside_pole",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "weigh_house",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "well",
+    "name": ""
+  },
+  {
+    "key": "historic",
+    "value": "wheat_silo",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "backward",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "basketball_hoop",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "bird_screen",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "cantina",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "dierenambulance",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "events",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "farmersgolf",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "game",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "gardening",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "halfpipe",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "hammock",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "kitchen",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "maze",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "miniature_train",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "pet",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "pit",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "pl",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "playground1",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "playground2",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "playground_device",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "pool_hall",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "proposed",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "puzzle",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "real_estate",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "recreation_center",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "recreative",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "rope_climbing_garden",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "rugby_union",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "sailing_club",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "sailing_school",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "school",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "school_yard",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "snooker_centre",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "spa",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "sports",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "table_tennis",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "tanning_station",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "turkish_bath",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "wellness",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "winter_restaurant",
+    "name": ""
+  },
+  {
+    "key": "leisure",
+    "value": "zoo",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "Christelijke Basisschool De Rank",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "DJ",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "Elite B.V.",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "Fiets_plus_(van_Overveld)",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "Makelaar",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "Natural_Health_Products",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "Production_companies",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "advisor",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "appraiser",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "art_dealer",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "auction",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "beauty",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "broadcaster",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "business_centre",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "cabinet_maker",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "care",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "catering",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "church",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "cleaning_company",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "coaching",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "consultant",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "corporate",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "counsellor",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "creative",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "delivery",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "developer",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "disabled_care",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "disused",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "ecommerce_en_ebusiness",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "electricity",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "event_management",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "event_manager",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "events",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "federation",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "finance",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "financial_service",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "flexible_work",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "funeral_directors",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "graphic_designer",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "harbour",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "headqaurter",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "health_insurance",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "home_care",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "housing",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "import-export",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "insurance_advisor",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "internet_service_provider",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "job_agency",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "journalist",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "labor_union",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "labour_union",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "land_development_company",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "language_training",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "logistic",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "medical_supply",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "mortgage_advisor",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "movie_production",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "multi",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "music",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "music_lable",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "nonprofit",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "ontwerp",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "organization",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "parish",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "patent attorney office",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "patent_attorney",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "physiotherapist",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "physiotherapy",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "pilotage",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "podologist",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "police",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "production",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "promotion_gifts",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "property_development",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "public_transport_company",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "radio_station",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "real_estate_agency",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "real_estate_rental",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "safety",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "serviced_offices",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "shipping",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "shop",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "sluice",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "social_facility",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "software",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "sports",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "staffing",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "stock_broker",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "studio",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "surface_treatment",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "syndicate",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "tax",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "television",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "television_station",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "theatre",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "tourist",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "towing",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "trade",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "traffic_engineering",
+    "name": "Verkeersadviesbureau"
+  },
+  {
+    "key": "office",
+    "value": "translator",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "true",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "vaccination",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "vakantiewoningen",
+    "name": ""
+  },
+  {
+    "key": "office",
+    "value": "visa",
+    "name": ""
+  },
+  {
+    "key": "place",
+    "value": "country",
+    "name": ""
+  },
+  {
+    "key": "place",
+    "value": "valley",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "3D_printing_materials",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "Poelier",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "Vignet sale only",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "accessories",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "alternative_medicine",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "animal_food",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "animal_health",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "aquarium",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "aquarium_speciaalzaak",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "artgallery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "auction_house",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "bakery_ingredients",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "bakery_supplies",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "barbecue",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "beauty_salon",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "billiards",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "board_games",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "boat_parts",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "boat_service",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "bodypaint",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "brewing_supplies",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "bubble_tea",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "building_supplies",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "candy",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "car_service",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "car_tires",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "chandler",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "chemicals",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "cleaning",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "cleaning_equipment",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "cleaning_supplies",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "climbing",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "clock",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "clocks",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "clothing recovery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "clothing_rental",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "coaching",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "coffee_maker",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "coffeeshop",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "coffin",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "comics",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "commercial_vehicles",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "concepts",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "construction_materials",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "construction_vehicles",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "container",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "cookery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "cooking",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "crystal",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "decoration",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "delicatessen",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "delivery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "dental_care",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "design_agency",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "dog_hairdresser",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "dog_trimming",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "earth-moving_machines",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "electrician",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "embroidery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "exhibition_supplies",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "face_painting",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "fan",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "fencing",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "fishmonger",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "fitness_machines",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "flour",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "flower_arranging",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "forestry",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "fossils",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "fur",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "furnishings",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "garden",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "geriatric",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "goldsmith",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "graffiti",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "grinding",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "hair_extensions",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "hemp_products",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "hgv_repair",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "hockey",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "home_healthcare",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "hookah",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "horse_riding",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "hunting",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "insurance",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "internet_cafe",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "juice",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "junk_yard",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "kitchen_equipment",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "knives",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "lamp measurements",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "landwinkel",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "leds_display",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "life_style_coaching",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "lifestyle",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "lingerie,_huishoudtextiel,_Lampe_Berger",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "lingery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "lock",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "mail",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "makeup",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "marine",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "marine_engine",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "maritime",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "medal",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "medical",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "medical_supplies",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "merch",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "mobile_home",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "mobile_industrial_equipment",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "mobile_phone_accesories",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "mobile_phone_accessories",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "mobility",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "modeling",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "money_transfer",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "mopeds",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "motorscooter",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "moving",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "mushrooms",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "natural_stone",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "number_plates",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "office",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "oil",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "optical_instruments",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "oral_care",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "orthopedics",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "outdoor_furniture",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "parquet",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "pawn_shop",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "phone_repair",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "photo_studio",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "piano_services",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "pickles",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "piercings",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "pillows",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "plant nursery",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "plants",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "poulterer",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "power_tools",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "print",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "printer",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "props",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "retail",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "rice",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "rocks_and_minerals",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "scooters",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "scootmobile",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "sheet_music",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "shoe_cleaning",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "shop_supplies",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "skate",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "skin_care",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "soap",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "solar_panel",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "sound_and_light",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "souvenir",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "spa",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "stickers",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "stitch",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "stones",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "stones_and_pavements",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "sun_protection",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "sunscreens",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "surfboards",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "sushi",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "taxidermist",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "tent_maker",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "test",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "textile_printer",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "textile_printing",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "textiles",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "tiled_floor",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "toko",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "vague",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "valuer",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "van",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "vegan_store",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "vehicles",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "watch",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "water",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "water_pipe",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "web_design",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "wedding",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "wholesale_trade",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "window blind",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "window_frames",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "window_tinting",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "windows",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "woodworks",
+    "name": ""
+  },
+  {
+    "key": "shop",
+    "value": "zero waste lifestyle",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "exhibition",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "group_accommodation",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "group_accomodation",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "landscape_frame",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "reception",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "sightseeing",
+    "name": ""
+  },
+  {
+    "key": "tourism",
+    "value": "tours",
+    "name": ""
+  }
+]
