@@ -7,7 +7,7 @@ import WindowWithDynamicRounding from "@/components/elements/window-with-dynamic
 import { LayoutSettingsProvider } from "@/contexts/layout-settings-context";
 import LayoutSettingOverride from "@/components/elements/layout-setting-override";
 import { ThemeProvider } from "@/providers/theme-provider";
-
+import { Analytics } from "@vercel/analytics/react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,6 +33,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-screen`}
       >
+        <Analytics />
+
         <div className="absolute top-0 left-0 w-full h-full z-0">
           <ImplemtedMap />
         </div>
