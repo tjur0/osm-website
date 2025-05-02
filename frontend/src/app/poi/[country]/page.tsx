@@ -1,6 +1,5 @@
 import { Title } from "@/components/elements/title";
 import { nile } from "@/lib/db";
-import { normalizeParams } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -19,7 +18,7 @@ export default async function CountryIndexPage({
 }: {
   params: Promise<{ country: string }>;
 }) {
-  const { country } = normalizeParams(await params);
+  const { country } = await params;
 
   const response = await nile.db.query(
     "SELECT DISTINCT state FROM pois WHERE country = $1 ORDER BY state",
