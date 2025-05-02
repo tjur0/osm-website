@@ -1,6 +1,6 @@
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
 import { nile } from "@/lib/db";
-import { rawPoiToPoi } from "@/lib/utils";
+import { normalizeParams, rawPoiToPoi } from "@/lib/utils";
 import { RawPoi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -44,17 +44,7 @@ interface PoiPageProps {
 }
 
 export async function generateMetadata({ params }: PoiPageProps) {
-  const raw = await params;
-  const decoded = {
-    country: decodeURIComponent(raw.country),
-    state: decodeURIComponent(raw.state),
-    city: decodeURIComponent(raw.city),
-    street: decodeURIComponent(raw.street),
-    type: decodeURIComponent(raw.type).toUpperCase()[0],
-    id: decodeURIComponent(raw.id),
-  } as PoiParams;
-
-  const { type, id } = decoded;
+  const { type, id } = normalizeParams(await params);
 
   const response = await nile.db.query(
     "SELECT name FROM pois WHERE id = $1 AND type = $2",
@@ -76,17 +66,9 @@ export async function generateMetadata({ params }: PoiPageProps) {
 }
 
 export default async function PoiPage({ params }: PoiPageProps) {
-  const raw = await params;
-  const decoded = {
-    country: decodeURIComponent(raw.country),
-    state: decodeURIComponent(raw.state),
-    city: decodeURIComponent(raw.city),
-    street: decodeURIComponent(raw.street),
-    type: decodeURIComponent(raw.type).toUpperCase()[0],
-    id: decodeURIComponent(raw.id),
-  } as PoiParams;
-
-  const { country, state, city, street, type, id } = decoded;
+  const { country, state, city, street, type, id } = normalizeParams(
+    await params
+  );
 
   const response = await nile.db.query(
     `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.id = $1 AND p.type = $2`,

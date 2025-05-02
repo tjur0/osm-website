@@ -4,7 +4,7 @@ import { Event } from "@/types/event";
 import { env } from "process";
 import Link from "next/link";
 import { Metadata } from "next";
-import { eclipse } from "@/lib/utils";
+import { eclipse, normalizeParams } from "@/lib/utils";
 import { MarkdownWrapper } from "@/components/markdown-wrapper";
 import { Title } from "@/components/elements/title";
 import { ExternalButton } from "@/components/external-button";
@@ -19,7 +19,7 @@ interface EventDetailPageProps {
 export async function generateMetadata({
   params,
 }: EventDetailPageProps): Promise<Metadata> {
-  const raw = await params;
+  const raw = normalizeParams(await params);
 
   if (!raw) return notFound();
 
@@ -121,7 +121,7 @@ const getEventDetail = async (id: string) => {
 export default async function EventDetailPage({
   params,
 }: EventDetailPageProps) {
-  const raw = await params;
+  const raw = normalizeParams(await params);
 
   if (!raw) return notFound();
 

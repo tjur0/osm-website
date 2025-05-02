@@ -23,3 +23,31 @@ export const eclipse = (input: string, length = 20) => {
 
   return input.slice(0, length) + "...";
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function normalizeParams<T extends Record<string, any>>(
+  params: T
+): T {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const result: Record<string, any> = {};
+
+  for (const [key, value] of Object.entries(params)) {
+    if (typeof value === "string") {
+      result[key] = decodeURIComponentSafe(value);
+    } else if (Array.isArray(value)) {
+      result[key] = value.map((v) => decodeURIComponentSafe(v));
+    } else {
+      result[key] = value;
+    }
+  }
+
+  return result as T;
+}
+
+export function decodeURIComponentSafe(value: string): string {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}

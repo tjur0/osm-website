@@ -32,11 +32,11 @@ export default function RedirectFullPoiPage({
 
   useEffect(() => {
     if (
-      decodeURIComponent(country) !== poi.country ||
-      decodeURIComponent(state) !== poi.state ||
-      decodeURIComponent(city) !== poi.city ||
-      decodeURIComponent(street) !== poi.street ||
-      decodeURIComponent(type) !== poi.type
+      country !== poi.country ||
+      state !== poi.state ||
+      city !== poi.city ||
+      street !== poi.street ||
+      type !== poi.type
     ) {
       router.replace(
         `/poi/${poi.country}/${poi.state}/${poi.city}/${poi.street}/${poi.type}/${poi.id}`
