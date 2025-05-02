@@ -8,6 +8,8 @@ import { LayoutSettingsProvider } from "@/contexts/layout-settings-context";
 import LayoutSettingOverride from "@/components/elements/layout-setting-override";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,6 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-screen`}
       >
         <Analytics />
+        <SpeedInsights />
 
         <div className="absolute top-0 left-0 w-full h-full z-0">
           <ImplemtedMap />
