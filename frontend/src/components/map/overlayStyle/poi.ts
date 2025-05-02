@@ -2,7 +2,7 @@
 // @ts-nocheck
 import { OverlayStyle } from "../style-specification-types";
 
-const PMTILES_URL = "/pois.pmtiles";
+const PMTILES_URL = process.env.NEXT_PUBLIC_PM_TILES_URL;
 
 const PoiStyle: OverlayStyle = {
   id: "design",
