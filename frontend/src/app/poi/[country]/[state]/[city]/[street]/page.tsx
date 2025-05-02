@@ -1,6 +1,6 @@
 import { Title } from "@/components/elements/title";
 import PoiCard from "@/components/poi/poi-card";
-import db from "../../../../../../../static/db";
+import { nile } from "@/lib/db";
 import { rawPoisToPois } from "@/lib/utils";
 import { RawPoi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
@@ -52,10 +52,12 @@ export default async function StreetIndexPage({
 
   const { country, state, city, street } = decoded;
 
-  const stmt = db.prepare(
-    "SELECT * FROM pois WHERE country = ? AND state = ? AND city = ? AND street = ? ORDER BY street"
+  const response = await nile.db.query(
+    `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.country = $1 AND p.state = $2 AND p.city = $3 AND p.street = $4 ORDER BY street`,
+    [country, state, city, street]
   );
-  const rawPois = stmt.all(country, state, city, street) as RawPoi[];
+
+  const rawPois = response.rows as RawPoi[];
 
   const pois = rawPoisToPois(rawPois);
 

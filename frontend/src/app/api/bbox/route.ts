@@ -1,4 +1,4 @@
-import db from "../../../../static/db";
+import { nile } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -9,64 +9,41 @@ export async function GET(req: NextRequest) {
   const type = searchParams.get("type");
   const id = searchParams.get("id");
 
-  const where = [];
+  const where: string[] = [];
   const values: (string | number)[] = [];
 
   if (state) {
-    where.push("state = ?");
+    where.push(`state = $${values.length + 1}`);
     values.push(state);
   }
   if (city) {
-    where.push("city = ?");
+    where.push(`city = $${values.length + 1}`);
     values.push(city);
   }
   if (street) {
-    where.push("street = ?");
+    where.push(`street = $${values.length + 1}`);
     values.push(street);
   }
   if (type) {
-    where.push("type = ?");
+    where.push(`type = $${values.length + 1}`);
     values.push(type);
   }
   if (id) {
-    where.push("id = ?");
+    where.push(`id = $${values.length + 1}`);
     values.push(Number(id));
   }
 
   const whereClause = where.length > 0 ? `WHERE ${where.join(" AND ")}` : "";
 
-  const stmt = db.prepare(`SELECT point FROM pois ${whereClause}`);
-  const rows = stmt.all(values) as { point: string }[];
+  const response = await nile.db.query(
+    `SELECT MIN(ST_X(point)) AS min_lng, MIN(ST_Y(point)) AS min_lat, MAX(ST_X(point)) AS max_lng, MAX(ST_Y(point)) AS max_lat FROM pois ${whereClause}`,
+    values
+  );
 
-  if (!rows.length) {
-    return NextResponse.json(
-      { message: "No matching POIs found" },
-      { status: 404 }
-    );
-  }
-
-  let minLng = Infinity,
-    minLat = Infinity,
-    maxLng = -Infinity,
-    maxLat = -Infinity;
-
-  for (const row of rows) {
-    try {
-      const [lng, lat] = JSON.parse(row.point);
-      if (!Array.isArray([lng, lat])) continue;
-
-      minLng = Math.min(minLng, lng);
-      minLat = Math.min(minLat, lat);
-      maxLng = Math.max(maxLng, lng);
-      maxLat = Math.max(maxLat, lat);
-    } catch (error) {
-      console.error("Invalid point:", row.point, error);
-    }
-  }
-
+  const { min_lng, min_lat, max_lng, max_lat } = response.rows[0];
   const bbox: [[number, number], [number, number]] = [
-    [minLng, minLat],
-    [maxLng, maxLat],
+    [min_lng, min_lat],
+    [max_lng, max_lat],
   ];
 
   return NextResponse.json({ bbox });

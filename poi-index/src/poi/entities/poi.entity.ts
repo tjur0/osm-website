@@ -1,6 +1,11 @@
 import { Feature } from 'src/feature/entities/feature.entity';
-import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Column, Entity, Index, ManyToOne, PrimaryColumn } from 'typeorm';
 
+@Index('poi_country_idx', ['country'])
+@Index('poi_state_idx', ['state'])
+@Index('poi_city_idx', ['city'])
+@Index('poi_street_idx', ['street'])
+@Index('poi_name_idx', ['name'])
 @Entity('pois')
 export class Poi {
   @PrimaryColumn('int8')

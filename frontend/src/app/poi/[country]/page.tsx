@@ -1,12 +1,12 @@
 import { Title } from "@/components/elements/title";
-import db from "../../../../static/db";
+import { nile } from "@/lib/db";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  const stmt = db.prepare("SELECT DISTINCT country FROM pois");
-  const countries = stmt.all() as { country: string }[];
+  const response = await nile.db.query("SELECT DISTINCT country FROM pois");
+  const countries = response.rows as { country: string }[];
 
   return countries.map(({ country }) => ({
     country: encodeURIComponent(country),
@@ -22,10 +22,12 @@ export default async function CountryIndexPage({
 
   const country = decodeURIComponent(raw.country);
 
-  const stmt = db.prepare(
-    "SELECT DISTINCT state FROM pois WHERE country = ? ORDER BY state"
+  const response = await nile.db.query(
+    "SELECT DISTINCT state FROM pois WHERE country = $1 ORDER BY state",
+    [country]
   );
-  const states = stmt.all(decodeURIComponent(country)) as { state: string }[];
+  console.log(response);
+  const states = response.rows as { state: string }[];
 
   if (!states || states.length === 0) return notFound();
 

@@ -1,12 +1,12 @@
-import db from "../../../static/db";
+import { nile } from "@/lib/db";
 import { MetadataRoute } from "next";
 
 const BASE_URL = "http://localhost:3000";
 const PAGE_SIZE = 50000;
 
 export async function generateSitemaps() {
-  const stmt = db.prepare("SELECT COUNT(*) as count FROM pois");
-  const { count } = stmt.get() as { count: number };
+  const response = await nile.db.query("SELECT COUNT(*) as count FROM pois");
+  const { count } = response.rows[0] as { count: number };
 
   const pages = Math.ceil(count / PAGE_SIZE);
 
@@ -26,13 +26,16 @@ export default async function sitemap({
 
   console.log("Generating sitemap for page", id, "with offset", offset);
 
-  const stmt = db.prepare(`
+  const response = await nile.db.query(
+    `
     SELECT country, state, city, street, type, id
     FROM pois
-    LIMIT ? OFFSET ?
-  `);
+    LIMIT $1 OFFSET $2
+  `,
+    [PAGE_SIZE, offset]
+  );
 
-  const pois = stmt.all(PAGE_SIZE, offset) as {
+  const pois = response.rows as {
     country: string;
     state: string;
     city: string;

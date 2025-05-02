@@ -1,6 +1,5 @@
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
-import db from "../../../../../../../../../static/db";
-import { getName } from "@/lib/tag-parsers/name";
+import { nile } from "@/lib/db";
 import { rawPoiToPoi } from "@/lib/utils";
 import { RawPoi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
@@ -31,25 +30,37 @@ import { notFound } from "next/navigation";
 //   }));
 // }
 
-interface StreetIndexPageProps {
-  params: Promise<{
-    country: string;
-    state: string;
-    city: string;
-    street: string;
-    type: string;
-    id: string;
-  }>;
+interface PoiParams {
+  country: string;
+  state: string;
+  city: string;
+  street: string;
+  type: string;
+  id: string;
 }
 
-export async function generateMetadata({ params }: StreetIndexPageProps) {
-  const { id, type } = await params;
+interface PoiPageProps {
+  params: Promise<PoiParams>;
+}
 
-  const stmt = db.prepare("SELECT * FROM pois WHERE id = ? AND type = ?");
-  const rawPoi = stmt.get(
-    decodeURIComponent(id),
-    decodeURIComponent(type).toUpperCase()[0]
-  ) as RawPoi;
+export async function generateMetadata({ params }: PoiPageProps) {
+  const raw = await params;
+  const decoded = {
+    country: decodeURIComponent(raw.country),
+    state: decodeURIComponent(raw.state),
+    city: decodeURIComponent(raw.city),
+    street: decodeURIComponent(raw.street),
+    type: decodeURIComponent(raw.type).toUpperCase()[0],
+    id: decodeURIComponent(raw.id),
+  } as PoiParams;
+
+  const { type, id } = decoded;
+
+  const response = await nile.db.query(
+    "SELECT name FROM pois WHERE id = $1 AND type = $2",
+    [id, type]
+  );
+  const rawPoi = response.rows[0] as RawPoi;
 
   if (!rawPoi) {
     return {
@@ -60,20 +71,29 @@ export async function generateMetadata({ params }: StreetIndexPageProps) {
   const poi = rawPoiToPoi(rawPoi);
 
   return {
-    title: getName(poi),
+    title: poi?.name,
   };
 }
 
-export default async function StreetIndexPage({
-  params,
-}: StreetIndexPageProps) {
-  const { id, type, country, state, city, street } = await params;
+export default async function PoiPage({ params }: PoiPageProps) {
+  const raw = await params;
+  const decoded = {
+    country: decodeURIComponent(raw.country),
+    state: decodeURIComponent(raw.state),
+    city: decodeURIComponent(raw.city),
+    street: decodeURIComponent(raw.street),
+    type: decodeURIComponent(raw.type).toUpperCase()[0],
+    id: decodeURIComponent(raw.id),
+  } as PoiParams;
 
-  const stmt = db.prepare("SELECT * FROM pois WHERE id = ? AND type = ?");
-  const rawPoi = stmt.get(
-    decodeURIComponent(id),
-    decodeURIComponent(type).toUpperCase()[0]
-  ) as RawPoi;
+  const { country, state, city, street, type, id } = decoded;
+
+  const response = await nile.db.query(
+    `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.id = $1 AND p.type = $2`,
+    [id, type]
+  );
+
+  const rawPoi = response.rows[0] as RawPoi;
 
   if (!rawPoi) return notFound();
 

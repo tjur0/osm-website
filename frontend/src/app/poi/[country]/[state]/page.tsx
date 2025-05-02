@@ -1,12 +1,14 @@
 import { Title } from "@/components/elements/title";
-import db from "../../../../../static/db";
+import { nile } from "@/lib/db";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  const stmt = db.prepare("SELECT DISTINCT country, state FROM pois");
-  const states = stmt.all() as { country: string; state: string }[];
+  const response = await nile.db.query(
+    "SELECT DISTINCT country, state FROM pois"
+  );
+  const states = response.rows as { country: string; state: string }[];
 
   return states.map(({ country, state }) => ({
     country: encodeURIComponent(country),
@@ -33,13 +35,11 @@ export default async function StateIndexPage({ params }: StateIndexPageProps) {
 
   const { country, state } = decoded;
 
-  const stmt = db.prepare(
-    "SELECT DISTINCT city FROM pois WHERE country = ? AND state = ? ORDER BY city"
+  const response = await nile.db.query(
+    "SELECT DISTINCT city FROM pois WHERE country = $1 AND state = $2 ORDER BY city",
+    [country, state]
   );
-  const cities = stmt.all(
-    decodeURIComponent(country),
-    decodeURIComponent(state)
-  ) as { city: string }[];
+  const cities = response.rows as { city: string }[];
 
   if (!cities || cities.length === 0) return notFound();
 
