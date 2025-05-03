@@ -173,7 +173,8 @@ local function has_area_tags(tags)
 end
 
 -- list of keys that are likely to be poi's
-local poi_keys = {'amenity', 'shop', 'tourism', 'leisure', 'historic', 'office', 'craft', 'place', 'community_centre'}
+local poi_keys = {'amenity', 'shop', 'tourism', 'leisure', 'historic', 'office', 'craft', 'place', 'community_centre',
+                  'man_made'}
 
 -- tag-value pairs that should be excluded from POIs
 -- this is a pre selection

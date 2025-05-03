@@ -41,10 +41,17 @@ export async function GET(req: NextRequest) {
   );
 
   const { min_lng, min_lat, max_lng, max_lat } = response.rows[0];
+
+  if (!min_lng || !min_lat || !max_lng || !max_lat) {
+    return NextResponse.json({ error: "No data found" }, { status: 404 });
+  }
+
   const bbox: [[number, number], [number, number]] = [
     [min_lng, min_lat],
     [max_lng, max_lat],
   ];
 
-  return NextResponse.json({ bbox });
+  const res = NextResponse.json({ bbox });
+  res.headers.set("Cache-Control", "public, max-age=31536000, immutable");
+  return res;
 }

@@ -39,22 +39,11 @@ export class PoiService {
     // await this.geocodeService.deleteGeocoding();
     // await this.geocodeService.deleteAllNonDutchPois();
     // await this.geocodeService.geocodePoisBatch();
-    // await this.tagParsingService.addNameToPoisBatch();
-    // await this.tagParsingService.deleteNameFromPois();
+    await this.tagParsingService.addNameToPois();
+    await this.tagParsingService.addTypeNameToPois();
     // await this.exportService.exportPoiDB();
     // await this.syncFeaturesToRemote();
     // await this.syncPoisToRemote();
-  }
-
-  async syncFeaturesToRemote() {
-    const features = await this.featureRepository.find();
-
-    await this.featureRemoteRepository.delete({});
-    await this.featureRemoteRepository.save(features);
-
-    this.logger.log(
-      `Synchronized ${features.length} features to remote database`,
-    );
   }
 
   async syncPoisToRemote() {

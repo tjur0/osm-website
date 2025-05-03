@@ -23,6 +23,16 @@ export default function ImplemtedMap() {
     const segments = pathname.split("/").map(decodeURIComponent);
     const [state, city, street, type, id] = segments.slice(3, 8);
 
+    if (
+      state === "undefined" ||
+      city === "undefined" ||
+      street === "undefined" ||
+      type === "undefined" ||
+      id === "undefined"
+    ) {
+      return;
+    }
+
     const params = new URLSearchParams();
     if (state) params.set("state", state);
     if (city) params.set("city", city);
@@ -34,6 +44,7 @@ export default function ImplemtedMap() {
     if (!res.ok) return;
 
     const { bbox } = await res.json();
+
     const sidebarwidth = 500;
     const padding = 50;
     map.fitBounds(bbox, {
