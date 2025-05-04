@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { EventClass, EventDetail } from "@/types/event";
 import { Event } from "@/types/event";
-import { env } from "process";
 import Link from "next/link";
 import { Metadata } from "next";
 import { eclipse } from "@/lib/utils";
@@ -90,10 +89,12 @@ const getAllEvents = async () => {
 
 const getEventDetail = async (id: string) => {
   if (!id) return null;
+  if (!process.env.BASE_URL) throw new Error("BASE_URL is not defined");
+
   let eventDetail: EventDetail | null = null;
 
   try {
-    const baseUrl = env.BASE_URL || "http://localhost:3000";
+    const baseUrl = process.env.BASE_URL;
     const response = await fetch(`${baseUrl}/api/event/${id}`, {
       next: {
         revalidate: 60 * 60, // 1 hour

@@ -21,8 +21,7 @@ export default async function sitemap({
 }: {
   id: number;
 }): Promise<MetadataRoute.Sitemap> {
-  if (!process.env.BASE_URL)
-    throw new Error("BASE_URL is not defined in .env file");
+  if (!process.env.BASE_URL) throw new Error("BASE_URL is not defined");
 
   const offset = id * PAGE_SIZE;
 
