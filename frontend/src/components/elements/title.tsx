@@ -23,14 +23,14 @@ export function Title({
   };
 
   const titleClassName = cn(
-    "font-bold tracking-tight overflow-hidden text-ellipsis pb-1 line-clamp-2",
+    "font-bold tracking-tight truncate text-ellipsis pb-1 line-clamp-2",
     sizes[size]
   );
 
   return (
     <div className="flex items-start md:items:center justify-between space-y-2 flex-col md:flex-row">
-      <div>
-        <div className="flex items-end gap-1 w-full">
+      <div className="truncate">
+        <div className="flex items-end gap-1 w-full truncate">
           {size === "h1" && <h1 className={titleClassName}>{title}</h1>}
           {size === "h2" && <h2 className={titleClassName}>{title}</h2>}
           {size === "h3" && <h3 className={titleClassName}>{title}</h3>}
@@ -42,11 +42,7 @@ export function Title({
             </span>
           )}
         </div>
-        {subTitle && (
-          <p className="text-sm mt-2 text-muted">
-            {subTitle}
-          </p>
-        )}
+        {subTitle && <p className="text-sm mt-2 text-muted">{subTitle}</p>}
       </div>
       <div>{actions && actions}</div>
     </div>

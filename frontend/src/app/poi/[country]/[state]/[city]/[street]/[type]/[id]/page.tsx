@@ -84,7 +84,7 @@ export default async function PoiPage({ params }: PoiPageProps) {
         type={type}
         poi={poi}
       />
-      <div className="overflow-scroll flex flex-col h-full gap-6">
+      <div className="overflow-auto flex flex-col h-full gap-6">
         <Link href={`/poi/${country}/${state}/${city}/${street}`}>
           <ArrowLeft />
         </Link>

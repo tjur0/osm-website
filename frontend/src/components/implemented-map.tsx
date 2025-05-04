@@ -20,6 +20,13 @@ export default function ImplemtedMap() {
   const zoomToSelected = useCallback(async () => {
     if (!map) return;
 
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.get("skipZoom") === "true") {
+      searchParams.delete("skipZoom");
+      router.replace(`${pathname}?${searchParams.toString()}`, undefined);
+      return;
+    }
+
     const segments = pathname.split("/").map(decodeURIComponent);
     const [country, state, city, street, type, id] = segments.slice(2, 8);
 
@@ -59,7 +66,7 @@ export default function ImplemtedMap() {
         right: padding,
       },
       duration: 800,
-      maxZoom: Math.min(map.getZoom() + map.getZoom() / 2, 16),
+      maxZoom: Math.min(map.getZoom() + map.getZoom() / 4, 16),
     });
   }, [map, pathname]);
 
@@ -148,7 +155,7 @@ export default function ImplemtedMap() {
 
         router.push(`/poi/${country}/${state}/${city}/${street}/${type}/${id}`);
       } else {
-        router.push("/poi/Nederland");
+        router.push("/poi/Nederland?skipZoom=true");
       }
     };
 
