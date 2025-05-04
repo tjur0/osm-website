@@ -57,9 +57,18 @@ export async function generateMetadata({ params }: PoiPageProps) {
     };
   }
 
+  let title = [];
+  if (poi?.name) {
+    title = [poi?.typeName, poi?.name];
+  } else {
+    title = [poi?.typeName, poi?.city, poi?.street];
+  }
+
+  const description = [poi?.typeName, poi?.name, poi?.city, poi?.street];
+
   return {
-    title: `${poi?.typeName} ${poi?.name}`,
-    description: `${poi?.typeName} ${poi?.name} ${poi?.city} ${poi?.street}`,
+    title: title.filter(Boolean).join(" "),
+    description: description.filter(Boolean).join(" "),
   };
 }
 
