@@ -1,7 +1,6 @@
 import { nile } from "@/lib/db";
 import { MetadataRoute } from "next";
 
-const BASE_URL = "http://localhost:3000";
 const PAGE_SIZE = 50000;
 
 export async function generateSitemaps() {
@@ -22,6 +21,9 @@ export default async function sitemap({
 }: {
   id: number;
 }): Promise<MetadataRoute.Sitemap> {
+  if (!process.env.BASE_URL)
+    throw new Error("BASE_URL is not defined in .env file");
+
   const offset = id * PAGE_SIZE;
 
   console.log("Generating sitemap for page", id, "with offset", offset);
@@ -45,11 +47,11 @@ export default async function sitemap({
   }[];
 
   const urls = pois.map(({ country, state, city, street, type, id }) => ({
-    url: `${BASE_URL}/poi/${encodeURIComponent(country)}/${encodeURIComponent(
-      state
-    )}/${encodeURIComponent(city)}/${encodeURIComponent(
-      street
-    )}/${encodeURIComponent(type)}/${id}`,
+    url: `${process.env.BASE_URL}/poi/${encodeURIComponent(
+      country
+    )}/${encodeURIComponent(state)}/${encodeURIComponent(
+      city
+    )}/${encodeURIComponent(street)}/${encodeURIComponent(type)}/${id}`,
     lastModified: new Date().toISOString(),
   }));
 
