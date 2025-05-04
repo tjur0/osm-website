@@ -31,16 +31,31 @@ export default function RedirectFullPoiPage({
   const router = useRouter();
 
   useEffect(() => {
+    const decoded = {
+      country: decodeURIComponent(country),
+      state: decodeURIComponent(state),
+      city: decodeURIComponent(city),
+      street: decodeURIComponent(street),
+      type: decodeURIComponent(type),
+    };
+
     if (
-      country !== poi.country ||
-      state !== poi.state ||
-      city !== poi.city ||
-      street !== poi.street ||
-      type !== poi.type
+      decoded.country !== poi.country ||
+      decoded.state !== poi.state ||
+      decoded.city !== poi.city ||
+      decoded.street !== poi.street ||
+      decoded.type !== poi.type
     ) {
-      router.replace(
-        `/poi/${poi.country}/${poi.state}/${poi.city}/${poi.street}/${poi.type}/${poi.id}`
-      );
+      const encoded = {
+        country: encodeURIComponent(poi.country),
+        state: encodeURIComponent(poi.state),
+        city: encodeURIComponent(poi.city),
+        street: encodeURIComponent(poi.street),
+      };
+
+      const path = `/poi/${encoded.country}/${encoded.state}/${encoded.city}/${encoded.street}/${poi.type}/${poi.id}`;
+      console.log("Redirecting to:", path);
+      router.replace(path);
     }
   }, [country, state, city, street, type, poi, router]);
 
