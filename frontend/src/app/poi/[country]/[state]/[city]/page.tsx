@@ -14,11 +14,7 @@ export async function generateStaticParams() {
     city: string;
   }[];
 
-  return cities.map(({ country, state, city }) => ({
-    country: encodeURIComponent(country),
-    state: encodeURIComponent(state),
-    city: encodeURIComponent(city),
-  }));
+  return cities.map((city) => city);
 }
 
 interface CityIndexPageProps {
@@ -39,8 +35,6 @@ export default async function CityIndexPage({ params }: CityIndexPageProps) {
     state: decodeURIComponent(raw.state),
     city: decodeURIComponent(raw.city),
   };
-
-  console.log("CityIndexPage", { country, state, city });
 
   const response = await nile.db.query(
     "SELECT DISTINCT street FROM pois WHERE country = $1 AND state = $2 AND city = $3 ORDER BY street",

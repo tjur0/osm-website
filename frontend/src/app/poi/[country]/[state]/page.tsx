@@ -10,10 +10,7 @@ export async function generateStaticParams() {
   );
   const states = response.rows as { country: string; state: string }[];
 
-  return states.map(({ country, state }) => ({
-    country: encodeURIComponent(country),
-    state: encodeURIComponent(state),
-  }));
+  return states.map((state) => state);
 }
 
 interface StateIndexPageProps {

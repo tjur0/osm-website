@@ -49,6 +49,8 @@ export default async function StreetIndexPage({
     street: decodeURIComponent(raw.street),
   };
 
+  console.log("StreetIndexPage", { country, state, city, street });
+
   const response = await nile.db.query(
     `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.country = $1 AND p.state = $2 AND p.city = $3 AND p.street = $4 ORDER BY street`,
     [country, state, city, street]
