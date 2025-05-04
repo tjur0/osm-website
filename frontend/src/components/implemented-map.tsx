@@ -1,6 +1,6 @@
 "use client";
 import Map from "@/components/map/map";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import ColorfulStyle from "./map/overlayStyle/colorful";
 import PoiStyle from "./map/overlayStyle/poi";
 import { usePathname, useRouter } from "next/navigation";
@@ -42,12 +42,11 @@ export default function ImplemtedMap() {
     }
 
     const params = new URLSearchParams();
-    if (!type && !id) {
-      if (country) params.set("country", country);
-      if (state) params.set("state", state);
-      if (city) params.set("city", city);
-      if (street) params.set("street", street);
-    }
+
+    if (country) params.set("country", country);
+    if (state) params.set("state", state);
+    if (city) params.set("city", city);
+    if (street) params.set("street", street);
     if (type) params.set("type", type);
     if (id) params.set("id", id);
 
@@ -55,6 +54,10 @@ export default function ImplemtedMap() {
     if (!res.ok) return;
 
     const { bbox } = await res.json();
+
+    const currentZoom = map.getZoom();
+    const targetMaxZoom = Math.min(currentZoom + currentZoom / 3, 16);
+    const maxZoom = Math.max(currentZoom, targetMaxZoom);
 
     const sidebarwidth = 500;
     const padding = 50;
@@ -66,7 +69,7 @@ export default function ImplemtedMap() {
         right: padding,
       },
       duration: 800,
-      maxZoom: Math.min(map.getZoom() + map.getZoom() / 4, 16),
+      maxZoom,
     });
   }, [map, pathname]);
 
@@ -132,6 +135,29 @@ export default function ImplemtedMap() {
     }
   }, [pathname, map, zoomToSelected]);
 
+  const handleIdle = useCallback(() => {
+    if (!map) return;
+
+    const features = map.queryRenderedFeatures({
+      layers: ["points"],
+    });
+
+    features.forEach((feature) => {
+      const poi = feature.properties;
+
+      const encoded = {
+        country: encodeURIComponent(poi.country),
+        state: encodeURIComponent(poi.state),
+        city: encodeURIComponent(poi.city),
+        street: encodeURIComponent(poi.street),
+      };
+
+      const path = `/poi/${encoded.country}/${encoded.state}/${encoded.city}/${encoded.street}/${poi.type}/${poi.id}`;
+
+      router.prefetch(path);
+    });
+  }, [map]);
+
   useEffect(() => {
     if (!map) return;
 
@@ -171,12 +197,14 @@ export default function ImplemtedMap() {
 
     map.on("mouseenter", "points", handleMouseEnter);
     map.on("mouseleave", "points", handleMouseLeave);
+    map.on("idle", handleIdle);
 
     return () => {
       if (map) {
         map.off("click", handleMapClick);
         map.off("mouseenter", "points", handleMouseEnter);
         map.off("mouseleave", "points", handleMouseLeave);
+        map.off("idle", handleIdle);
       }
     };
   }, [map, router]);
