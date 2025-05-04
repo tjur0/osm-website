@@ -67,8 +67,8 @@ export default function Map({ overlays, map, setMap }: MapProps) {
       container: htmlElement,
       style: DefaultBase,
       hash: true,
-      zoom: 8,
-      center: [5.3875, 52.1561],
+      zoom: 7.03,
+      center: [4.619, 52.167],
     });
 
     map.on("style.load", () => {
