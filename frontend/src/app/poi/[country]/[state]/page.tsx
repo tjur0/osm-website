@@ -40,7 +40,7 @@ export default async function StateIndexPage({ params }: StateIndexPageProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <Link href={`/poi/${country}`}>
+      <Link href={`/poi/${country}`} aria-label="Terug naar de provincie lijst">
         <ArrowLeft />
       </Link>
       <Title title={state} titlePostfix={country} size="h1" />

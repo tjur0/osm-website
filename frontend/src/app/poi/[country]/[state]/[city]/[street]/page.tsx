@@ -59,7 +59,10 @@ export default async function StreetIndexPage({
 
   return (
     <div className="flex flex-col gap-4">
-      <Link href={`/poi/${country}/${state}/${city}`}>
+      <Link
+        href={`/poi/${country}/${state}/${city}`}
+        aria-label="Terug naar de straten lijst"
+      >
         <ArrowLeft />
       </Link>
       <Title title={street} titlePostfix={city} size={"h1"} />

@@ -14,7 +14,7 @@ export default async function PoiIndexPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <Link href={`/`}>
+      <Link href={`/`} aria-label="Terug naar de homepage">
         <ArrowLeft />
       </Link>
 

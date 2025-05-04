@@ -35,7 +35,7 @@ export default async function CountryIndexPage({
 
   return (
     <div className="flex flex-col gap-4">
-      <Link href={`/poi`}>
+      <Link href={`/poi`} aria-label="Terug naar de landen lijst">
         <ArrowLeft />
       </Link>
       <Title title={country} size="h1" />

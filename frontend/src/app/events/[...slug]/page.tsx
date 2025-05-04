@@ -143,7 +143,7 @@ export default async function EventDetailPage({
 
   return (
     <div className="flex flex-col gap-4">
-      <Link href={`/events`}>
+      <Link href={`/events`} aria-label="Terug naar evenementen">
         <ArrowLeft />
       </Link>
 

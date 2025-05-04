@@ -48,7 +48,10 @@ export default async function CityIndexPage({ params }: CityIndexPageProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <Link href={`/poi/${country}/${state}`}>
+      <Link
+        href={`/poi/${country}/${state}`}
+        aria-label="Terug naar de plaatsen lijst"
+      >
         <ArrowLeft />
       </Link>
       <Title title={city} titlePostfix={state} size="h1" />

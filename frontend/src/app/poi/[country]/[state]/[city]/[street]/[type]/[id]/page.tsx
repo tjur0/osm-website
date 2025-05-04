@@ -94,7 +94,10 @@ export default async function PoiPage({ params }: PoiPageProps) {
         poi={poi}
       />
       <div className="overflow-auto flex flex-col h-full gap-6">
-        <Link href={`/poi/${country}/${state}/${city}/${street}`}>
+        <Link
+          href={`/poi/${country}/${state}/${city}/${street}`}
+          aria-label="Terug naar de poi lijst"
+        >
           <ArrowLeft />
         </Link>
 
