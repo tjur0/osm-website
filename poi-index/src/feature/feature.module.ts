@@ -11,5 +11,6 @@ import { Feature } from './entities/feature.entity';
   ],
   controllers: [FeatureController],
   providers: [FeatureService, Logger],
+  exports: [FeatureService],
 })
 export class FeatureModule {}

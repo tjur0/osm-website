@@ -32,7 +32,15 @@ interface CityIndexParams {
 }
 
 export default async function CityIndexPage({ params }: CityIndexPageProps) {
-  const { country, state, city } = await params;
+  const raw = await params;
+
+  const { country, state, city } = {
+    country: decodeURIComponent(raw.country),
+    state: decodeURIComponent(raw.state),
+    city: decodeURIComponent(raw.city),
+  };
+
+  console.log("CityIndexPage", { country, state, city });
 
   const response = await nile.db.query(
     "SELECT DISTINCT street FROM pois WHERE country = $1 AND state = $2 AND city = $3 ORDER BY street",

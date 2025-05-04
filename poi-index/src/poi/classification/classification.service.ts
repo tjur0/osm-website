@@ -16,11 +16,13 @@ export class ClassificationService {
 
   async classifyPois() {
     const features = await this.featureRepository.find();
-    this.logger.log(`Found ${features.length} features`);
+    this.logger.debug(`Found ${features.length} features`);
 
     for (const feature of features) {
       await this.classifyFeature(feature);
     }
+
+    this.logger.debug(`Classified all pois`);
   }
 
   async classifyFeature(feature: Feature) {

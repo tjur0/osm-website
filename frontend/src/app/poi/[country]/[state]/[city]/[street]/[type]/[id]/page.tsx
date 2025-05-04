@@ -1,7 +1,6 @@
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
 import { nile } from "@/lib/db";
-import { rawPoiToPoi } from "@/lib/utils";
-import { RawPoi } from "@/types/poi";
+import { Poi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -47,21 +46,20 @@ export async function generateMetadata({ params }: PoiPageProps) {
   const { type, id } = await params;
 
   const response = await nile.db.query(
-    "SELECT name FROM pois WHERE id = $1 AND type = $2",
+    `SELECT name, "typeName", city, street FROM pois WHERE id = $1 AND type = $2`,
     [id, type]
   );
-  const rawPoi = response.rows[0] as RawPoi;
+  const poi = response.rows[0] as Poi;
 
-  if (!rawPoi) {
+  if (!poi) {
     return {
-      title: "POI Not Found",
+      title: "POI Niet Gevonden",
     };
   }
 
-  const poi = rawPoiToPoi(rawPoi);
-
   return {
-    title: poi?.name,
+    title: `${poi?.typeName} ${poi?.name}`,
+    description: `${poi?.typeName} ${poi?.name} ${poi?.city} ${poi?.street}`,
   };
 }
 
@@ -73,11 +71,8 @@ export default async function PoiPage({ params }: PoiPageProps) {
     [id, type]
   );
 
-  const rawPoi = response.rows[0] as RawPoi;
-
-  if (!rawPoi) return notFound();
-
-  const poi = rawPoiToPoi(rawPoi);
+  const poi = response.rows[0] as Poi;
+  if (!poi) return notFound();
 
   return (
     <>
@@ -118,10 +113,6 @@ export default async function PoiPage({ params }: PoiPageProps) {
               : `${poi.city} ${poi.street}`}
           </span>
         </div>
-
-        <div></div>
-
-        <pre>{JSON.stringify(poi, null, 2)}</pre>
       </div>
     </>
   );

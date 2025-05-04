@@ -1,8 +1,7 @@
 import { Title } from "@/components/elements/title";
 import PoiCard from "@/components/poi/poi-card";
 import { nile } from "@/lib/db";
-import {  rawPoisToPois } from "@/lib/utils";
-import { RawPoi } from "@/types/poi";
+import { Poi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -41,17 +40,21 @@ interface StreetIndexParams {
 export default async function StreetIndexPage({
   params,
 }: StreetIndexPageProps) {
-  const { country, state, city, street } = await params;
+  const raw = await params;
+
+  const { country, state, city, street } = {
+    country: decodeURIComponent(raw.country),
+    state: decodeURIComponent(raw.state),
+    city: decodeURIComponent(raw.city),
+    street: decodeURIComponent(raw.street),
+  };
 
   const response = await nile.db.query(
     `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.country = $1 AND p.state = $2 AND p.city = $3 AND p.street = $4 ORDER BY street`,
     [country, state, city, street]
   );
 
-  const rawPois = response.rows as RawPoi[];
-
-  const pois = rawPoisToPois(rawPois);
-
+  const pois = response.rows as Poi[];
   if (!pois || pois.length === 0) return notFound();
 
   return (

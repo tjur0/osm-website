@@ -1,21 +1,8 @@
-import { Poi, RawPoi } from "@/types/poi";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
-}
-
-export function rawPoiToPoi(rawPoi: RawPoi): Poi {
-  const poi = {
-    ...rawPoi,
-  };
-
-  return poi;
-}
-
-export function rawPoisToPois(rawPois: RawPoi[]): Poi[] {
-  return rawPois.map((rawPoi) => rawPoiToPoi(rawPoi));
 }
 
 export const eclipse = (input: string, length = 20) => {
@@ -25,9 +12,7 @@ export const eclipse = (input: string, length = 20) => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function normalizeParams<T extends Record<string, any>>(
-  params: T
-): T {
+export function normalizeParams<T extends Record<string, any>>(params: T): T {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const result: Record<string, any> = {};
 

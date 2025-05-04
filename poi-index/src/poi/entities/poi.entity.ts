@@ -30,6 +30,9 @@ export class Poi {
   })
   area?: { type: string; coordinates: number[][][] };
 
+  @Column('timestamptz', { nullable: true })
+  geocodedAt?: Date;
+
   @Column({ nullable: true })
   country?: string;
 

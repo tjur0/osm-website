@@ -25,5 +25,12 @@ import { TagParsingService } from './tag-parsing/tag-parsing.service';
     ClassificationService,
     Logger,
   ],
+  exports: [
+    PoiService,
+    GeocodeService,
+    TagParsingService,
+    ExportService,
+    ClassificationService,
+  ],
 })
 export class PoiModule {}

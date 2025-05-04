@@ -18,7 +18,11 @@ export default async function CountryIndexPage({
 }: {
   params: Promise<{ country: string }>;
 }) {
-  const { country } = await params;
+  const raw = await params;
+
+  const { country } = {
+    country: decodeURIComponent(raw.country),
+  };
 
   const response = await nile.db.query(
     "SELECT DISTINCT state FROM pois WHERE country = $1 ORDER BY state",

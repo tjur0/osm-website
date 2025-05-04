@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
+  const country = searchParams.get("country");
   const state = searchParams.get("state");
   const city = searchParams.get("city");
   const street = searchParams.get("street");
@@ -12,6 +13,10 @@ export async function GET(req: NextRequest) {
   const where: string[] = [];
   const values: (string | number)[] = [];
 
+  if (country) {
+    where.push(`country = $${values.length + 1}`);
+    values.push(country);
+  }
   if (state) {
     where.push(`state = $${values.length + 1}`);
     values.push(state);
@@ -53,5 +58,6 @@ export async function GET(req: NextRequest) {
 
   const res = NextResponse.json({ bbox });
   res.headers.set("Cache-Control", "public, max-age=31536000, immutable");
+
   return res;
 }

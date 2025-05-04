@@ -1,6 +1,6 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { IsNull, Repository } from 'typeorm';
+import { IsNull, Not, Repository } from 'typeorm';
 import { Poi } from '../entities/poi.entity';
 import { ReverseGeocodeResult } from './entities/reverse-geocode-result';
 
@@ -35,6 +35,7 @@ export class GeocodeService {
   constructor(
     @InjectRepository(Poi)
     private poiRepository: Repository<Poi>,
+    private readonly logger: Logger,
   ) {}
 
   async deleteAllNonDutchPois() {
@@ -42,6 +43,8 @@ export class GeocodeService {
       DELETE FROM pois
       WHERE country != 'Nederland'
     `);
+
+    this.logger.debug('Deleted all non-Dutch POIs');
   }
 
   async deleteGeocoding() {
@@ -58,7 +61,7 @@ export class GeocodeService {
 
   async geocodePoisBatch() {
     const count = await this.poiRepository.count({
-      where: { country: IsNull() },
+      where: { geocodedAt: IsNull(), feature: Not(IsNull()) },
     });
 
     console.log('POIs to geocode:', count);
@@ -84,7 +87,7 @@ export class GeocodeService {
     const now = new Date();
 
     const pois = await this.poiRepository.find({
-      where: { country: IsNull() },
+      where: { geocodedAt: IsNull(), feature: Not(IsNull()) },
       take: batchSize,
     });
 
@@ -130,13 +133,20 @@ export class GeocodeService {
       }
     }
 
-    if (attempts > 0) {
+    if (attempts > 0 && attempts < coordinatesOffset.length) {
       console.log(
         `Found geocode for POI ${poi.type} ${poi.id} after ${attempts} attempts`,
       );
-      console.log('Geocode:', geocode);
     }
 
+    if (geocode === null) {
+      console.warn(
+        `Failed to geocode POI ${poi.type} ${poi.id} after ${attempts} attempts`,
+      );
+      return null;
+    }
+
+    geocode.geocodedAt = new Date();
     return geocode;
   }
 

@@ -3,57 +3,35 @@ docker compose -p osm-nl up --build
 <!-- step 1 on wsl -->
 
 ogr2ogr -f GeoJSONSeq pois.ndjson PG:"host=localhost dbname=gis user=postgres" \
-  -lco RS=YES \
-  -sql "
-    SELECT 
-      p.id,
-      p.type,
-      p.point, 
-      p.name, 
-      f.importance
-    FROM pois p
-    JOIN feature f ON f.id = p.\"featureId\"
-    WHERE p.country = 'Nederland'
-  "
-
-ogr2ogr -f GeoJSONSeq pois.ndjson PG:"host=localhost dbname=gis user=postgres" \
-  -lco RS=YES FID=new_id \
-  -sql "
-    SELECT 
-      CONCAT(p.id, '_', p.type) AS new_id, 
-      p.id,
-      p.type,
-      p.point, 
-      p.name, 
-      f.importance
-    FROM pois p
-    JOIN feature f ON f.id = p.\"featureId\"
-    WHERE p.country = 'Nederland'
-  "
-
-
+ -lco RS=YES \
+ -sql "
+SELECT
+p.id,
+p.type,
+p.point,
+p.name,
+p.\"typeName\",
+p.country,
+p.state,
+p.city,
+p.street,
+f.importance
+FROM pois p
+JOIN feature f ON f.id = p.\"featureId\"
+WHERE p.country = 'Nederland'
+"
 
 <!-- step 2 on wsl -->
 
 tippecanoe -o pois.mbtiles \
-  --read-parallel \
-  -Z0 -z16 \
-  --drop-rate=0.1 \
-  --no-tile-size-limit \
-  --no-feature-limit \
-  --force \
-  -J filter.json \
-  pois.ndjson
-
-tippecanoe -o pois.mbtiles \
-  --read-parallel \
-  -Z0 -z16 \
-  --drop-rate=0.1 \
-  --no-tile-size-limit \
-  --no-feature-limit \
-  --force \
-  pois.ndjson
-
+ --read-parallel \
+ -Z0 -z16 \
+ --drop-densest-as-needed \
+ --maximum-tile-bytes=25000 \
+ --force \
+ --base-zoom=0 \
+ -J filter.json \
+ pois.ndjson
 
 <!-- step 3 on windows with .\pmtiles.exe in ../  -->
 

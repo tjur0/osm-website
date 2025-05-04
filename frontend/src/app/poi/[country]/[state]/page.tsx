@@ -26,7 +26,12 @@ interface StateIndexParams {
 }
 
 export default async function StateIndexPage({ params }: StateIndexPageProps) {
-  const { country, state } = await params;
+  const raw = await params;
+
+  const { country, state } = {
+    country: decodeURIComponent(raw.country),
+    state: decodeURIComponent(raw.state),
+  };
 
   const response = await nile.db.query(
     "SELECT DISTINCT city FROM pois WHERE country = $1 AND state = $2 ORDER BY city",

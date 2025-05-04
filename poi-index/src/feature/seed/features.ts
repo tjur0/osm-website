@@ -2366,7 +2366,7 @@ export const features: Feature[] = [
     id: generateFeatureUUID('shop', 'games'),
     key: 'shop',
     value: 'games',
-    name: 'Spellenwinkel',
+    name: 'Spelletjeswinkel',
 
     pois: [],
   },
@@ -2398,7 +2398,7 @@ export const features: Feature[] = [
     id: generateFeatureUUID('place', 'town'),
     key: 'place',
     value: 'town',
-    name: 'Stad',
+    name: 'Plaats',
 
     pois: [],
   },
@@ -2975,6 +2975,64 @@ export const features: Feature[] = [
     value: 'swimming_area',
     name: 'Zwemgebied',
 
+    pois: [],
+  },
+  {
+    id: generateFeatureUUID('amenity', 'animal_shelter'),
+    key: 'amenity',
+    value: 'animal_shelter',
+    name: 'Dierenasiel',
+    pois: [],
+  },
+  {
+    id: generateFeatureUUID('shop', 'estate_agent'),
+    key: 'shop',
+    value: 'estate_agent',
+    name: 'Makelaardij',
+
+    pois: [],
+  },
+  {
+    id: generateFeatureUUID('amenity', 'reception_desk'),
+    key: 'amenity',
+    value: 'reception_desk',
+    name: 'Receptie',
+    pois: [],
+  },
+  {
+    id: generateFeatureUUID('amenity', 'lounger'),
+    key: 'amenity',
+    value: 'lounger',
+    name: 'Ligstoel',
+    pois: [],
+  },
+
+  {
+    id: generateFeatureUUID('shop', 'gold_buyer'),
+    key: 'shop',
+    value: 'gold_buyer',
+    name: 'Goudwisselkantoor',
+    pois: [],
+  },
+  {
+    id: generateFeatureUUID('office', 'newspaper'),
+    key: 'office',
+    value: 'newspaper',
+    name: 'Krantenredactie',
+    pois: [],
+  },
+  {
+    id: generateFeatureUUID('amenity', 'telephone'),
+    key: 'amenity',
+    value: 'telephone',
+    name: 'Telefooncel',
+    pois: [],
+  },
+  {
+    id: generateFeatureUUID('shop', 'appliance'),
+    key: 'shop',
+    value: 'appliance',
+    name: 'Grote huishoudelijke apparaten winkel',
     pois: [],
   },
 ];

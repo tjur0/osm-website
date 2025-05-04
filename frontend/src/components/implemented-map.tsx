@@ -21,9 +21,10 @@ export default function ImplemtedMap() {
     if (!map) return;
 
     const segments = pathname.split("/").map(decodeURIComponent);
-    const [state, city, street, type, id] = segments.slice(3, 8);
+    const [country, state, city, street, type, id] = segments.slice(2, 8);
 
     if (
+      country === "undefined" ||
       state === "undefined" ||
       city === "undefined" ||
       street === "undefined" ||
@@ -34,9 +35,12 @@ export default function ImplemtedMap() {
     }
 
     const params = new URLSearchParams();
-    if (state) params.set("state", state);
-    if (city) params.set("city", city);
-    if (street) params.set("street", street);
+    if (!type && !id) {
+      if (country) params.set("country", country);
+      if (state) params.set("state", state);
+      if (city) params.set("city", city);
+      if (street) params.set("street", street);
+    }
     if (type) params.set("type", type);
     if (id) params.set("id", id);
 
@@ -55,7 +59,7 @@ export default function ImplemtedMap() {
         right: padding,
       },
       duration: 800,
-      maxZoom: 18,
+      maxZoom: Math.min(map.getZoom() + map.getZoom() / 2, 16),
     });
   }, [map, pathname]);
 
@@ -75,6 +79,8 @@ export default function ImplemtedMap() {
 
     if (map && map.getLayer("points-outline")) {
       if (isPoiPath) {
+        zoomToSelected();
+
         const segments = pathname.split("/").map(decodeURIComponent);
         const state = segments[3];
         const city = segments[4];
@@ -108,8 +114,6 @@ export default function ImplemtedMap() {
             filter as maplibregl.FilterSpecification
           );
           map.setLayoutProperty("points-outline", "visibility", "visible");
-
-          zoomToSelected();
         } else {
           map.setFilter("points-outline", null);
           map.setLayoutProperty("points-outline", "visibility", "none");
