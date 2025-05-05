@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { Drawer } from "vaul";
 import { Window } from "@/components/elements/window";
+import { Button } from "../ui/button";
+import { Menu } from "lucide-react";
 
 interface WindowDrawerProps {
   children?: React.ReactNode;
@@ -11,6 +13,7 @@ const snapPoints = [0.1, 0.5, 1];
 
 export default function WindowDrawer({ children }: WindowDrawerProps) {
   const [snap, setSnap] = useState<number | string | null>(snapPoints[0]);
+  const [open, setOpen] = useState(true);
 
   return (
     <Drawer.Root
@@ -18,8 +21,16 @@ export default function WindowDrawer({ children }: WindowDrawerProps) {
       snapPoints={snapPoints}
       activeSnapPoint={snap}
       setActiveSnapPoint={setSnap}
-      open={true}
+      open={open}
+      onOpenChange={setOpen}
     >
+      <Drawer.Trigger asChild>
+        {!open && (
+          <Button className="fixed bottom-0 right-0 m-8">
+            <Menu />
+          </Button>
+        )}
+      </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
         <Drawer.Content

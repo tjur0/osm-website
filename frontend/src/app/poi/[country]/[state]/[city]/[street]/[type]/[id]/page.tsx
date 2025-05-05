@@ -1,4 +1,7 @@
+import { Title } from "@/components/elements/title";
+import TagTable from "@/components/poi/tag-table";
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
+import { Badge } from "@/components/ui/badge";
 import { nile } from "@/lib/db";
 import { Poi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
@@ -94,37 +97,41 @@ export default async function PoiPage({ params }: PoiPageProps) {
         poi={poi}
       />
       <div className="overflow-auto flex flex-col h-full gap-6">
-        <Link
-          href={`/poi/${country}/${state}/${city}/${street}`}
-          aria-label="Terug naar de poi lijst"
-        >
-          <ArrowLeft />
-        </Link>
-
-        <div className="flex flex-col gap-4 items-center">
-          {poi.tags?.name && (
-            <span className="text-xl font-semibold">
+        <div className="flex items-center justify-between w-full">
+          <Link
+            href={`/poi/${country}/${state}/${city}/${street}`}
+            aria-label="Terug naar de poi lijst"
+          >
+            <ArrowLeft />
+          </Link>
+          <div className="flex justify-end">
+            <Badge>
               {poi.tags?.["name:prefix"]
                 ? poi.tags?.["name:prefix"]
                 : `${poi.feature}`}
-            </span>
-          )}
+            </Badge>
+          </div>
+        </div>
 
-          <h1 className="text-5xl text-center text-ellipsis w-full overflow-hidden pb-2 line-clamp-2">
-            {[
+        <div className="flex flex-col gap-4 w-full">
+          <Title
+            size="h1"
+            title={[
               poi.tags?.name ?? poi.tags?.name,
               poi.tags?.branch ?? poi.tags?.branch,
-            ].join(" ")}
-
-            {!poi.tags?.name && !poi.tags?.branch && poi.feature}
-          </h1>
-
-          <span className="text-md overflow-hidden">
-            {poi.tags?.["name:suffix"]
-              ? poi.tags?.["name:suffix"]
-              : `${poi.city} ${poi.street}`}
-          </span>
+              !poi.tags?.name && !poi.tags?.branch && poi.feature,
+            ]
+              .filter(Boolean)
+              .join(" ")}
+            subTitle={
+              poi.tags?.["name:suffix"]
+                ? poi.tags?.["name:suffix"]
+                : `${poi.city} ${poi.street}`
+            }
+          />
         </div>
+
+        <TagTable poi={poi} />
       </div>
     </>
   );

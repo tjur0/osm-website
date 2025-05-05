@@ -29,8 +29,8 @@ export function Title({
 
   return (
     <div className="flex items-start md:items:center justify-between space-y-2 flex-col md:flex-row">
-      <div className="truncate">
-        <div className="flex items-end gap-1 w-full truncate">
+      <div>
+        <div className="flex items-end gap-1 w-full">
           {size === "h1" && <h1 className={titleClassName}>{title}</h1>}
           {size === "h2" && <h2 className={titleClassName}>{title}</h2>}
           {size === "h3" && <h3 className={titleClassName}>{title}</h3>}
