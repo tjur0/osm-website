@@ -17,7 +17,7 @@ export default function PoiLayout({
       <HideOnMobile>
         <WindowWithDynamicRounding
           className="w-96"
-          dynamicRoundingClassName="rounded-l-none"
+          dynamicRoundingClassName="rounded-l-none xl:p-8"
         >
           {children}
         </WindowWithDynamicRounding>

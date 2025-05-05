@@ -8,27 +8,22 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+export const revalidate = false;
+
 // export async function generateStaticParams() {
-//   const stmt = db.prepare(
-//     "SELECT DISTINCT country, state, city, street, type, osm_id FROM pois"
+//   const response = await nile.db.query(
+//     'SELECT p.country, p.state, p.city, p.street, p.type, p.id, f.importance FROM pois p JOIN feature f ON f.id = p."featureId" where p.name is not null order by f.importance desc limit 1000'
 //   );
 
-//   const pois = stmt.all() as {
-//     country: string;
-//     state: string;
-//     city: string;
-//     street: string;
-//     type: string;
-//     osm_id: number;
-//   }[];
+//   const pois = response.rows as Poi[];
 
-//   return pois.map(({ country, state, city, street, type, osm_id }) => ({
+//   return pois.map(({ country, state, city, street, type, id }) => ({
 //     country,
 //     state,
 //     city,
 //     street,
 //     type: type,
-//     id: osm_id.toString(),
+//     id: id,
 //   }));
 // }
 

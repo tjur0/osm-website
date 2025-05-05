@@ -6,24 +6,21 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+export const revalidate = false;
+
 // export async function generateStaticParams() {
-//   const stmt = db.prepare(
+//   const response = await nile.db.query(
 //     "SELECT DISTINCT country, state, city, street FROM pois"
 //   );
 
-//   const streets = stmt.all() as {
+//   const streets = response.rows as {
 //     country: string;
 //     state: string;
 //     city: string;
 //     street: string;
 //   }[];
 
-//   return streets.map(({ country, state, city, street }) => ({
-//     country: encodeURIComponent(country),
-//     state: encodeURIComponent(state),
-//     city: encodeURIComponent(city),
-//     street: encodeURIComponent(street),
-//   }));
+//   return streets.map((street) => street);
 // }
 
 interface StreetIndexPageProps {

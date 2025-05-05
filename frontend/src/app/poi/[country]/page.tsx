@@ -29,7 +29,7 @@ export default async function CountryIndexPage({
     "SELECT DISTINCT state FROM pois WHERE country = $1 ORDER BY state",
     [country]
   );
-  console.log(response);
+
   const states = response.rows as { state: string }[];
 
   if (!states || states.length === 0) return notFound();

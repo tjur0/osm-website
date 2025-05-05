@@ -8,6 +8,7 @@ export async function generateStaticParams() {
   const response = await nile.db.query(
     "SELECT DISTINCT country, state, city FROM pois"
   );
+
   const cities = response.rows as {
     country: string;
     state: string;
