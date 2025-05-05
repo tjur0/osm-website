@@ -1,3 +1,4 @@
+"use cache";
 import { notFound } from "next/navigation";
 import { EventClass, EventDetail } from "@/types/event";
 import { Event } from "@/types/event";
