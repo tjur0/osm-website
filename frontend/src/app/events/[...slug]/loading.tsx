@@ -1,9 +1,6 @@
-// app/poi/[country]/[state]/[city]/[street]/[type]/[id]/loading.tsx
-
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
 
 export default function Loading() {
   return (
