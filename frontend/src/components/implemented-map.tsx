@@ -9,6 +9,7 @@ import maplibregl, {
   QueryRenderedFeaturesOptions,
 } from "maplibre-gl";
 import { useMediaQuery } from "react-responsive";
+import Link from "next/link";
 
 export default function ImplemtedMap() {
   const pathname = usePathname();
@@ -225,6 +226,14 @@ export default function ImplemtedMap() {
   return (
     <>
       <Map overlays={overlays} map={map} setMap={setMap} />
+
+      <Link href="https://www.openstreetmap.org/copyright" target="_blank">
+        <div className="right-0 bottom-0 absolute z-10 m-2 p-1 pt-0 px-3 rounded-full bg-gradient-to-r from-green-500 to-orange-500">
+          <span className="text-md text-white font-bold select-none text-xs">
+            Mogelijk gemaakt door OpenStreetMap data
+          </span>
+        </div>
+      </Link>
     </>
   );
 }

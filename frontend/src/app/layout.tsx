@@ -25,7 +25,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "OpenStreetMap Nederland",
-  description: "OpenStreetMap Nederland",
+  description:
+    "OpenStreetMap Nederland is een project dat zich richt op het verzamelen, bewerken en beschikbaar stellen van vrije geografische gegevens. Zie op deze site alle punten van interesse in Nederland.",
+  keywords: ["OpenStreetMap Nederland", "OSM", "Kaart", "Geografie"],
 };
 
 export default function RootLayout({
