@@ -99,7 +99,7 @@ export default function RootLayout({
 
             <HideOnMobile>
               <div className="absolute z-10 flex h-screen p-6">
-                <WindowWithDynamicRounding dynamicRoundingClassName="rounded-r-none">
+                <WindowWithDynamicRounding dynamicRoundingClassName="rounded-r-none xl:p-4">
                   <Header />
                 </WindowWithDynamicRounding>
                 {children}

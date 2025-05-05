@@ -13,7 +13,7 @@ import { useMediaQuery } from "react-responsive";
 export default function ImplemtedMap() {
   const pathname = usePathname();
   const router = useRouter();
-  const isMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 1280px)" });
 
   const [map, setMap] = useState<maplibregl.Map | null>(null);
 

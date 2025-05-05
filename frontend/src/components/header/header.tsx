@@ -1,6 +1,6 @@
 import { Logo } from "@/components/logo";
 import Link from "next/link";
-import { CalendarSearch, MapPin } from "lucide-react";
+import { CalendarSearch, MapPin, ScrollText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Header() {
@@ -28,16 +28,16 @@ export default function Header() {
             <CalendarSearch className="text-gray-200" />
           </Button>
         </Link>
-        {/* <Link href={"/community"} className="size-12">
+        <Link href={"/docs"} className="size-12">
           <Button
             variant="ghost"
             className="size-12 p-3"
-            aria-label="Gemeenschap"
+            aria-label="Documentatie"
             asChild
           >
             <ScrollText className="text-gray-200" />
           </Button>
-        </Link> */}
+        </Link>
       </div>
       <div className="flex flex-col gap-2 items-center">
         {/* <Link href={"/settings"} className="size-12">

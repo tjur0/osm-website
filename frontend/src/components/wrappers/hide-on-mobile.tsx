@@ -8,7 +8,7 @@ interface HideOnMobileProps {
 
 export default function HideOnMobile({ children }: HideOnMobileProps) {
   const [mounted, setMounted] = useState(false);
-  const isMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 1280px)" });
 
   useEffect(() => {
     setMounted(true);

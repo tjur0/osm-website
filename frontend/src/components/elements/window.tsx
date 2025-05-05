@@ -10,7 +10,7 @@ export function Window({ children, className }: WindowProps) {
   return (
     <div
       className={twMerge(
-        `transition-all p-4 bg-gradient-to-br from-[rgba(0,0,0,0.5)] to-[rgba(17,24,39,0.7)] backdrop-blur-md border border-white/20 rounded-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] text-white overflow-auto flex flex-col justify-between`,
+        `p-4 xl:p-8 transition-all bg-gradient-to-br from-[rgba(0,0,0,0.5)] to-[rgba(17,24,39,0.7)] backdrop-blur-md border border-white/20 rounded-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] text-white overflow-auto flex flex-col justify-between`,
         className
       )}
     >

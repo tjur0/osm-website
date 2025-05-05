@@ -1,3 +1,4 @@
+import MissingPoi from "@/components/cta/missing-poi";
 import { Title } from "@/components/elements/title";
 import { nile } from "@/lib/db";
 import { ArrowLeft } from "lucide-react";
@@ -34,18 +35,21 @@ export default async function CountryIndexPage({
   if (!states || states.length === 0) return notFound();
 
   return (
-    <div className="flex flex-col gap-4">
-      <Link href={`/poi`} aria-label="Terug naar de landen lijst">
-        <ArrowLeft />
-      </Link>
-      <Title title={country} size="h1" />
-      <ul>
-        {states.map(({ state }) => (
-          <li key={state}>
-            <Link href={`/poi/${country}/${state}`}>{state}</Link>
-          </li>
-        ))}
-      </ul>
+    <div className="flex flex-col gap-4 justify-between h-full">
+      <div className="flex flex-col gap-4">
+        <Link href={`/poi`} aria-label="Terug naar de landen lijst">
+          <ArrowLeft />
+        </Link>
+        <Title title={country} size="h1" />
+        <ul>
+          {states.map(({ state }) => (
+            <li key={state}>
+              <Link href={`/poi/${country}/${state}`}>{state}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <MissingPoi />
     </div>
   );
 }

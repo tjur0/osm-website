@@ -1,12 +1,13 @@
 import { cn } from "@/lib/utils";
 
-type Props = {
+interface TitleProps {
   size: "h1" | "h2" | "h3" | "h4";
-  title: string;
+  title?: string;
   titlePostfix?: string | null;
   subTitle?: string | null | React.ReactNode;
   actions?: React.ReactNode | null;
-};
+  children?: React.ReactNode;
+}
 
 export function Title({
   size = "h1",
@@ -14,7 +15,8 @@ export function Title({
   titlePostfix,
   subTitle,
   actions,
-}: Props) {
+  children,
+}: TitleProps) {
   const sizes = {
     h1: "text-4xl",
     h2: "text-xl",
@@ -31,10 +33,18 @@ export function Title({
     <div className="flex items-start md:items:center justify-between space-y-2 flex-col md:flex-row">
       <div>
         <div className="flex items-end gap-1 w-full">
-          {size === "h1" && <h1 className={titleClassName}>{title}</h1>}
-          {size === "h2" && <h2 className={titleClassName}>{title}</h2>}
-          {size === "h3" && <h3 className={titleClassName}>{title}</h3>}
-          {size === "h4" && <h4 className={titleClassName}>{title}</h4>}
+          {size === "h1" && (
+            <h1 className={titleClassName}>{title || children}</h1>
+          )}
+          {size === "h2" && (
+            <h2 className={titleClassName}>{title || children}</h2>
+          )}
+          {size === "h3" && (
+            <h3 className={titleClassName}>{title || children}</h3>
+          )}
+          {size === "h4" && (
+            <h4 className={titleClassName}>{title || children}</h4>
+          )}
 
           {titlePostfix && (
             <span className="text-[12px] font-medium text-muted">
