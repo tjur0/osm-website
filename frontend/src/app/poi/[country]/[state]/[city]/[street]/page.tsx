@@ -1,3 +1,4 @@
+"use cache";
 import { Title } from "@/components/elements/title";
 import PoiCard from "@/components/poi/poi-card";
 import { nile } from "@/lib/db";
@@ -5,8 +6,6 @@ import { Poi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-export const revalidate = false;
 
 // export async function generateStaticParams() {
 //   const response = await nile.db.query(

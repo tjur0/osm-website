@@ -1,19 +1,23 @@
+// next.config.ts
 import type { NextConfig } from "next";
+import mdx from "@next/mdx";
 
-const withMDX = require("@next/mdx")({
+const withMDX = mdx({
   extension: /\.mdx?$/,
 });
 
-module.exports = withMDX({
-  pageExtensions: ["ts", "tsx", "js", "jsx", "mdx"],
-});
-
 const nextConfig: NextConfig = {
-  /* config options here */
-  // output: "export",
+  pageExtensions: ["ts", "tsx", "js", "jsx", "mdx"],
   outputFileTracingIncludes: {
     "./": ["**/*.sqlite*"],
   },
+  experimental: {
+    useCache: true,
+  },
+  webpack: (config) => {
+    config.cache = false; 
+    return config;
+  },
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);

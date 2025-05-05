@@ -1,3 +1,5 @@
+"use cache";
+
 import { Title } from "@/components/elements/title";
 import TagTable from "@/components/poi/tag-table";
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
@@ -7,8 +9,6 @@ import { Poi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-export const revalidate = false;
 
 // export async function generateStaticParams() {
 //   const response = await nile.db.query(
