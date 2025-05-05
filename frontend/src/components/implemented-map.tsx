@@ -138,9 +138,17 @@ export default function ImplemtedMap() {
   const handleIdle = useCallback(() => {
     if (!map) return;
 
+    if (map.getZoom() < 14) {
+      return;
+    }
+
     const features = map.queryRenderedFeatures({
       layers: ["points"],
     });
+
+    if (features.length > 50) {
+      features.splice(50);
+    }
 
     features.forEach((feature) => {
       const poi = feature.properties;

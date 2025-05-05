@@ -1,5 +1,7 @@
 import LayoutSettingOverride from "@/components/elements/layout-setting-override";
 import WindowWithDynamicRounding from "@/components/elements/window-with-dynamic-rounding";
+import HideOnDesktop from "@/components/wrappers/hide-on-desktop";
+import HideOnMobile from "@/components/wrappers/hide-on-mobile";
 
 export default function PoiLayout({
   children,
@@ -9,12 +11,17 @@ export default function PoiLayout({
   return (
     <>
       <LayoutSettingOverride key="PoiLayout" rounded={false} />
-      <WindowWithDynamicRounding
-        className="w-96"
-        dynamicRoundingClassName="rounded-l-none"
-      >
-        {children}
-      </WindowWithDynamicRounding>
+
+      <HideOnDesktop>{children}</HideOnDesktop>
+
+      <HideOnMobile>
+        <WindowWithDynamicRounding
+          className="w-96"
+          dynamicRoundingClassName="rounded-l-none"
+        >
+          {children}
+        </WindowWithDynamicRounding>
+      </HideOnMobile>
     </>
   );
 }

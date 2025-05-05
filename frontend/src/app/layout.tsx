@@ -9,6 +9,9 @@ import LayoutSettingOverride from "@/components/elements/layout-setting-override
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import WindowDrawer from "@/components/elements/window-drawer";
+import HideOnMobile from "@/components/wrappers/hide-on-mobile";
+import HideOnDesktop from "@/components/wrappers/hide-on-desktop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,32 +68,45 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-screen overflow-hidden`}
       >
         <Analytics />
         <SpeedInsights />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LayoutSettingsProvider>
+            <LayoutSettingOverride key="RootLayout" rounded={true} />
 
-        <div className="absolute top-0 left-0 w-full h-full z-0">
-          <ImplemtedMap />
-        </div>
+            <div className="absolute top-0 left-0 w-full h-full z-0">
+              <ImplemtedMap />
+            </div>
 
-        <div className="absolute z-10 flex h-screen p-6">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <LayoutSettingsProvider>
-              <LayoutSettingOverride key="RootLayout" rounded={true} />
+            <HideOnDesktop>
+              <WindowDrawer>
+                <div className="flex h-full gap-8">
+                  <div className="h-full flex flex-col gap-4 w-12">
+                    <Header />
+                  </div>
+                  <div>{children}</div>
+                  <div className="w-12" />
+                </div>
+              </WindowDrawer>
+            </HideOnDesktop>
 
-              <WindowWithDynamicRounding dynamicRoundingClassName="rounded-r-none">
-                <Header />
-              </WindowWithDynamicRounding>
-              {children}
-            </LayoutSettingsProvider>
-          </ThemeProvider>
-        </div>
+            <HideOnMobile>
+              <div className="absolute z-10 flex h-screen p-6">
+                <WindowWithDynamicRounding dynamicRoundingClassName="rounded-r-none">
+                  <Header />
+                </WindowWithDynamicRounding>
+                {children}
+              </div>
+            </HideOnMobile>
+          </LayoutSettingsProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
