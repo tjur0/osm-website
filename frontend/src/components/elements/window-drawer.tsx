@@ -1,9 +1,7 @@
 "use client";
-import clsx from "clsx";
 import { useState } from "react";
 import { Drawer } from "vaul";
 import { Window } from "@/components/elements/window";
-import { usePathname } from "next/navigation";
 
 interface WindowDrawerProps {
   children?: React.ReactNode;
