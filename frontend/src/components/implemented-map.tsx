@@ -187,7 +187,9 @@ export default function ImplemtedMap() {
         const { country, state, city, street, type, id } =
           features[0].properties;
 
-        router.push(`/poi/${country}/${state}/${city}/${street}/${type}/${id}`);
+        router.push(
+          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`
+        );
       } else {
         router.push("/poi/Nederland?skipZoom=true");
       }

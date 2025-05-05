@@ -8,7 +8,7 @@ export default function Header() {
     <>
       <Logo />
       <div className="flex flex-col gap-2 items-center">
-        <Link href={"/poi/Nederland"} className="size-12">
+        <Link href={"/poi/Nederland?skipZoom=true"} className="size-12">
           <Button
             variant="ghost"
             className="size-12 p-3"

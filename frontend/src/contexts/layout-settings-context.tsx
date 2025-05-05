@@ -58,7 +58,12 @@ export const LayoutSettingsProvider = ({
   );
 
   const registerOverride = useCallback((initial: boolean) => {
-    const id = crypto.randomUUID();
+    let id = `${Math.random()}`;
+
+    if (crypto && crypto.randomUUID) {
+      id = crypto.randomUUID();
+    }
+
     setOverrides((ov) => [...ov, { id, rounded: initial }]);
     return id;
   }, []);
