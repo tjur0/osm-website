@@ -14,6 +14,19 @@ interface DocPageProps {
   }>;
 }
 
+export async function generateStaticParams() {
+  const files = fs.readdirSync(path.join(process.cwd(), "content"));
+
+  const params = files.map((file) => {
+    const slug = file.replace(/\.mdx$/, "");
+    return {
+      slug: encodeURIComponent(slug),
+    };
+  });
+
+  return params;
+}
+
 export async function generateMetadata({
   params,
 }: DocPageProps): Promise<Metadata> {
