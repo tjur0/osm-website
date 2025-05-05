@@ -1,8 +1,17 @@
 import { JSX, ReactNode } from "react";
 import { Title } from "@/components/elements/title";
+import Link from "next/link";
 
 export function Paragraph({ children }: { children: ReactNode }) {
   return <p className="text-muted leading-relaxed">{children}</p>;
+}
+
+export function A({ children, ...props }: JSX.IntrinsicElements["a"]) {
+  return (
+    <Link {...props} href={props.href as string} target="_blank">
+      {children}
+    </Link>
+  );
 }
 
 export const mdxComponents = {
@@ -12,4 +21,5 @@ export const mdxComponents = {
   p: (props: JSX.IntrinsicAttributes & { children: ReactNode }) => (
     <Paragraph {...props} />
   ),
+  a: (props: JSX.IntrinsicElements["a"]) => <A {...props} />,
 };

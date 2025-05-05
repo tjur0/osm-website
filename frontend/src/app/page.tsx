@@ -37,31 +37,43 @@ export default function Home() {
 function Content() {
   return (
     <div className="flex flex-col gap-4 justify-between h-full">
-      <div className="flex flex-col gap-4">
-        <Title size="h1" title="OpenStreetMap Nederland" />
-        <p>
-          OpenStreetMap Nederland bestaat uit vrijwilligers die zich inzetten
-          voor het verzamelen, bewerken en beschikbaar stellen van vrije
-          geografische gegevens.
-        </p>
+      <Title size="h1" title="OpenStreetMap Nederland" />
+      <p>
+        OpenStreetMap Nederland bestaat uit vrijwilligers die zich inzetten voor
+        het verzamelen, bewerken en beschikbaar stellen van vrije geografische
+        gegevens.
+      </p>
 
-        <Title size="h2" title="Wat is OpenStreetMap?" />
+      <Title size="h2" title="Wat is OpenStreetMap?" />
 
-        <p>
-          Iedereen kan meehelpen aan OpenStreetMap. Een goede manier om te
-          beginnen is om in een gebied te bekijken waar je bekend mee bent. Klop
-          er iets niet? Pas het aan! Je kan zelf iets aanpassen door op Bewerken
-          te klikken.
-        </p>
-        <p>
-          Wees niet bang om iets fout te doen. De eerste paar edits worden door
-          een ervaren mapper gecontroleerd. Deze kan je dan tips geven om je
-          edits te verbeteren. Mocht je er niet uitkomen, dan kan je altijd een
-          vraag stellen op het forum van OpenStreetMap.
-        </p>
-      </div>
+      <p>
+        OpenStreetMap is een wereldwijde database van geografische informatie.
+        Deze informatie wordt verzameld en bijgehouden door vrijwilligers.
+        Iedereen kan deze informatie gebruiken, bewerken en delen.
+      </p>
+
+      <Title size="h2" title="Hoe is OpenStreetMap ontstaan?" />
+
+      <p>
+        OpenStreetMap is ontstaan in 2004 als een reactie op de beperkte
+        beschikbaarheid van geografische gegevens. Het project is gestart door
+        Steve Coast, die het idee had om een open-source kaart te maken die door
+        iedereen kon worden bewerkt.
+      </p>
+
+      <Title size="h2" title="Kaartlagen" />
+
+      <p>
+        De kaartlagen zijn verschillende weergaven van de gegevens in
+        OpenStreetMap. Verschillende kaartlagen hebben vaak andere doelen, zoals
+        een focus op fietsen of om geschikt te zijn als achtergrond voor een
+        app. Hoewel de OpenStreetMap data vrij toegankelijk is, zijn de
+        kaartlagen dat niet altijd. Vaak hebben kaartlagen een aangegeven limit.
+      </p>
 
       <MoreInfo />
+
+      <div className="pb-4"></div>
     </div>
   );
 }

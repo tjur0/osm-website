@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     useCache: true,
   },
   webpack: (config) => {
-    config.cache = false; 
+    config.cache = false;
     return config;
   },
 };
