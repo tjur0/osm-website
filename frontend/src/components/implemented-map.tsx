@@ -8,10 +8,12 @@ import maplibregl, {
   PointLike,
   QueryRenderedFeaturesOptions,
 } from "maplibre-gl";
+import { useMediaQuery } from "react-responsive";
 
 export default function ImplemtedMap() {
   const pathname = usePathname();
   const router = useRouter();
+  const isMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   const [map, setMap] = useState<maplibregl.Map | null>(null);
 
@@ -56,19 +58,20 @@ export default function ImplemtedMap() {
     const { bbox } = await res.json();
 
     const currentZoom = map.getZoom();
-    const targetMaxZoom = Math.min(currentZoom + currentZoom / 3, 16);
+    const targetMaxZoom = Math.min(currentZoom + currentZoom / 2, 16);
     const maxZoom = Math.max(currentZoom, targetMaxZoom);
 
-    const sidebarwidth = 500;
-    const padding = 50;
+    const sidebarwidth = isMobile ? 0 : 500;
+    const drawerHeight = isMobile ? 400 : 0;
+    const padding = isMobile ? 10 : 50;
     map.fitBounds(bbox, {
       padding: {
         top: padding,
-        bottom: padding,
+        bottom: drawerHeight / 2 + padding,
         left: sidebarwidth / 2 + padding,
         right: padding,
       },
-      duration: 800,
+      duration: 500,
       maxZoom,
     });
   }, [map, pathname]);
