@@ -1,6 +1,6 @@
 "use client";
 import Map from "@/components/map/map";
-import { use, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import PoiStyle from "./map/overlayStyle/poi";
 import { usePathname, useRouter } from "next/navigation";
 import maplibregl, {
