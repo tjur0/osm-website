@@ -1,7 +1,6 @@
 "use client";
 import Map from "@/components/map/map";
 import { useCallback, useEffect, useState } from "react";
-import ColorfulStyle from "./map/overlayStyle/colorful";
 import PoiStyle from "./map/overlayStyle/poi";
 import { usePathname, useRouter } from "next/navigation";
 import maplibregl, {
