@@ -35,7 +35,7 @@ export const LayoutSettingsProvider = ({
     { id: string; rounded: boolean }[]
   >([]);
 
-  const [baseRounded, setBaseRounded] = useState(true);
+  const [baseRounded, setBaseRounded] = useState(false);
 
   const rounded =
     overrides.length > 0

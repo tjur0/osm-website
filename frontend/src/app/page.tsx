@@ -25,7 +25,8 @@ export default function Home() {
       <HideOnMobile>
         <WindowWithDynamicRounding
           className="w-96"
-          dynamicRoundingClassName="rounded-l-none xl:p-8"
+          dynamicRoundingClassName="rounded-l-none"
+          padding={8}
         >
           <Content />
         </WindowWithDynamicRounding>
