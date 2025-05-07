@@ -10,6 +10,7 @@ import maplibregl, {
 } from "maplibre-gl";
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
+import CartoStyle from "./map/overlayStyle/carto";
 
 export default function ImplemtedMap() {
   const pathname = usePathname();
@@ -18,7 +19,7 @@ export default function ImplemtedMap() {
 
   const [map, setMap] = useState<maplibregl.Map | null>(null);
 
-  const [overlays, setOverlays] = useState([ColorfulStyle, PoiStyle]);
+  const [overlays, setOverlays] = useState([CartoStyle, PoiStyle]);
 
   const zoomToSelected = useCallback(async () => {
     if (!map) return;
@@ -58,10 +59,6 @@ export default function ImplemtedMap() {
 
     const { bbox } = await res.json();
 
-    const currentZoom = map.getZoom();
-    const targetMaxZoom = Math.min(currentZoom + currentZoom / 2, 16);
-    const maxZoom = Math.max(currentZoom, targetMaxZoom);
-
     const sidebarwidth = isMobile ? 0 : 500;
     const drawerHeight = isMobile ? 400 : 0;
     const padding = isMobile ? 10 : 50;
@@ -73,7 +70,7 @@ export default function ImplemtedMap() {
         right: padding,
       },
       duration: 500,
-      maxZoom,
+      maxZoom: 18,
     });
   }, [map, pathname]);
 
