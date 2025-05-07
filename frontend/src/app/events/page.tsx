@@ -62,8 +62,15 @@ const getPastEvents = async () => {
 };
 
 export default async function EventsPage() {
-  const futureEvents: Event[] = await getFutureEvents();
-  const pastEvents: Event[] = await getPastEvents();
+  let futureEvents: Event[] = [];
+  let pastEvents: Event[] = [];
+
+  try {
+    futureEvents = await getFutureEvents();
+    pastEvents = await getPastEvents();
+  } catch (error) {
+    console.error("Error fetching events:", error);
+  }
 
   return (
     <div className="flex flex-col gap-4">
@@ -104,6 +111,5 @@ export default async function EventsPage() {
         </div>
       </div>
     </div>
-    // </TitledPage>
   );
 }
