@@ -139,7 +139,14 @@ export default function ImplemtedMap() {
   }, [pathname, map, zoomToSelected]);
 
   useEffect(() => {
-    zoomToSelected(false);
+    const segments = pathname.split("/").map(decodeURIComponent);
+
+    const type = segments[6];
+    const id = segments[7];
+
+    if (type && id) {
+      zoomToSelected(false);
+    }
   }, [map, zoomToSelected]);
 
   const handleIdle = useCallback(() => {
