@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Drawer } from "vaul";
 import { Window } from "@/components/elements/window";
 import { Button } from "../ui/button";
