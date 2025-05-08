@@ -70,7 +70,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen w-screen overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-[100dvh] w-screen overflow-hidden`}
       >
         <Analytics />
         <SpeedInsights />
@@ -83,7 +83,7 @@ export default function RootLayout({
           <LayoutSettingsProvider>
             <LayoutSettingOverride key="RootLayout" rounded={true} />
 
-            <div className="absolute top-0 left-0 w-full h-full z-0">
+            <div className="absolute top-0 left-0 w-full h-[100dvh] z-0">
               <ImplemtedMap />
             </div>
 
