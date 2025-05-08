@@ -45,7 +45,7 @@ export default function WindowDrawer({ children }: WindowDrawerProps) {
             >
               <div
                 aria-hidden
-                className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 my-4"
+                className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-700 dark:bg-gray-300 my-4"
               />
               <div className="flex flex-col w-full p-4 pt-5 overflow-y-auto flex-1">
                 {children}
