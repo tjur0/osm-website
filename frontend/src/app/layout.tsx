@@ -68,6 +68,10 @@ export default function RootLayout({
           content="/favicon/browserconfig.xml"
         />
         <meta name="theme-color" content="#ffffff" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-[100dvh] w-screen overflow-hidden`}
@@ -93,8 +97,7 @@ export default function RootLayout({
                   <div className="h-full flex flex-col gap-4 w-12">
                     <Header />
                   </div>
-                  <div>{children}</div>
-                  <div className="w-12" />
+                  <div className="overflow-auto">{children}</div>
                 </div>
               </WindowDrawer>
             </HideOnDesktop>
