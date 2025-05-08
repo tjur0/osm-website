@@ -18,9 +18,9 @@ export function Title({
   children,
 }: TitleProps) {
   const sizes = {
-    h1: "text-4xl",
-    h2: "text-xl",
-    h3: "text-lg",
+    h1: "text-2xl md:text-4xl",
+    h2: "text-lg md:text-xl",
+    h3: "text-md md:text-lg",
     h4: "text-md",
   };
 
@@ -47,12 +47,16 @@ export function Title({
           )}
 
           {titlePostfix && (
-            <span className="text-[12px] font-medium text-muted">
+            <span className="text-[12px] font-medium text-muted-foreground dark:text-muted">
               {titlePostfix}
             </span>
           )}
         </div>
-        {subTitle && <p className="text-sm mt-2 text-muted">{subTitle}</p>}
+        {subTitle && (
+          <p className="text-sm mt-2 text-muted-foreground dark:text-muted">
+            {subTitle}
+          </p>
+        )}
       </div>
       <div>{actions && actions}</div>
     </div>

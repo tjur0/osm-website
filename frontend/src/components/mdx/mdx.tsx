@@ -3,7 +3,11 @@ import { Title } from "@/components/elements/title";
 import Link from "next/link";
 
 export function Paragraph({ children }: { children: ReactNode }) {
-  return <p className="text-muted leading-relaxed">{children}</p>;
+  return (
+    <p className="text-muted-foreground dark:text-muted leading-relaxed mb-4">
+      {children}
+    </p>
+  );
 }
 
 export function A({ children, ...props }: JSX.IntrinsicElements["a"]) {

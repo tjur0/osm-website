@@ -78,7 +78,7 @@ export default async function DocPage({ params }: DocPageProps) {
         <ArrowLeft />
       </Link>
 
-      <article className="prose flex flex-col gap-4">
+      <article className="prose flex flex-col gap-2">
         <MDXRemote source={content} components={mdxComponents} />
       </article>
     </div>
