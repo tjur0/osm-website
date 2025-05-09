@@ -10,7 +10,7 @@ interface WindowDrawerProps {
   children?: React.ReactNode;
 }
 
-const snapPoints = [0.4, 0.6, 0.8, 1];
+const snapPoints = [0.8];
 
 export default function WindowDrawer({ children }: WindowDrawerProps) {
   const [snap, setSnap] = useState<number | string | null>(snapPoints[0]);
@@ -34,9 +34,9 @@ export default function WindowDrawer({ children }: WindowDrawerProps) {
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
         <Drawer.Content
           data-testid="content"
-          className="h-[100dvh] overflow-hidden fixed w-full"
+          className="h-[80dvh] overflow-hidden fixed w-full"
         >
-          <div className="h-[100dvh] flex flex-col">
+          <div className="h-[80dvh] flex flex-col">
             <Drawer.Title className="hidden">Title</Drawer.Title>
 
             <Window
