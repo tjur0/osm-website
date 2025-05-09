@@ -22,6 +22,20 @@ interface StateIndexParams {
   state: string;
 }
 
+export async function generateMetadata({ params }: StateIndexPageProps) {
+  const raw = await params;
+
+  const { country, state } = {
+    country: decodeURIComponent(raw.country),
+    state: decodeURIComponent(raw.state),
+  };
+
+  return {
+    title: `Punten van intresse in ${state}, ${country}`,
+    description: `Bekijk de punten van intresse in ${state}, ${country}`,
+  };
+}
+
 export default async function StateIndexPage({ params }: StateIndexPageProps) {
   const raw = await params;
 

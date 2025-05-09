@@ -5,6 +5,7 @@ import TagTable from "@/components/poi/tag-table";
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
 import { Badge } from "@/components/ui/badge";
 import { nile } from "@/lib/db";
+import { uniqueCaseInsensitive } from "@/lib/utils";
 import { Poi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -57,16 +58,21 @@ export async function generateMetadata({ params }: PoiPageProps) {
 
   let title = [];
   if (poi?.name) {
-    title = [poi?.typeName, poi?.name];
+    title = [poi?.typeName, ...poi?.name.split(" "), poi?.city];
   } else {
     title = [poi?.typeName, poi?.city, poi?.street];
   }
 
-  const description = [poi?.typeName, poi?.name, poi?.city, poi?.street];
+  const description = [
+    poi?.typeName,
+    ...(poi?.name ? poi.name.split(" ") : []),
+    poi?.city,
+    poi?.street,
+  ];
 
   return {
-    title: title.filter(Boolean).join(" "),
-    description: description.filter(Boolean).join(" "),
+    title: uniqueCaseInsensitive(title).join(" "),
+    description: uniqueCaseInsensitive(description).join(" "),
   };
 }
 

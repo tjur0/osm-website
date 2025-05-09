@@ -28,6 +28,21 @@ interface CityIndexParams {
   city: string;
 }
 
+export async function generateMetadata({ params }: CityIndexPageProps) {
+  const raw = await params;
+
+  const { country, state, city } = {
+    country: decodeURIComponent(raw.country),
+    state: decodeURIComponent(raw.state),
+    city: decodeURIComponent(raw.city),
+  };
+
+  return {
+    title: `Punten van intresse in ${city}, ${state}, ${country}`,
+    description: `Bekijk de punten van intresse in ${city}, ${state}, ${country}`,
+  };
+}
+
 export default async function CityIndexPage({ params }: CityIndexPageProps) {
   const raw = await params;
 

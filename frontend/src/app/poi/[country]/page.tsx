@@ -5,6 +5,14 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+interface CountryParams {
+  country: string;
+}
+
+interface CountryPageProps {
+  params: Promise<CountryParams>;
+}
+
 export async function generateStaticParams() {
   const response = await nile.db.query("SELECT DISTINCT country FROM pois");
   const countries = response.rows as { country: string }[];
@@ -14,11 +22,20 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function CountryIndexPage({
-  params,
-}: {
-  params: Promise<{ country: string }>;
-}) {
+export async function generateMetadata({ params }: CountryPageProps) {
+  const raw = await params;
+
+  const { country } = {
+    country: decodeURIComponent(raw.country),
+  };
+
+  return {
+    title: `Punten van intresse in ${country}`,
+    description: `Bekijk de punten van intresse in ${country}`,
+  };
+}
+
+export default async function CountryIndexPage({ params }: CountryPageProps) {
   const raw = await params;
 
   const { country } = {

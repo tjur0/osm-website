@@ -4,6 +4,19 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+export const metadata = {
+  title: "Landen OpenStreetMap Punten van Interesse",
+  description:
+    "Alle landen met OpenStreetMap Punten van Interesse. Dit zijn bedrijven, restaurants, musea en andere interessante locaties.",
+  keywords: [
+    "Landen",
+    "OpenStreetMap Punten van Interesse",
+    "OSM",
+    "Kaart",
+    "Geografie",
+  ],
+};
+
 export default async function PoiIndexPage() {
   const response = await nile.db.query(
     "SELECT DISTINCT country FROM pois ORDER BY country"

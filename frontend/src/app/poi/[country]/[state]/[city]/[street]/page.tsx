@@ -33,6 +33,22 @@ interface StreetIndexParams {
   street: string;
 }
 
+export async function generateMetadata({ params }: StreetIndexPageProps) {
+  const raw = await params;
+
+  const { country, state, city, street } = {
+    country: decodeURIComponent(raw.country),
+    state: decodeURIComponent(raw.state),
+    city: decodeURIComponent(raw.city),
+    street: decodeURIComponent(raw.street),
+  };
+
+  return {
+    title: `Punten van intresse in ${street}, ${city}, ${state}, ${country}`,
+    description: `Bekijk de punten van intresse in ${street}, ${city}, ${state}, ${country}`,
+  };
+}
+
 export default async function StreetIndexPage({
   params,
 }: StreetIndexPageProps) {

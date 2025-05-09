@@ -36,3 +36,19 @@ export function decodeURIComponentSafe(value: string): string {
     return value;
   }
 }
+
+export function uniqueCaseInsensitive(arr: (string | undefined)[]) {
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  for (const item of arr) {
+    if (!item) continue;
+    const lower = item.toLowerCase();
+    if (!seen.has(lower)) {
+      seen.add(lower);
+      result.push(item);
+    }
+  }
+
+  return result;
+}
