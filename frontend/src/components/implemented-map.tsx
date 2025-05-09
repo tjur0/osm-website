@@ -164,20 +164,20 @@ export default function ImplemtedMap() {
       features.splice(50);
     }
 
-    features.forEach((feature) => {
-      const poi = feature.properties;
+    // features.forEach((feature) => {
+    //   const poi = feature.properties;
 
-      const encoded = {
-        country: encodeURIComponent(poi.country),
-        state: encodeURIComponent(poi.state),
-        city: encodeURIComponent(poi.city),
-        street: encodeURIComponent(poi.street),
-      };
+    //   const encoded = {
+    //     country: encodeURIComponent(poi.country),
+    //     state: encodeURIComponent(poi.state),
+    //     city: encodeURIComponent(poi.city),
+    //     street: encodeURIComponent(poi.street),
+    //   };
 
-      const path = `/poi/${encoded.country}/${encoded.state}/${encoded.city}/${encoded.street}/${poi.type}/${poi.id}`;
+    //   const path = `/poi/${encoded.country}/${encoded.state}/${encoded.city}/${encoded.street}/${poi.type}/${poi.id}`;
 
-      router.prefetch(path);
-    });
+    //   router.prefetch(path);
+    // });
   }, [map]);
 
   useEffect(() => {
