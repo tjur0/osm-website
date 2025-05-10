@@ -57,7 +57,7 @@ export async function GET(req: NextRequest) {
   ];
 
   const res = NextResponse.json({ bbox });
-  res.headers.set("Cache-Control", "public, max-age=31536000, immutable");
+  res.headers.set("Cache-Control", "private, max-age=0, no-cache");
 
   return res;
 }

@@ -4,3 +4,10 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "/api/bbox"
+  to = "/.netlify/functions/bbox"
+  status = 200
+  force = true
+  query = ":query"
