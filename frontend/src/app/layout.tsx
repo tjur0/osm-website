@@ -7,8 +7,6 @@ import WindowWithDynamicRounding from "@/components/elements/window-with-dynamic
 import { LayoutSettingsProvider } from "@/contexts/layout-settings-context";
 import LayoutSettingOverride from "@/components/elements/layout-setting-override";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import WindowDrawer from "@/components/elements/window-drawer";
 import HideOnMobile from "@/components/wrappers/hide-on-mobile";
 import HideOnDesktop from "@/components/wrappers/hide-on-desktop";
@@ -72,12 +70,17 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="1851f20d-2dc9-4192-ba6f-ec5cc26abe91"
+        ></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-[100dvh] w-screen overflow-hidden`}
       >
-        <Analytics />
-        <SpeedInsights />
+        {/* <Analytics />
+        <SpeedInsights /> */}
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
