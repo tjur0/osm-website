@@ -33,10 +33,12 @@ export default async function TagTable({ poi }: TagTableProps) {
         {sortedTags.map(([key, value]) => (
           <TableRow key={`${key}:${value}`}>
             <TableCell>
-              <TagWikiLink tagKey={key} label={key} />
+              {/* <TagWikiLink tagKey={key} label={key} /> */}
+              <span>{key}</span>
             </TableCell>
             <TableCell>
-              <TagWikiLink tagKey={key} value={value} label={value} />
+              {/* <TagWikiLink tagKey={key} value={value} label={value} /> */}
+              <span>{value}</span>
             </TableCell>
           </TableRow>
         ))}

@@ -7,74 +7,74 @@ import maplibregl, {
   PointLike,
   QueryRenderedFeaturesOptions,
 } from "maplibre-gl";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import CartoStyle from "./map/overlayStyle/carto";
 
 export default function ImplemtedMap() {
   const pathname = usePathname();
   const router = useRouter();
-  const isMobile = useMediaQuery({ query: "(max-width: 1280px)" });
+  // const isMobile = useMediaQuery({ query: "(max-width: 1280px)" });
 
   const [map, setMap] = useState<maplibregl.Map | null>(null);
 
   const [overlays, setOverlays] = useState([CartoStyle, PoiStyle]);
 
-  const zoomToSelected = useCallback(
-    async (animated: boolean) => {
-      if (!map) return;
+  // const zoomToSelected = useCallback(
+  //   async (animated: boolean) => {
+  //     if (!map) return;
 
-      const searchParams = new URLSearchParams(window.location.search);
-      if (searchParams.get("skipZoom") === "true") {
-        searchParams.delete("skipZoom");
-        router.replace(`${pathname}?${searchParams.toString()}`, undefined);
-        return;
-      }
+  //     const searchParams = new URLSearchParams(window.location.search);
+  //     if (searchParams.get("skipZoom") === "true") {
+  //       searchParams.delete("skipZoom");
+  //       router.replace(`${pathname}?${searchParams.toString()}`, undefined);
+  //       return;
+  //     }
 
-      const segments = pathname.split("/").map(decodeURIComponent);
-      const [country, state, city, street, type, id] = segments.slice(2, 8);
+  //     const segments = pathname.split("/").map(decodeURIComponent);
+  //     const [country, state, city, street, type, id] = segments.slice(2, 8);
 
-      if (
-        country === "undefined" ||
-        state === "undefined" ||
-        city === "undefined" ||
-        street === "undefined" ||
-        type === "undefined" ||
-        id === "undefined"
-      ) {
-        return;
-      }
+  //     if (
+  //       country === "undefined" ||
+  //       state === "undefined" ||
+  //       city === "undefined" ||
+  //       street === "undefined" ||
+  //       type === "undefined" ||
+  //       id === "undefined"
+  //     ) {
+  //       return;
+  //     }
 
-      const params = new URLSearchParams();
+  //     const params = new URLSearchParams();
 
-      if (country) params.set("country", country);
-      if (state) params.set("state", state);
-      if (city) params.set("city", city);
-      if (street) params.set("street", street);
-      if (type) params.set("type", type);
-      if (id) params.set("id", id);
+  //     if (country) params.set("country", country);
+  //     if (state) params.set("state", state);
+  //     if (city) params.set("city", city);
+  //     if (street) params.set("street", street);
+  //     if (type) params.set("type", type);
+  //     if (id) params.set("id", id);
 
-      const res = await fetch(`/api/bbox?${params.toString()}`);
-      if (!res.ok) return;
+  //     const res = await fetch(`/api/bbox?${params.toString()}`);
+  //     if (!res.ok) return;
 
-      const { bbox } = await res.json();
+  //     const { bbox } = await res.json();
 
-      const sidebarwidth = isMobile ? 0 : 500;
-      const drawerHeight = isMobile ? 400 : 0;
-      const padding = isMobile ? 10 : 50;
-      map.fitBounds(bbox, {
-        padding: {
-          top: padding,
-          bottom: drawerHeight / 2 + padding,
-          left: sidebarwidth / 2 + padding,
-          right: padding,
-        },
-        duration: animated ? 500 : 0,
-        maxZoom: 18,
-      });
-    },
-    [map, pathname]
-  );
+  //     const sidebarwidth = isMobile ? 0 : 500;
+  //     const drawerHeight = isMobile ? 400 : 0;
+  //     const padding = isMobile ? 10 : 50;
+  //     map.fitBounds(bbox, {
+  //       padding: {
+  //         top: padding,
+  //         bottom: drawerHeight / 2 + padding,
+  //         left: sidebarwidth / 2 + padding,
+  //         right: padding,
+  //       },
+  //       duration: animated ? 500 : 0,
+  //       maxZoom: 18,
+  //     });
+  //   },
+  //   [map, pathname]
+  // );
 
   useEffect(() => {
     const isPoiPath = pathname.startsWith("/poi");
@@ -92,7 +92,7 @@ export default function ImplemtedMap() {
 
     if (map && map.getLayer("points-outline")) {
       if (isPoiPath) {
-        zoomToSelected(true);
+        // zoomToSelected(true);
 
         const segments = pathname.split("/").map(decodeURIComponent);
         const state = segments[3];
@@ -136,18 +136,22 @@ export default function ImplemtedMap() {
         map.setLayoutProperty("points-outline", "visibility", "none");
       }
     }
-  }, [pathname, map, zoomToSelected]);
+  }, [
+    pathname,
+    map,
+    //zoomToSelected
+  ]);
 
-  useEffect(() => {
-    const segments = pathname.split("/").map(decodeURIComponent);
+  // useEffect(() => {
+  //   const segments = pathname.split("/").map(decodeURIComponent);
 
-    const type = segments[6];
-    const id = segments[7];
+  //   const type = segments[6];
+  //   const id = segments[7];
 
-    if (type && id) {
-      zoomToSelected(false);
-    }
-  }, [map, zoomToSelected]);
+  //   if (type && id) {
+  //     zoomToSelected(false);
+  //   }
+  // }, [map, zoomToSelected]);
 
   const handleIdle = useCallback(() => {
     if (!map) return;
