@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import TagWikiLink from "./tag-wiki-link";
+// import TagWikiLink from "./tag-wiki-link";
 
 interface TagTableProps {
   poi: {
