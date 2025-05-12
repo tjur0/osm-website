@@ -17,7 +17,7 @@ type LayoutSettings = {
 };
 
 const LayoutSettingsContext = createContext<LayoutSettings | undefined>(
-  undefined
+  undefined,
 );
 
 export const useLayoutSettings = () => {
@@ -54,7 +54,7 @@ export const LayoutSettingsProvider = ({
         });
       }
     },
-    [overrides.length]
+    [overrides.length],
   );
 
   const registerOverride = useCallback((initial: boolean) => {
@@ -79,7 +79,7 @@ export const LayoutSettingsProvider = ({
       registerOverride,
       unregisterOverride,
     }),
-    [rounded, setRounding, registerOverride, unregisterOverride]
+    [rounded, setRounding, registerOverride, unregisterOverride],
   );
 
   return (

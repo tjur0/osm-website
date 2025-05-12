@@ -10,6 +10,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import WindowDrawer from "@/components/elements/window-drawer";
 import HideOnMobile from "@/components/wrappers/hide-on-mobile";
 import HideOnDesktop from "@/components/wrappers/hide-on-desktop";
+import { BBoxProvider } from "@/providers/bbox-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -87,36 +88,38 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LayoutSettingsProvider>
-            <LayoutSettingOverride key="RootLayout" rounded={true} />
+          <BBoxProvider>
+            <LayoutSettingsProvider>
+              <LayoutSettingOverride key="RootLayout" rounded={true} />
 
-            <div className="absolute top-0 left-0 w-full h-[100dvh] z-0">
-              <ImplemtedMap />
-            </div>
-
-            <HideOnDesktop>
-              <WindowDrawer>
-                <div className="flex h-full gap-8">
-                  <div className="h-full flex flex-col gap-4 w-12">
-                    <Header />
-                  </div>
-                  <div className="overflow-auto">{children}</div>
-                </div>
-              </WindowDrawer>
-            </HideOnDesktop>
-
-            <HideOnMobile>
-              <div className="absolute z-10 flex h-screen p-6">
-                <WindowWithDynamicRounding
-                  dynamicRoundingClassName="rounded-r-none"
-                  padding={4}
-                >
-                  <Header />
-                </WindowWithDynamicRounding>
-                {children}
+              <div className="absolute top-0 left-0 w-full h-[100dvh] z-0">
+                <ImplemtedMap />
               </div>
-            </HideOnMobile>
-          </LayoutSettingsProvider>
+
+              <HideOnDesktop>
+                <WindowDrawer>
+                  <div className="flex h-full gap-8">
+                    <div className="h-full flex flex-col gap-4 w-12">
+                      <Header />
+                    </div>
+                    <div className="overflow-auto">{children}</div>
+                  </div>
+                </WindowDrawer>
+              </HideOnDesktop>
+
+              <HideOnMobile>
+                <div className="absolute z-10 flex h-screen p-6">
+                  <WindowWithDynamicRounding
+                    dynamicRoundingClassName="rounded-r-none"
+                    padding={4}
+                  >
+                    <Header />
+                  </WindowWithDynamicRounding>
+                  {children}
+                </div>
+              </HideOnMobile>
+            </LayoutSettingsProvider>
+          </BBoxProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,7 +1,9 @@
 "use cache";
 import { Title } from "@/components/elements/title";
+import BBox from "@/components/map/bbox";
 import PoiCard from "@/components/poi/poi-card";
 import { nile } from "@/lib/db";
+import { getBBox } from "@/lib/getBBox";
 import { Poi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -63,14 +65,22 @@ export default async function StreetIndexPage({
 
   const response = await nile.db.query(
     `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.country = $1 AND p.state = $2 AND p.city = $3 AND p.street = $4 ORDER BY street`,
-    [country, state, city, street]
+    [country, state, city, street],
   );
 
   const pois = response.rows as Poi[];
   if (!pois || pois.length === 0) return notFound();
 
+  const bbox = await getBBox({
+    country: country,
+    state: state,
+    city: city,
+    street: street,
+  });
+
   return (
     <div className="flex flex-col gap-4">
+      <BBox bbox={bbox} />
       <Link
         href={`/poi/${country}/${state}/${city}`}
         aria-label="Terug naar de straten lijst"

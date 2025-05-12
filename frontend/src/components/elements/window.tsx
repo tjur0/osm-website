@@ -16,7 +16,7 @@ const windowVariants = cva(
     defaultVariants: {
       padding: 4,
     },
-  }
+  },
 );
 
 function Window({

@@ -33,7 +33,7 @@ export default async function sitemap({
     FROM pois
     LIMIT $1 OFFSET $2
   `,
-    [PAGE_SIZE, offset]
+    [PAGE_SIZE, offset],
   );
 
   const pois = response.rows as {
@@ -47,9 +47,9 @@ export default async function sitemap({
 
   const urls = pois.map(({ country, state, city, street, type, id }) => ({
     url: `${process.env.BASE_URL}/poi/${encodeURIComponent(
-      country
+      country,
     )}/${encodeURIComponent(state)}/${encodeURIComponent(
-      city
+      city,
     )}/${encodeURIComponent(street)}/${encodeURIComponent(type)}/${id}`,
     lastModified: new Date().toISOString(),
   }));

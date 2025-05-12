@@ -1,12 +1,14 @@
 import { Title } from "@/components/elements/title";
+import BBox from "@/components/map/bbox";
 import { nile } from "@/lib/db";
+import { getBBox } from "@/lib/getBBox";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const response = await nile.db.query(
-    "SELECT DISTINCT country, state, city FROM pois"
+    "SELECT DISTINCT country, state, city FROM pois",
   );
 
   const cities = response.rows as {
@@ -54,7 +56,7 @@ export default async function CityIndexPage({ params }: CityIndexPageProps) {
 
   const response = await nile.db.query(
     "SELECT DISTINCT street FROM pois WHERE country = $1 AND state = $2 AND city = $3 ORDER BY street",
-    [country, state, city]
+    [country, state, city],
   );
   const streets = response.rows as {
     street: string;
@@ -62,8 +64,15 @@ export default async function CityIndexPage({ params }: CityIndexPageProps) {
 
   if (!streets || streets.length === 0) return notFound();
 
+  const bbox = await getBBox({
+    country: country,
+    state: state,
+    city: city,
+  });
+
   return (
     <div className="flex flex-col gap-4">
+      <BBox bbox={bbox} />
       <Link
         href={`/poi/${country}/${state}`}
         aria-label="Terug naar de plaatsen lijst"

@@ -2,8 +2,10 @@ import MoreInfo from "@/components/cta/more-info";
 import LayoutSettingOverride from "@/components/elements/layout-setting-override";
 import { Title } from "@/components/elements/title";
 import WindowWithDynamicRounding from "@/components/elements/window-with-dynamic-rounding";
+import BBox from "@/components/map/bbox";
 import HideOnDesktop from "@/components/wrappers/hide-on-desktop";
 import HideOnMobile from "@/components/wrappers/hide-on-mobile";
+import { getBBox } from "@/lib/getBBox";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,9 +15,14 @@ export const metadata: Metadata = {
   keywords: ["OpenStreetMap Nederland", "OSM", "Kaart", "Geografie"],
 };
 
-export default function Home() {
+export default async function Home() {
+  const bbox = await getBBox({
+    country: "Nederland",
+  });
+
   return (
     <>
+      <BBox bbox={bbox} />
       <LayoutSettingOverride key="Home" rounded={false} />
 
       <HideOnDesktop>

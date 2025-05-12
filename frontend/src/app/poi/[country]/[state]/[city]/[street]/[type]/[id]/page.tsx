@@ -1,10 +1,12 @@
 "use cache";
 
 import { Title } from "@/components/elements/title";
+import BBox from "@/components/map/bbox";
 import TagTable from "@/components/poi/tag-table";
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
 import { Badge } from "@/components/ui/badge";
 import { nile } from "@/lib/db";
+import { getBBox } from "@/lib/getBBox";
 import { uniqueCaseInsensitive } from "@/lib/utils";
 import { Poi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
@@ -46,7 +48,7 @@ export async function generateMetadata({ params }: PoiPageProps) {
 
   const response = await nile.db.query(
     `SELECT name, "typeName", city, street FROM pois WHERE id = $1 AND type = $2`,
-    [id, type]
+    [id, type],
   );
   const poi = response.rows[0] as Poi;
 
@@ -81,14 +83,20 @@ export default async function PoiPage({ params }: PoiPageProps) {
 
   const response = await nile.db.query(
     `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.id = $1 AND p.type = $2`,
-    [id, type]
+    [id, type],
   );
 
   const poi = response.rows[0] as Poi;
   if (!poi) return notFound();
 
+  const bbox = await getBBox({
+    type: poi.type,
+    id: poi.id,
+  });
+
   return (
     <>
+      <BBox bbox={bbox} />
       <RedirectFullPoiPage
         country={country}
         state={state}

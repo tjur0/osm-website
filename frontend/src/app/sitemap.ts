@@ -17,7 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: `${process.env.BASE_URL}/poi/sitemap/${id}.xml`,
         lastModified: new Date().toISOString(),
       };
-    }
+    },
   );
 
   return poiSitemapUrls;

@@ -1,6 +1,8 @@
 import MissingPoi from "@/components/cta/missing-poi";
 import { Title } from "@/components/elements/title";
+import BBox from "@/components/map/bbox";
 import { nile } from "@/lib/db";
+import { getBBox } from "@/lib/getBBox";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -44,15 +46,20 @@ export default async function CountryIndexPage({ params }: CountryPageProps) {
 
   const response = await nile.db.query(
     "SELECT DISTINCT state FROM pois WHERE country = $1 ORDER BY state",
-    [country]
+    [country],
   );
 
   const states = response.rows as { state: string }[];
 
   if (!states || states.length === 0) return notFound();
 
+  const bbox = await getBBox({
+    country: country,
+  });
+
   return (
     <div className="flex flex-col gap-4 justify-between h-full">
+      <BBox bbox={bbox} />
       <div className="flex flex-col gap-4">
         <Link href={`/poi`} aria-label="Terug naar de landen lijst">
           <ArrowLeft />

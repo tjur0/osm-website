@@ -10,6 +10,7 @@ import maplibregl, {
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import CartoStyle from "./map/overlayStyle/carto";
+import { useBBox } from "@/providers/bbox-provider";
 
 export default function ImplemtedMap() {
   const pathname = usePathname();
@@ -19,6 +20,8 @@ export default function ImplemtedMap() {
   const [map, setMap] = useState<maplibregl.Map | null>(null);
 
   const [overlays, setOverlays] = useState([CartoStyle, PoiStyle]);
+
+  const bbox = useBBox();
 
   const zoomToSelected = useCallback(
     async (animated: boolean) => {
@@ -31,33 +34,7 @@ export default function ImplemtedMap() {
         return;
       }
 
-      const segments = pathname.split("/").map(decodeURIComponent);
-      const [country, state, city, street, type, id] = segments.slice(2, 8);
-
-      if (
-        country === "undefined" ||
-        state === "undefined" ||
-        city === "undefined" ||
-        street === "undefined" ||
-        type === "undefined" ||
-        id === "undefined"
-      ) {
-        return;
-      }
-
-      const params = new URLSearchParams();
-
-      if (country) params.set("country", country);
-      if (state) params.set("state", state);
-      if (city) params.set("city", city);
-      if (street) params.set("street", street);
-      if (type) params.set("type", type);
-      if (id) params.set("id", id);
-
-      const res = await fetch(`/api/bbox?${params.toString()}`);
-      if (!res.ok) return;
-
-      const { bbox } = await res.json();
+      if (!bbox) return;
 
       const sidebarwidth = isMobile ? 0 : 500;
       const drawerHeight = isMobile ? 400 : 0;
@@ -73,7 +50,7 @@ export default function ImplemtedMap() {
         maxZoom: 18,
       });
     },
-    [map, pathname]
+    [map, pathname, bbox],
   );
 
   useEffect(() => {
@@ -124,7 +101,7 @@ export default function ImplemtedMap() {
         if (filter.length > 1) {
           map.setFilter(
             "points-outline",
-            filter as maplibregl.FilterSpecification
+            filter as maplibregl.FilterSpecification,
           );
           map.setLayoutProperty("points-outline", "visibility", "visible");
         } else {
@@ -202,7 +179,7 @@ export default function ImplemtedMap() {
           features[0].properties;
 
         router.push(
-          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`
+          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`,
         );
       } else {
         router.push("/poi/Nederland?skipZoom=true");

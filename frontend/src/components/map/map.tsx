@@ -31,7 +31,7 @@ export default function Map({ overlays, map, setMap }: MapProps) {
     (overlay: OverlayStyle) => {
       setActiveOverlays((prev) => [...prev, overlay]);
     },
-    [setActiveOverlays]
+    [setActiveOverlays],
   );
 
   const removeOverlay = useCallback(
@@ -46,7 +46,7 @@ export default function Map({ overlays, map, setMap }: MapProps) {
         console.error(`Error directly removing overlay ${overlay.id}:`, err);
       }
     },
-    [map, activeOverlays]
+    [map, activeOverlays],
   );
 
   useEffect(() => {
@@ -101,7 +101,7 @@ export default function Map({ overlays, map, setMap }: MapProps) {
     if (!map || !isStyleLoaded) return;
 
     const sortedOverlays = [...activeOverlays].sort(
-      (a, b) => a.order - b.order
+      (a, b) => a.order - b.order,
     );
 
     sortedOverlays.forEach((overlay) => {
