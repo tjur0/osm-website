@@ -1,4 +1,8 @@
-import { VectorSourceSpecification, StyleSpecification } from "maplibre-gl";
+import {
+  SourceSpecification,
+  StyleSpecification,
+  VectorSourceSpecification,
+} from "maplibre-gl";
 
 export interface BaseStyle extends StyleSpecification {
   id: string;
@@ -14,6 +18,6 @@ export interface OverlayStyle extends Pick<StyleSpecification, "layers"> {
   order: number;
   removeSourceAfterRemove?: boolean;
   sources: {
-    [_: string]: SourceSpecificationVector;
+    [_: string]: SourceSpecificationVector | SourceSpecification;
   };
 }

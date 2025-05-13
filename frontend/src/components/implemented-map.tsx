@@ -1,7 +1,6 @@
 "use client";
-import Map from "@/components/map/map";
-import { useCallback, useEffect, useState } from "react";
-import PoiStyle from "./map/overlayStyle/poi";
+import { Map } from "@/components/map/map";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import maplibregl, {
   PointLike,
@@ -11,6 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import CartoStyle from "./map/overlayStyle/carto";
 import { useBBox } from "@/providers/bbox-provider";
+import { getPoisOverylay } from "./map/overlayStyle/poi";
 
 export default function ImplemtedMap() {
   const pathname = usePathname();
@@ -19,7 +19,53 @@ export default function ImplemtedMap() {
 
   const [map, setMap] = useState<maplibregl.Map | null>(null);
 
-  const [overlays, setOverlays] = useState([CartoStyle, PoiStyle]);
+  const PoiStyle = useMemo(() => {
+    const isPoiPath = pathname.startsWith("/poi");
+    if (!isPoiPath) return null;
+
+    const segments = pathname.split("/").map(decodeURIComponent);
+
+    const country = segments[2];
+    const state = segments[3];
+    const city = segments[4];
+    const street = segments[5];
+    const type = segments[6];
+    const id = segments[7];
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const filter: ["all" | "any" | "none", ...any[]] = ["all"];
+
+    if (country) {
+      filter.push(["==", ["get", "country"], country]);
+    }
+
+    if (state) {
+      filter.push(["==", ["get", "state"], state]);
+    }
+
+    if (city) {
+      filter.push(["==", ["get", "city"], city]);
+    }
+
+    if (street) {
+      filter.push(["==", ["get", "street"], street]);
+    }
+
+    if (type && id) {
+      filter.push(["==", ["get", "type"], type]);
+      filter.push(["==", ["get", "id"], Number(id)]);
+    }
+
+    return getPoisOverylay(filter);
+  }, [pathname, map]);
+
+  const overlays = useMemo(() => {
+    const overlays = [CartoStyle];
+    if (PoiStyle) {
+      overlays.push(PoiStyle);
+    }
+    return overlays;
+  }, [PoiStyle]);
 
   const bbox = useBBox();
 
@@ -30,7 +76,7 @@ export default function ImplemtedMap() {
       const searchParams = new URLSearchParams(window.location.search);
       if (searchParams.get("skipZoom") === "true") {
         searchParams.delete("skipZoom");
-        router.replace(`${pathname}?${searchParams.toString()}`, undefined);
+        // router.replace(`${pathname}?${searchParams.toString()}`, undefined);
         return;
       }
 
@@ -50,112 +96,12 @@ export default function ImplemtedMap() {
         maxZoom: 18,
       });
     },
-    [map, pathname, bbox],
+    [map, pathname, bbox]
   );
 
   useEffect(() => {
-    const isPoiPath = pathname.startsWith("/poi");
-
-    setOverlays((prev) => {
-      const hasPoi = prev.includes(PoiStyle);
-      if (isPoiPath && !hasPoi) {
-        return [...prev, PoiStyle];
-      } else if (!isPoiPath && hasPoi) {
-        return prev.filter((style) => style !== PoiStyle);
-      } else {
-        return prev;
-      }
-    });
-
-    if (map && map.getLayer("points-outline")) {
-      if (isPoiPath) {
-        zoomToSelected(true);
-
-        const segments = pathname.split("/").map(decodeURIComponent);
-        const state = segments[3];
-        const city = segments[4];
-        const street = segments[5];
-        const type = segments[6];
-        const id = segments[7];
-
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const filter: ["all" | "any" | "none", ...any[]] = ["all"];
-
-        if (state) {
-          filter.push(["==", ["get", "state"], state]);
-        }
-
-        if (city) {
-          filter.push(["==", ["get", "city"], city]);
-        }
-
-        if (street) {
-          filter.push(["==", ["get", "street"], street]);
-        }
-
-        if (type && id) {
-          filter.push(["==", ["get", "type"], type]);
-          filter.push(["==", ["get", "id"], Number(id)]);
-        }
-
-        if (filter.length > 1) {
-          map.setFilter(
-            "points-outline",
-            filter as maplibregl.FilterSpecification,
-          );
-          map.setLayoutProperty("points-outline", "visibility", "visible");
-        } else {
-          map.setFilter("points-outline", null);
-          map.setLayoutProperty("points-outline", "visibility", "none");
-        }
-      } else {
-        map.setFilter("points-outline", null);
-        map.setLayoutProperty("points-outline", "visibility", "none");
-      }
-    }
-  }, [pathname, map, zoomToSelected]);
-
-  useEffect(() => {
-    const segments = pathname.split("/").map(decodeURIComponent);
-
-    const type = segments[6];
-    const id = segments[7];
-
-    if (type && id) {
-      zoomToSelected(false);
-    }
-  }, [map, zoomToSelected]);
-
-  const handleIdle = useCallback(() => {
-    if (!map) return;
-
-    if (map.getZoom() < 14) {
-      return;
-    }
-
-    const features = map.queryRenderedFeatures({
-      layers: ["points"],
-    });
-
-    if (features.length > 50) {
-      features.splice(50);
-    }
-
-    // features.forEach((feature) => {
-    //   const poi = feature.properties;
-
-    //   const encoded = {
-    //     country: encodeURIComponent(poi.country),
-    //     state: encodeURIComponent(poi.state),
-    //     city: encodeURIComponent(poi.city),
-    //     street: encodeURIComponent(poi.street),
-    //   };
-
-    //   const path = `/poi/${encoded.country}/${encoded.state}/${encoded.city}/${encoded.street}/${poi.type}/${poi.id}`;
-
-    //   router.prefetch(path);
-    // });
-  }, [map]);
+    zoomToSelected(true);
+  }, [zoomToSelected, pathname]);
 
   useEffect(() => {
     if (!map) return;
@@ -179,7 +125,7 @@ export default function ImplemtedMap() {
           features[0].properties;
 
         router.push(
-          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`,
+          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`
         );
       } else {
         router.push("/poi/Nederland?skipZoom=true");
@@ -198,14 +144,12 @@ export default function ImplemtedMap() {
 
     map.on("mouseenter", "points", handleMouseEnter);
     map.on("mouseleave", "points", handleMouseLeave);
-    map.on("idle", handleIdle);
 
     return () => {
       if (map) {
         map.off("click", handleMapClick);
         map.off("mouseenter", "points", handleMouseEnter);
         map.off("mouseleave", "points", handleMouseLeave);
-        map.off("idle", handleIdle);
       }
     };
   }, [map, router]);
