@@ -4,19 +4,6 @@ import { OverlayStyle } from "../style-specification-types";
 
 const PMTILES_URL = process.env.NEXT_PUBLIC_PM_TILES_URL;
 
-const colors = [
-  "hsl(292, 52%, 35%)",
-  "hsl(2, 55%, 48%)",
-  "hsl(176, 97%, 36%)",
-  "hsl(67, 49%, 50%)",
-  "hsl(47, 77%, 63%)",
-  "hsl(18, 98%, 54%)",
-  "hsl(222, 67%, 52%)",
-  "hsl(312, 72%, 46%)",
-  "hsl(202, 58%, 46%)",
-  "hsl(257, 66%, 56%)",
-];
-
 export function getPoisOverylay(filter): OverlayStyle {
   return {
     id: "design",
