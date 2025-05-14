@@ -15,7 +15,7 @@ import { OverlayStyle } from "./style-specification-types";
 export const findLayerInsertionIndex = (
   map: maplibregl.Map,
   overlays: OverlayStyle[],
-  order: number
+  order: number,
 ): string | undefined => {
   const mapLayers = map.getStyle().layers || [];
 
@@ -46,7 +46,7 @@ export const findLayerInsertionIndex = (
 export const addOverlayToMap = (
   map: maplibregl.Map,
   overlays: OverlayStyle[],
-  overlay: OverlayStyle
+  overlay: OverlayStyle,
 ): void => {
   if (overlay.sources) {
     Object.entries(overlay.sources).forEach(([sourceId, source]) => {
@@ -54,7 +54,7 @@ export const addOverlayToMap = (
         if (map.getSource(sourceId)) {
           const sourceUsedByThisOverlay =
             overlay.layers?.some(
-              (l) => "source" in l && l.source === sourceId
+              (l) => "source" in l && l.source === sourceId,
             ) || false;
 
           if (sourceUsedByThisOverlay) {
@@ -113,7 +113,7 @@ export const addOverlayToMap = (
 export const removeOverlayFromMap = (
   map: maplibregl.Map,
   overlays: OverlayStyle[],
-  overlay: OverlayStyle
+  overlay: OverlayStyle,
 ): void => {
   if (overlay.layers) {
     overlay.layers.forEach((layer) => {
@@ -131,7 +131,7 @@ export const removeOverlayFromMap = (
     Object.keys(overlay.sources).forEach((sourceId) => {
       try {
         const isSourceUsedElsewhere = overlays.some(
-          (o) => o.id !== overlay.id && o.sources && sourceId in o.sources
+          (o) => o.id !== overlay.id && o.sources && sourceId in o.sources,
         );
 
         if (!isSourceUsedElsewhere && map.getSource(sourceId)) {
@@ -153,7 +153,7 @@ export const removeOverlayFromMap = (
  */
 export const getAddedOverlays = (
   activeOverlays: OverlayStyle[],
-  overlays: OverlayStyle[]
+  overlays: OverlayStyle[],
 ): OverlayStyle[] => {
   return overlays.filter((o) => !activeOverlays.some((ao) => ao.id === o.id));
 };
@@ -167,7 +167,7 @@ export const getAddedOverlays = (
  */
 export const getRemovedOverlays = (
   activeOverlays: OverlayStyle[],
-  overlays: OverlayStyle[]
+  overlays: OverlayStyle[],
 ): OverlayStyle[] => {
   return activeOverlays.filter((ao) => !overlays.some((o) => o.id === ao.id));
 };
@@ -182,7 +182,7 @@ export const getRemovedOverlays = (
  */
 export const getChangedOverlays = (
   activeOverlays: OverlayStyle[],
-  overlays: OverlayStyle[]
+  overlays: OverlayStyle[],
 ): OverlayStyle[] => {
   return overlays.filter((o) => {
     const activeOverlay = activeOverlays.find((ao) => ao.id === o.id);

@@ -92,13 +92,13 @@ export function Map({ overlays, center, zoom, map, setMap }: MapProps) {
     if (!map || !isStyleLoaded) return;
 
     const sortedOverlays = [...activeOverlays].sort(
-      (a, b) => a.order - b.order
+      (a, b) => a.order - b.order,
     );
 
     sortedOverlays.forEach((overlay) => {
       addOverlayToMap(map, activeOverlays, overlay);
     });
-  }, [map, isStyleLoaded]);
+  }, [map, isStyleLoaded, activeOverlays]);
 
   useEffect(() => {
     if (!map) return;
@@ -147,16 +147,16 @@ export function Map({ overlays, center, zoom, map, setMap }: MapProps) {
 
     if (existingOverlay.sources !== overlay.sources) {
       const removedSources = Object.keys(existingOverlay.sources).filter(
-        (sourceId) => !(sourceId in overlay.sources)
+        (sourceId) => !(sourceId in overlay.sources),
       );
       const addedSources = Object.keys(overlay.sources).filter(
-        (sourceId) => !(sourceId in existingOverlay.sources)
+        (sourceId) => !(sourceId in existingOverlay.sources),
       );
       const changedSources = Object.keys(overlay.sources).filter(
         (sourceId) =>
           sourceId in existingOverlay.sources &&
           sourceId in overlay.sources &&
-          existingOverlay.sources[sourceId] !== overlay.sources[sourceId]
+          existingOverlay.sources[sourceId] !== overlay.sources[sourceId],
       );
       removedSources.forEach((sourceId) => {
         if (map.getSource(sourceId)) {
@@ -200,7 +200,7 @@ export function Map({ overlays, center, zoom, map, setMap }: MapProps) {
     }
 
     setActiveOverlays((prev) =>
-      prev.map((o) => (o.id === overlay.id ? overlay : o))
+      prev.map((o) => (o.id === overlay.id ? overlay : o)),
     );
   };
 

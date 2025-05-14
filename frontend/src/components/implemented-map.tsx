@@ -20,9 +20,6 @@ export default function ImplemtedMap() {
   const [map, setMap] = useState<maplibregl.Map | null>(null);
 
   const PoiStyle = useMemo(() => {
-    const isPoiPath = pathname.startsWith("/poi");
-    if (!isPoiPath) return null;
-
     const segments = pathname.split("/").map(decodeURIComponent);
 
     const country = segments[2];
@@ -61,9 +58,13 @@ export default function ImplemtedMap() {
 
   const overlays = useMemo(() => {
     const overlays = [CartoStyle];
-    if (PoiStyle) {
+
+    const isPoiPath = pathname.startsWith("/poi");
+
+    if (PoiStyle && isPoiPath) {
       overlays.push(PoiStyle);
     }
+
     return overlays;
   }, [PoiStyle]);
 
@@ -96,7 +97,7 @@ export default function ImplemtedMap() {
         maxZoom: 18,
       });
     },
-    [map, pathname, bbox]
+    [map, pathname, bbox],
   );
 
   useEffect(() => {
@@ -125,7 +126,7 @@ export default function ImplemtedMap() {
           features[0].properties;
 
         router.push(
-          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`
+          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`,
         );
       } else {
         router.push("/poi/Nederland?skipZoom=true");
