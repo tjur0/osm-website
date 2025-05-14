@@ -137,7 +137,9 @@ export default function ImplemtedMap() {
       }
     };
 
-    map.on("click", handleMapClick);
+    const handleMapLeave = () => {
+      setClicked(false);
+    };
 
     const handleMouseEnter = () => {
       map.getCanvas().style.cursor = "pointer";
@@ -147,14 +149,17 @@ export default function ImplemtedMap() {
       map.getCanvas().style.cursor = "";
     };
 
+    map.on("click", handleMapClick);
     map.on("mouseenter", "points", handleMouseEnter);
     map.on("mouseleave", "points", handleMouseLeave);
+    map.getCanvas().addEventListener("mouseleave", handleMapLeave);
 
     return () => {
       if (map) {
         map.off("click", handleMapClick);
         map.off("mouseenter", "points", handleMouseEnter);
         map.off("mouseleave", "points", handleMouseLeave);
+        map.getCanvas().removeEventListener("mouseleave", handleMapLeave);
       }
     };
   }, [map, router]);
