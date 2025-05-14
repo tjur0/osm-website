@@ -19,6 +19,8 @@ export default function ImplemtedMap() {
 
   const [map, setMap] = useState<maplibregl.Map | null>(null);
 
+  const [clicked, setClicked] = useState(false);
+
   const PoiStyle = useMemo(() => {
     const segments = pathname.split("/").map(decodeURIComponent);
 
@@ -72,16 +74,7 @@ export default function ImplemtedMap() {
 
   const zoomToSelected = useCallback(
     async (animated: boolean) => {
-      if (!map) return;
-
-      const searchParams = new URLSearchParams(window.location.search);
-      if (searchParams.get("skipZoom") === "true") {
-        searchParams.delete("skipZoom");
-        // router.replace(`${pathname}?${searchParams.toString()}`, undefined);
-        return;
-      }
-
-      if (!bbox) return;
+      if (!map || !bbox) return;
 
       const sidebarwidth = isMobile ? 0 : 500;
       const drawerHeight = isMobile ? 400 : 0;
@@ -97,10 +90,20 @@ export default function ImplemtedMap() {
         maxZoom: 18,
       });
     },
-    [map, pathname, bbox],
+    [map, pathname, bbox]
   );
 
   useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.get("skipZoom") === "true") {
+      searchParams.delete("skipZoom");
+      router.replace(`${pathname}?${searchParams.toString()}`, undefined);
+      return;
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    if (clicked) return;
     zoomToSelected(true);
   }, [zoomToSelected, pathname]);
 
@@ -116,6 +119,7 @@ export default function ImplemtedMap() {
     }) => {
       if (!map.isStyleLoaded()) return;
       if (!map.getLayer("points")) return;
+      setClicked(true);
 
       const features = map.queryRenderedFeatures(e.point, {
         layers: ["points"],
@@ -126,7 +130,7 @@ export default function ImplemtedMap() {
           features[0].properties;
 
         router.push(
-          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`,
+          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`
         );
       } else {
         router.push("/poi/Nederland?skipZoom=true");

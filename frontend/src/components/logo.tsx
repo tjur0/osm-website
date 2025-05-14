@@ -13,7 +13,7 @@ export function Logo() {
     >
       <Image
         className={sizeClass}
-        alt="OpenStreetMap logo"
+        alt="Het logo van OpenStreetMap Nederland"
         width={size}
         height={size}
         src="/OSMNL_Square.svg"

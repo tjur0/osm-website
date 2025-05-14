@@ -8,8 +8,21 @@ const withMDX = mdx({
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "mdx"],
-  outputFileTracingIncludes: {
-    "./": ["**/*.sqlite*"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "commons.wikimedia.org",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
   experimental: {
     useCache: true,
