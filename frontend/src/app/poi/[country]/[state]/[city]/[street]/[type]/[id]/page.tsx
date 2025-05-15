@@ -2,7 +2,11 @@
 
 import { Title } from "@/components/elements/title";
 import BBox from "@/components/map/bbox";
+import FormattedAdres from "@/components/poi/formatted-adres";
+import FormattedEmail from "@/components/poi/formatted-email";
+import FormattedPhone from "@/components/poi/formatted-phone";
 import TagTable from "@/components/poi/tag-table";
+import FormattedWebsite from "@/components/poi/formatted-website";
 import Wiki from "@/components/poi/wiki";
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
 import { Badge } from "@/components/ui/badge";
@@ -106,7 +110,7 @@ export default async function PoiPage({ params }: PoiPageProps) {
         type={type}
         poi={poi}
       />
-      <div className="overflow-auto flex flex-col h-full gap-6">
+      <div className="overflow-auto flex flex-col h-full gap-6 vertical-scroll">
         <div className="flex items-center justify-between w-full">
           <Link
             href={`/poi/${country}/${state}/${city}/${street}`}
@@ -141,7 +145,13 @@ export default async function PoiPage({ params }: PoiPageProps) {
           />
         </div>
 
-        <Wiki poi={poi} />
+        <div>
+          <Wiki poi={poi} />
+          <FormattedAdres poi={poi} />
+          <FormattedWebsite poi={poi} />
+          <FormattedEmail poi={poi} />
+          <FormattedPhone poi={poi} />
+        </div>
         <TagTable poi={poi} />
       </div>
     </>

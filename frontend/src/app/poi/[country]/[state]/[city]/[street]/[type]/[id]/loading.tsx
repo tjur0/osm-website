@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Loading() {
   return (
-    <div className="overflow-auto flex flex-col h-full gap-8 animate-pulse">
+    <div className="overflow-auto flex flex-col h-full gap-8 animate-pulse vertical-scroll">
       <div className="flex items-center justify-between w-full">
         <Link
           href="#"

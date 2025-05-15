@@ -55,7 +55,8 @@ export default function ImplemtedMap() {
       filter.push(["==", ["get", "id"], Number(id)]);
     }
 
-    return getPoisOverylay(filter);
+    // lets only start showing the selection after state has been selected
+    return getPoisOverylay(filter.length > 2 && filter);
   }, [pathname, map]);
 
   const overlays = useMemo(() => {

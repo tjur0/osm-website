@@ -132,4 +132,12 @@
   a * {
     @apply text-primary;
   }
+
+  .horizontal-scroll {
+    @apply pb-4 mb-[-16px];
+  }
+
+  .vertical-scroll {
+    @apply pr-4 mb-[-16px];
+  }
 }

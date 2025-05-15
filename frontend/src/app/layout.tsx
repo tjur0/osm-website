@@ -102,7 +102,9 @@ export default function RootLayout({
                     <div className="h-full flex flex-col gap-4 w-12">
                       <Header />
                     </div>
-                    <div className="overflow-auto w-full">{children}</div>
+                    <div className="overflow-auto w-full vertical-scroll">
+                      {children}
+                    </div>
                   </div>
                 </WindowDrawer>
               </HideOnDesktop>
