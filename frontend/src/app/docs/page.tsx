@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default async function EventsPage() {
-  const docs = getAllMdxFiles();
+  const docs = getAllMdxFiles("docs");
 
   return (
     <div className="flex flex-col gap-4">

@@ -1,12 +1,12 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Metadata } from "next";
 import { mdxComponents } from "@/components/mdx/mdx";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getMdxFile } from "@/lib/getMdxFiles";
 
 interface DocPageProps {
   params: Promise<{
@@ -15,7 +15,7 @@ interface DocPageProps {
 }
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join(process.cwd(), "content"));
+  const files = fs.readdirSync(path.join(process.cwd(), "content", "docs"));
 
   const params = files.map((file) => {
     const slug = file.replace(/\.mdx$/, "");
@@ -36,28 +36,12 @@ export async function generateMetadata({
 
   const slug = decodeURIComponent(raw.slug);
 
-  const { frontmatter } = await getDoc(slug);
+  const { frontmatter } = await getMdxFile(slug, "docs");
 
   return {
     title: frontmatter.title,
     description: frontmatter.description,
     keywords: frontmatter.keywords,
-  };
-}
-
-async function getDoc(slug: string) {
-  const filePath = path.join(process.cwd(), "content", `${slug}.mdx`);
-  const fileContents = fs.readFileSync(filePath, "utf-8");
-
-  const { content, data } = matter(fileContents);
-
-  return {
-    frontmatter: data as {
-      title: string;
-      description: string;
-      keywords: string[];
-    },
-    content,
   };
 }
 
@@ -70,7 +54,7 @@ export default async function DocPage({ params }: DocPageProps) {
     slug: decodeURIComponent(raw.slug),
   };
 
-  const { content } = await getDoc(slug);
+  const { content } = await getMdxFile(slug, "docs");
 
   return (
     <div className="flex flex-col gap-4">

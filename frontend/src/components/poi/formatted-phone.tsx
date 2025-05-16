@@ -34,7 +34,7 @@ export const formatPhoneNumber = (phone: string): string => {
     /(\+?\d{2,3})(\d{3})(\d{3,4})(\d{0,4})/,
     (_match, p1, p2, p3, p4) => {
       return [p1, p2, p3, p4].filter(Boolean).join(" ");
-    }
+    },
   );
 };
 
@@ -45,7 +45,7 @@ export default function FormattedPhone({ poi }: FormattedPhoneProps) {
 
   if (!phone) return null;
 
-  const formattedPhone = formatPhoneNumber(phone);
+  const formattedPhoneNumber = formatPhoneNumber(phone);
 
   return (
     <div className="flex flex-col items-center justify-center gap-2">
@@ -55,14 +55,14 @@ export default function FormattedPhone({ poi }: FormattedPhoneProps) {
             <Phone className="size-4 mt-1" aria-label="phone" />
           </div>
           <Link
-            href={`tel:${formattedPhone.replace(/\s+/g, "")}`}
+            href={`tel:${formattedPhoneNumber.replace(/\s+/g, "")}`}
             aria-label="Telefoonnummer"
             className="whitespace-nowrap"
           >
-            {formattedPhone}
+            {formattedPhoneNumber}
           </Link>
         </div>
-        <CopyString string={formattedPhone} />
+        <CopyString string={formattedPhoneNumber} />
       </div>
     </div>
   );

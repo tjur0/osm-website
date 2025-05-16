@@ -1,6 +1,8 @@
 import { JSX, ReactNode } from "react";
 import { Title } from "@/components/elements/title";
 import Link from "next/link";
+import { ExternalButton } from "../external-button";
+import { DiscordLogoIcon } from "@radix-ui/react-icons";
 
 export function Paragraph({ children }: { children: ReactNode }) {
   return (
@@ -26,4 +28,6 @@ export const mdxComponents = {
     <Paragraph {...props} />
   ),
   a: (props: JSX.IntrinsicElements["a"]) => <A {...props} />,
+  ExternalButton,
+  DiscordLogoIcon,
 };

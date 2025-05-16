@@ -1,6 +1,6 @@
 import { Logo } from "@/components/logo";
 import Link from "next/link";
-import { CalendarSearch, MapPin, ScrollText } from "lucide-react";
+import { BookUser, CalendarSearch, MapPin, ScrollText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
 
@@ -37,6 +37,16 @@ export default function Header() {
             asChild
           >
             <ScrollText className="text-gray-200" />
+          </Button>
+        </Link>
+        <Link href={"/contact"} className="size-12">
+          <Button
+            variant="ghost"
+            className="size-12 p-3"
+            aria-label="Documentatie"
+            asChild
+          >
+            <BookUser className="text-gray-200" />
           </Button>
         </Link>
       </div>

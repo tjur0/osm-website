@@ -11,13 +11,13 @@ import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 export const metadata: Metadata = {
-  title: "OpenStreetMap Nederland",
+  title: "OpenStreetMap Nederland Contact",
   description:
-    "OpenStreetMap Nederland is een project dat zich richt op het verzamelen, bewerken en beschikbaar stellen van vrije geografische gegevens. Zie op deze site alle punten van interesse in Nederland.",
-  keywords: ["OpenStreetMap Nederland", "OSM", "Kaart", "Geografie"],
+    "OpenStreetMap Nederland Contact, informatie over het project en de mensen erachter.",
+  keywords: ["OpenStreetMap Nederland", "OSM", "Contact", "Informatie"],
 };
 
-export default async function Home() {
+export default async function About() {
   const bbox = await getBBox({
     country: "Nederland",
   });
@@ -25,7 +25,7 @@ export default async function Home() {
   return (
     <>
       <BBox bbox={bbox} />
-      <LayoutSettingOverride key="Home" rounded={false} />
+      <LayoutSettingOverride key="About" rounded={false} />
 
       <HideOnDesktop>
         <Content />
@@ -45,7 +45,7 @@ export default async function Home() {
 }
 
 async function Content() {
-  const { content } = await getMdxFile("home");
+  const { content } = await getMdxFile("contact");
 
   return (
     <div className="flex flex-col gap-4 justify-between h-full">
