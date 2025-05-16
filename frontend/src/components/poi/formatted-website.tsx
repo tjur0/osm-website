@@ -1,5 +1,5 @@
 "use client";
-
+import { isUrl } from "valid-url-ts";
 import Link from "next/link";
 import { Globe } from "lucide-react";
 import CopyString from "./copy-string";
@@ -9,11 +9,6 @@ interface FormattedWebsiteProps {
     tags: Record<string, string>;
   };
 }
-
-export const isValidUrl = (url: string): boolean => {
-  const pattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
-  return pattern.test(url);
-};
 
 export const getDomainFromUrl = (url: string): string => {
   const urlObj = new URL(url);
@@ -28,7 +23,22 @@ export default function FormattedWebsite({ poi }: FormattedWebsiteProps) {
 
   const websiteUrl = tags["website"] || tags["url"] || tags["contact:website"];
 
-  if (!isValidUrl(websiteUrl)) return null;
+  if (!isUrl(websiteUrl)) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex w-full p-2 justify-between items-center gap-2">
+          <div className="flex items-center gap-2 whitespace-nowrap overflow-auto horizontal-scroll text-red-600 dark:text-red-400">
+            <div className="flex items-center mx-0.5">
+              <Globe className="size-4 mt-1" />
+            </div>
+
+            {websiteUrl}
+          </div>
+          <CopyString string={websiteUrl} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center justify-center gap-2">
