@@ -12,12 +12,14 @@ export default function Header() {
         <Link href={"/poi/Nederland"} className="size-12">
           <Button
             variant="ghost"
-            className="size-12 p-3"
+            className="size-12"
             aria-label="Punten van interesse"
             asChild
           >
-            <MapPin className="text-gray-200" />
-            <span className="sr-only">Punten van interesse</span>
+            <div className="size-12 p-3">
+              <MapPin className="text-gray-200 size-6" />
+              <span className="sr-only">Punten van interesse</span>
+            </div>
           </Button>
         </Link>
         <Link href={"/events"} className="size-12">
@@ -27,8 +29,10 @@ export default function Header() {
             aria-label="Evenementen"
             asChild
           >
-            <CalendarSearch className="text-gray-200" />
-            <span className="sr-only">Evenementen</span>
+            <div className="size-12 p-3">
+              <CalendarSearch className="text-gray-200 size-6" />
+              <span className="sr-only">Evenementen</span>
+            </div>
           </Button>
         </Link>
         <Link href={"/docs"} className="size-12">
@@ -38,8 +42,10 @@ export default function Header() {
             aria-label="Documentatie"
             asChild
           >
-            <ScrollText className="text-gray-200" />
-            <span className="sr-only">Documentatie</span>
+            <div className="size-12 p-3">
+              <ScrollText className="text-gray-200 size-6" />
+              <span className="sr-only">Documentatie</span>
+            </div>
           </Button>
         </Link>
         <Link href={"/contact"} className="size-12">
@@ -49,8 +55,10 @@ export default function Header() {
             aria-label="Contact"
             asChild
           >
-            <BookUser className="text-gray-200" />
-            <span className="sr-only">Contact</span>
+            <div className="size-12 p-3">
+              <BookUser className="text-gray-200 size-6" />
+              <span className="sr-only">Contact</span>
+            </div>
           </Button>
         </Link>
       </div>
