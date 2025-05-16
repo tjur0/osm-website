@@ -17,6 +17,7 @@ export default function Header() {
             asChild
           >
             <MapPin className="text-gray-200" />
+            <span className="sr-only">Punten van interesse</span>
           </Button>
         </Link>
         <Link href={"/events"} className="size-12">
@@ -27,6 +28,7 @@ export default function Header() {
             asChild
           >
             <CalendarSearch className="text-gray-200" />
+            <span className="sr-only">Evenementen</span>
           </Button>
         </Link>
         <Link href={"/docs"} className="size-12">
@@ -37,16 +39,18 @@ export default function Header() {
             asChild
           >
             <ScrollText className="text-gray-200" />
+            <span className="sr-only">Documentatie</span>
           </Button>
         </Link>
         <Link href={"/contact"} className="size-12">
           <Button
             variant="ghost"
             className="size-12 p-3"
-            aria-label="Documentatie"
+            aria-label="Contact"
             asChild
           >
             <BookUser className="text-gray-200" />
+            <span className="sr-only">Contact</span>
           </Button>
         </Link>
       </div>

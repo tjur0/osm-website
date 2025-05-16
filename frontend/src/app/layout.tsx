@@ -67,10 +67,7 @@ export default function RootLayout({
           content="/favicon/browserconfig.xml"
         />
         <meta name="theme-color" content="#ffffff" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
           defer
           src="https://cloud.umami.is/script.js"
