@@ -1,5 +1,3 @@
-"use cache";
-
 import { Title } from "@/components/elements/title";
 import BBox from "@/components/map/bbox";
 import FormattedAdres from "@/components/poi/formatted-adres";

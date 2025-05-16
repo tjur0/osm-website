@@ -1,4 +1,3 @@
-"use cache";
 import { Title } from "@/components/elements/title";
 import BBox from "@/components/map/bbox";
 import PoiCard from "@/components/poi/poi-card";
