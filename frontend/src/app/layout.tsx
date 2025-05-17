@@ -11,6 +11,7 @@ import WindowDrawer from "@/components/elements/window-drawer";
 import HideOnMobile from "@/components/wrappers/hide-on-mobile";
 import HideOnDesktop from "@/components/wrappers/hide-on-desktop";
 import { BBoxProvider } from "@/providers/bbox-provider";
+import { UmamiAnalyticsProvider } from "@/providers/umami-analytics-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,58 +69,56 @@ export default function RootLayout({
         />
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="1851f20d-2dc9-4192-ba6f-ec5cc26abe91"
-        ></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-[100dvh] w-screen overflow-hidden`}
       >
-        {/* <Analytics />
-        <SpeedInsights /> */}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
+        <UmamiAnalyticsProvider
+          src="https://cloud.umami.is/script.js"
+          websiteId="1851f20d-2dc9-4192-ba6f-ec5cc26abe91"
         >
-          <BBoxProvider>
-            <LayoutSettingsProvider>
-              <LayoutSettingOverride key="RootLayout" rounded={true} />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <BBoxProvider>
+              <LayoutSettingsProvider>
+                <LayoutSettingOverride key="RootLayout" rounded={true} />
 
-              <div className="absolute top-0 left-0 w-full h-[100dvh] z-0">
-                <ImplemtedMap />
-              </div>
-
-              <HideOnDesktop>
-                <WindowDrawer>
-                  <div className="flex h-full gap-8">
-                    <div className="h-full flex flex-col gap-4 w-12">
-                      <Header />
-                    </div>
-                    <div className="overflow-auto w-full vertical-scroll">
-                      {children}
-                    </div>
-                  </div>
-                </WindowDrawer>
-              </HideOnDesktop>
-
-              <HideOnMobile>
-                <div className="absolute z-10 flex h-screen p-6">
-                  <WindowWithDynamicRounding
-                    dynamicRoundingClassName="rounded-r-none"
-                    padding={4}
-                  >
-                    <Header />
-                  </WindowWithDynamicRounding>
-                  {children}
+                <div className="absolute top-0 left-0 w-full h-[100dvh] z-0">
+                  <ImplemtedMap />
                 </div>
-              </HideOnMobile>
-            </LayoutSettingsProvider>
-          </BBoxProvider>
-        </ThemeProvider>
+
+                <HideOnDesktop>
+                  <WindowDrawer>
+                    <div className="flex h-full gap-8">
+                      <div className="h-full flex flex-col gap-4 w-12">
+                        <Header />
+                      </div>
+                      <div className="overflow-auto w-full vertical-scroll">
+                        {children}
+                      </div>
+                    </div>
+                  </WindowDrawer>
+                </HideOnDesktop>
+
+                <HideOnMobile>
+                  <div className="absolute z-10 flex h-screen p-6">
+                    <WindowWithDynamicRounding
+                      dynamicRoundingClassName="rounded-r-none"
+                      padding={4}
+                    >
+                      <Header />
+                    </WindowWithDynamicRounding>
+                    {children}
+                  </div>
+                </HideOnMobile>
+              </LayoutSettingsProvider>
+            </BBoxProvider>
+          </ThemeProvider>
+        </UmamiAnalyticsProvider>
       </body>
     </html>
   );
