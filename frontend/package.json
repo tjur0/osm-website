@@ -38,8 +38,7 @@
     "tailwind-merge": "^3.3.0",
     "tw-animate-css": "^1.2.7",
     "umami-analytics-next": "^1.0.1",
-    "valid-url-ts": "^1.0.4",
-    "vaul": "^1.1.2"
+    "valid-url-ts": "^1.0.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -29,11 +29,11 @@ export default function FormattedAdres({ poi }: AdresLinkProps) {
   return (
     <div className="flex flex-col items-center justify-center gap-2">
       <div className="flex w-full p-2 justify-between items-center gap-2">
-        <div className="flex items-center gap-2 overflow-auto horizontal-scroll">
+        <div className="flex items-center gap-2 overflow-x-scroll w-full horizontal-scroll">
           <div className="flex items-center mx-0.5">
             <MapPinHouse className="size-4 mt-1" aria-label="Adres" />
           </div>
-          <span className="whitespace-nowrap">{adres}</span>
+          <span className="whitespace-nowrap w-0">{adres}</span>
         </div>
         <CopyString string={adres} />
       </div>

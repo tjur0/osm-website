@@ -109,7 +109,7 @@ export default async function PoiPage({ params }: PoiPageProps) {
         type={type}
         poi={poi}
       />
-      <div className="overflow-auto flex flex-col h-full gap-6 vertical-scroll">
+      <div className="md:overflow-auto flex flex-col h-full gap-6 vertical-scroll">
         <div className="flex items-center justify-between w-full">
           <Link
             href={`/poi/${country}/${state}/${city}/${street}`}
@@ -141,18 +141,25 @@ export default async function PoiPage({ params }: PoiPageProps) {
                 ? poi.tags?.["name:suffix"]
                 : `${poi.city} ${poi.street}`
             }
-            actions={<Opinion poi={poi} />}
           />
         </div>
 
         <div>
           <Wiki poi={poi} />
           <FormattedAdres poi={poi} />
-          <FormattedWebsite poi={poi} />
-          <FormattedEmail poi={poi} />
-          <FormattedPhone poi={poi} />
+          <div className="flex flex-col gap-4">
+            <FormattedWebsite poi={poi} />
+            <FormattedEmail poi={poi} />
+            <FormattedPhone poi={poi} />
+          </div>
         </div>
-        <TagTable poi={poi} />
+
+        <Opinion poi={poi} />
+
+        <div className="hidden md:block">
+          <Title size="h2" title="Tags" />
+          <TagTable poi={poi} />
+        </div>
       </div>
     </>
   );

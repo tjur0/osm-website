@@ -35,7 +35,7 @@ export default async function PoiIndexPage() {
     <div className="flex flex-col gap-4">
       <BBox bbox={bbox} />
 
-      <Link href={`/`} aria-label="Terug naar de homepage">
+      <Link href={`/`} aria-label="Terug naar de homepagina">
         <ArrowLeft />
       </Link>
 

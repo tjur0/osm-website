@@ -49,37 +49,43 @@ export default function Opinion({ poi }: OpinionProps) {
   };
 
   return (
-    <div className="flex gap-2">
-      <Button
-        variant="ghost"
-        className={cn(
-          "size-8",
-          userOpinion === "like"
-            ? "bg-green-400 dark:bg-green-800 text-white"
-            : ""
-        )}
-        onClick={() => handleClick("like")}
-        disabled={!!userOpinion}
-        aria-pressed={userOpinion === "like"}
-      >
-        <ThumbsUp className="size-4" />
-        <span className="sr-only">Vind ik leuk</span>
-      </Button>
-      <Button
-        variant="ghost"
-        className={cn(
-          "size-8",
-          userOpinion === "dislike"
-            ? "bg-red-400 dark:bg-red-800 text-white"
-            : ""
-        )}
-        onClick={() => handleClick("dislike")}
-        disabled={!!userOpinion}
-        aria-pressed={userOpinion === "dislike"}
-      >
-        <ThumbsDown className="size-4" />
-        <span className="sr-only">Vind ik niet leuk</span>
-      </Button>
+    <div className="flex justify-between">
+      <div className="flex justify-center items-center">
+        <span>Klopt de infomatie?</span>
+      </div>
+
+      <div className="flex gap-2">
+        <Button
+          variant="ghost"
+          className={cn(
+            "size-8",
+            userOpinion === "like"
+              ? "bg-green-400 dark:bg-green-800 text-white"
+              : ""
+          )}
+          onClick={() => handleClick("like")}
+          disabled={!!userOpinion}
+          aria-pressed={userOpinion === "like"}
+        >
+          <ThumbsUp className="size-4" />
+          <span className="sr-only">Vind ik leuk</span>
+        </Button>
+        <Button
+          variant="ghost"
+          className={cn(
+            "size-8",
+            userOpinion === "dislike"
+              ? "bg-red-400 dark:bg-red-800 text-white"
+              : ""
+          )}
+          onClick={() => handleClick("dislike")}
+          disabled={!!userOpinion}
+          aria-pressed={userOpinion === "dislike"}
+        >
+          <ThumbsDown className="size-4" />
+          <span className="sr-only">Vind ik niet leuk</span>
+        </Button>
+      </div>
     </div>
   );
 }

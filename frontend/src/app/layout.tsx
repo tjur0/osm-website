@@ -3,15 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ImplemtedMap from "@/components/implemented-map";
 import Header from "@/components/header/header";
-import WindowWithDynamicRounding from "@/components/elements/window-with-dynamic-rounding";
-import { LayoutSettingsProvider } from "@/contexts/layout-settings-context";
-import LayoutSettingOverride from "@/components/elements/layout-setting-override";
 import { ThemeProvider } from "@/providers/theme-provider";
-import WindowDrawer from "@/components/elements/window-drawer";
-import HideOnMobile from "@/components/wrappers/hide-on-mobile";
-import HideOnDesktop from "@/components/wrappers/hide-on-desktop";
 import { BBoxProvider } from "@/providers/bbox-provider";
 import { UmamiAnalyticsProvider } from "@/providers/umami-analytics-provider";
+import { Window } from "@/components/elements/window";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,7 +66,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-[100dvh] w-screen overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen md:overflow-hidden`}
       >
         <UmamiAnalyticsProvider
           src="https://cloud.umami.is/script.js"
@@ -84,38 +79,29 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <BBoxProvider>
-              <LayoutSettingsProvider>
-                <LayoutSettingOverride key="RootLayout" rounded={true} />
-
-                <div className="absolute top-0 left-0 w-full h-[100dvh] z-0">
+              <div className="md:absolute top-0 left-0 w-full h-[70dvh] md:h-[100dvh] z-0">
+                <div className="fixed md:absolute w-full h-[100dvh] md:h-[100dvh]">
                   <ImplemtedMap />
                 </div>
+              </div>
 
-                <HideOnDesktop>
-                  <WindowDrawer>
-                    <div className="flex h-full gap-8">
-                      <div className="h-full flex flex-col gap-4 w-12">
-                        <Header />
-                      </div>
-                      <div className="overflow-auto w-full vertical-scroll">
-                        {children}
-                      </div>
-                    </div>
-                  </WindowDrawer>
-                </HideOnDesktop>
-
-                <HideOnMobile>
-                  <div className="absolute z-10 flex h-screen p-6">
-                    <WindowWithDynamicRounding
-                      dynamicRoundingClassName="rounded-r-none"
-                      padding={4}
-                    >
+              <div className="absolute z-10 flex h-screen md:p-6">
+                <Window className="md:w-[500px] w-screen min-h-[100dvh] md:min-h-[500px] h-fit md:h-full justify-start">
+                  <div
+                    aria-hidden
+                    className="md:hidden mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-700 dark:bg-gray-300 my-4"
+                  />
+                  <div className="flex gap-4 w-full h-full">
+                    <div className="min-w-[60px] h-full flex flex-col justify-start md:justify-between gap-2">
                       <Header />
-                    </WindowWithDynamicRounding>
-                    {children}
+                    </div>
+                    {/* <div className="bg-gray-200 opacity-30 w-[2px] h-full" /> */}
+                    <div className="md:p-4 flex flex-col h-full md:overflow-y-auto w-full">
+                      {children}
+                    </div>
                   </div>
-                </HideOnMobile>
-              </LayoutSettingsProvider>
+                </Window>
+              </div>
             </BBoxProvider>
           </ThemeProvider>
         </UmamiAnalyticsProvider>
