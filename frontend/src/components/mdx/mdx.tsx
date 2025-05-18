@@ -2,7 +2,7 @@ import { JSX, ReactNode } from "react";
 import { Title } from "@/components/elements/title";
 import Link from "next/link";
 import { ExternalButton } from "../external-button";
-import { DiscordLogoIcon } from "@radix-ui/react-icons";
+import { SiDiscord, SiDiscourse } from "@icons-pack/react-simple-icons";
 
 export function Paragraph({ children }: { children: ReactNode }) {
   return (
@@ -29,5 +29,6 @@ export const mdxComponents = {
   ),
   a: (props: JSX.IntrinsicElements["a"]) => <A {...props} />,
   ExternalButton,
-  DiscordLogoIcon,
+  SiDiscord,
+  SiDiscourse,
 };
