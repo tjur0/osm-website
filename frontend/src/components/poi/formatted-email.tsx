@@ -1,5 +1,3 @@
-"use client";
-
 import { Mail } from "lucide-react";
 import Link from "next/link";
 import CopyString from "./copy-string";

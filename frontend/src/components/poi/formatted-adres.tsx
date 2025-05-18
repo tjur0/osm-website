@@ -1,5 +1,3 @@
-"use client";
-
 import { MapPinHouse } from "lucide-react";
 import CopyString from "./copy-string";
 

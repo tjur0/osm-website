@@ -51,7 +51,7 @@ export default function Opinion({ poi }: OpinionProps) {
   return (
     <div className="flex justify-between">
       <div className="flex justify-center items-center">
-        <span>Klopt de infomatie?</span>
+        <span>Bent uw geholpen?</span>
       </div>
 
       <div className="flex gap-2">

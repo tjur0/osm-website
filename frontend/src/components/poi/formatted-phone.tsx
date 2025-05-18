@@ -1,5 +1,3 @@
-"use client";
-
 import { Phone } from "lucide-react";
 import CopyString from "./copy-string";
 import Link from "next/link";

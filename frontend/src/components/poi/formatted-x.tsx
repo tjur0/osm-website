@@ -1,4 +1,3 @@
-"use client";
 import { isUrl } from "valid-url-ts";
 import Link from "next/link";
 import CopyString from "./copy-string";
