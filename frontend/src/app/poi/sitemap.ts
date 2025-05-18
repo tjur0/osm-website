@@ -1,7 +1,7 @@
 import { nile } from "@/lib/db";
 import { MetadataRoute } from "next";
 
-const PAGE_SIZE = 50000;
+const PAGE_SIZE = 40000;
 
 export async function generateSitemaps() {
   const response = await nile.db.query("SELECT COUNT(*) as count FROM pois");

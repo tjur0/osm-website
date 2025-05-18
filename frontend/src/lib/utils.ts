@@ -52,3 +52,8 @@ export function uniqueCaseInsensitive(arr: (string | undefined)[]) {
 
   return result;
 }
+
+export const getPageFromUrl = (url: string): string => {
+  const urlObj = new URL(url);
+  return urlObj.pathname.split("/").pop() || "";
+};

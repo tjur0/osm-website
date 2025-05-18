@@ -34,7 +34,7 @@ export const formatPhoneNumber = (phone: string): string => {
     /(\+?\d{2,3})(\d{3})(\d{3,4})(\d{0,4})/,
     (_match, p1, p2, p3, p4) => {
       return [p1, p2, p3, p4].filter(Boolean).join(" ");
-    }
+    },
   );
 };
 
@@ -54,7 +54,7 @@ export default function FormattedPhone({ poi }: FormattedPhoneProps) {
           <div className="flex items-center mx-0.5">
             <Phone className="size-4 mt-1" aria-label="phone" />
           </div>
-          
+
           <Link
             href={`tel:${formattedPhoneNumber.replace(/\s+/g, "")}`}
             aria-label="Telefoonnummer"

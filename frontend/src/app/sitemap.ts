@@ -1,7 +1,7 @@
 import { nile } from "@/lib/db";
 import { MetadataRoute } from "next";
 
-const PAGE_SIZE = 50000;
+const PAGE_SIZE = 40000;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (!process.env.BASE_URL) throw new Error("BASE_URL is not defined");

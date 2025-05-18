@@ -16,6 +16,9 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Opinion from "@/components/poi/opinion";
+import FormattedFacebook from "@/components/poi/formatted-facebook";
+import FormattedInstagram from "@/components/poi/formatted-instagram";
+import FormattedX from "@/components/poi/formatted-x";
 
 // export async function generateStaticParams() {
 //   const response = await nile.db.query(
@@ -52,7 +55,7 @@ export async function generateMetadata({ params }: PoiPageProps) {
 
   const response = await nile.db.query(
     `SELECT name, "typeName", city, street FROM pois WHERE id = $1 AND type = $2`,
-    [id, type]
+    [id, type],
   );
   const poi = response.rows[0] as Poi;
 
@@ -87,7 +90,7 @@ export default async function PoiPage({ params }: PoiPageProps) {
 
   const response = await nile.db.query(
     `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.id = $1 AND p.type = $2`,
-    [id, type]
+    [id, type],
   );
 
   const poi = response.rows[0] as Poi;
@@ -147,11 +150,12 @@ export default async function PoiPage({ params }: PoiPageProps) {
         <div>
           <Wiki poi={poi} />
           <FormattedAdres poi={poi} />
-          <div className="flex flex-col gap-4">
-            <FormattedWebsite poi={poi} />
-            <FormattedEmail poi={poi} />
-            <FormattedPhone poi={poi} />
-          </div>
+          <FormattedWebsite poi={poi} />
+          <FormattedEmail poi={poi} />
+          <FormattedPhone poi={poi} />
+          <FormattedFacebook poi={poi} />
+          <FormattedInstagram poi={poi} />
+          <FormattedX poi={poi} />
         </div>
 
         <Opinion poi={poi} />
