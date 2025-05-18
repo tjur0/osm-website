@@ -105,7 +105,7 @@ export default function ImplemtedMap() {
 
   useEffect(() => {
     if (clicked) return;
-    zoomToSelected(true);
+    zoomToSelected(false);
   }, [zoomToSelected, pathname]);
 
   useEffect(() => {
