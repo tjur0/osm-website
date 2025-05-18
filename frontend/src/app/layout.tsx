@@ -80,13 +80,13 @@ export default function RootLayout({
           >
             <BBoxProvider>
               <div className="md:absolute top-0 left-0 w-full h-[70dvh] md:h-[100dvh] z-0">
-                <div className="fixed md:absolute w-full h-[100dvh] md:h-[100dvh]">
+                <div className="fixed md:absolute w-full h-[100lvh] md:h-[100dvh]">
                   <ImplemtedMap />
                 </div>
               </div>
 
               <div className="absolute z-10 flex h-screen md:p-6">
-                <Window className="md:w-[500px] w-screen min-h-[100dvh] md:min-h-[500px] h-fit md:h-full justify-start">
+                <Window className="md:w-[500px] w-screen min-h-[100lvh] md:min-h-[500px] h-fit md:h-full justify-start">
                   <div
                     aria-hidden
                     className="md:hidden mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-700 dark:bg-gray-300 my-4"
