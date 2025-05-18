@@ -7,6 +7,7 @@ const withMDX = mdx({
 });
 
 const nextConfig: NextConfig = {
+  productionBrowserSourceMaps: true,
   pageExtensions: ["ts", "tsx", "js", "jsx", "mdx"],
   images: {
     remotePatterns: [

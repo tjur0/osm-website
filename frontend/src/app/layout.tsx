@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { BBoxProvider } from "@/providers/bbox-provider";
 import { UmamiAnalyticsProvider } from "@/providers/umami-analytics-provider";
 import { Window } from "@/components/elements/window";
+import SkipLink from "@/components/elements/skip-link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -79,6 +80,8 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <BBoxProvider>
+              <SkipLink />
+
               <div className="md:absolute top-0 left-0 w-full h-[70dvh] md:h-[100dvh] z-0">
                 <div className="fixed md:absolute w-full h-[100lvh] md:h-[100dvh]">
                   <ImplemtedMap />
@@ -96,9 +99,14 @@ export default function RootLayout({
                       <Header />
                     </div>
                     {/* <div className="bg-gray-200 opacity-30 w-[2px] h-full" /> */}
-                    <div className="md:p-4 flex flex-col h-full md:overflow-y-auto w-full">
+                    <main
+                      tabIndex={-1}
+                      id="main"
+                      aria-label="Hoofdvenster"
+                      className="md:p-4 flex flex-col h-full md:overflow-y-auto w-full"
+                    >
                       {children}
-                    </div>
+                    </main>
                   </div>
                 </Window>
               </div>

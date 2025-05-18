@@ -165,17 +165,34 @@ export default function ImplemtedMap() {
     };
   }, [map, router]);
 
+  const [focused, setFocused] = useState(false);
+
   return (
     <>
-      <Map overlays={overlays} map={map} setMap={setMap} />
+      <Map
+        overlays={overlays}
+        map={map}
+        setMap={setMap}
+        setFocused={setFocused}
+      />
 
-      <Link href="https://www.openstreetmap.org/copyright" target="_blank">
-        <div className="right-0 bottom-0 absolute z-10 m-2 p-1 pt-0 px-3 rounded-full bg-gradient-to-r from-green-500 to-orange-500">
-          <span className="text-md text-white font-bold select-none text-xs">
-            Mogelijk gemaakt door OpenStreetMap data
-          </span>
-        </div>
-      </Link>
+      <div className="right-0 bottom-0 absolute z-10 m-2 flex flex-col gap-2">
+        {focused && (
+          <div className="p-1 pt-0 px-3 rounded-full bg-gradient-to-r from-red-500 to-purple-500">
+            <span className="text-md text-white font-bold select-none text-xs">
+              Kaart geselecteerd
+            </span>
+          </div>
+        )}
+
+        <Link href="https://www.openstreetmap.org/copyright" target="_blank">
+          <div className="z-10 p-1 pt-0 px-3 rounded-full bg-gradient-to-r from-green-500 to-orange-500">
+            <span className="text-md text-white font-bold select-none text-xs">
+              Mogelijk gemaakt door OpenStreetMap data
+            </span>
+          </div>
+        </Link>
+      </div>
     </>
   );
 }

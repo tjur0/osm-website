@@ -24,9 +24,17 @@ interface MapProps {
   zoom?: number;
   map: maplibregl.Map | null;
   setMap: React.Dispatch<React.SetStateAction<maplibregl.Map | null>>;
+  setFocused: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function Map({ overlays, center, zoom, map, setMap }: MapProps) {
+export function Map({
+  overlays,
+  center,
+  zoom,
+  map,
+  setMap,
+  setFocused,
+}: MapProps) {
   const isLoaded = useRef(false);
   const mapContainer = useRef(null);
   const [activeOverlays, setActiveOverlays] = useState<OverlayStyle[]>([]);
@@ -57,6 +65,13 @@ export function Map({ overlays, center, zoom, map, setMap }: MapProps) {
       center: center || [0, 0],
       zoom: zoom || 2,
     });
+
+    const maplibreglCtrlBottomRight = document.querySelector(
+      ".maplibregl-ctrl-bottom-right",
+    );
+    if (maplibreglCtrlBottomRight) {
+      maplibreglCtrlBottomRight.remove();
+    }
 
     map.setPitch(0);
     map.dragRotate.disable();
@@ -217,7 +232,12 @@ export function Map({ overlays, center, zoom, map, setMap }: MapProps) {
 
   return (
     <div className="map-wrap h-full w-full">
-      <div ref={mapContainer} className="map h-full" />
+      <div
+        ref={mapContainer}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        className="map h-full"
+      />
     </div>
   );
 }
