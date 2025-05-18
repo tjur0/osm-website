@@ -35,6 +35,10 @@ export default function RootLayout({
     <html lang="nl" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="apple-mobile-web-app-title"
+          content="OpenStreetMap Nederland"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen md:overflow-hidden`}
