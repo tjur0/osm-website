@@ -12,8 +12,9 @@ export default async function PoiCard({ poi }: PoiCardProps) {
   return (
     <Link
       href={`/poi/${poi.country}/${poi.state}/${poi.city}/${poi.street}/${poi.type}/${poi.id}`}
+      className="relative flex transition-transform duration-100 ease-in-out hover:scale-105"
     >
-      <Card>
+      <Card className="w-full">
         <Title title={getName(poi, false)} subTitle={poi.feature} size="h2" />
       </Card>
     </Link>
