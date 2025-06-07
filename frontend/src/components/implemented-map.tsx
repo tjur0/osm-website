@@ -8,9 +8,9 @@ import maplibregl, {
 } from "maplibre-gl";
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
-import CartoStyle from "./map/overlayStyle/carto";
 import { useBBox } from "@/providers/bbox-provider";
 import { getPoisOverylay } from "./map/overlayStyle/poi";
+import ColorfulStyle from "./map/overlayStyle/colorful";
 
 export default function ImplemtedMap() {
   const pathname = usePathname();
@@ -60,7 +60,7 @@ export default function ImplemtedMap() {
   }, [pathname, map]);
 
   const overlays = useMemo(() => {
-    const overlays = [CartoStyle];
+    const overlays = [ColorfulStyle];
 
     const isPoiPath = pathname.startsWith("/poi");
 
@@ -91,7 +91,7 @@ export default function ImplemtedMap() {
         maxZoom: 18,
       });
     },
-    [map, pathname, bbox],
+    [map, pathname, bbox]
   );
 
   useEffect(() => {
@@ -131,7 +131,7 @@ export default function ImplemtedMap() {
           features[0].properties;
 
         router.push(
-          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`,
+          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`
         );
       } else {
         router.push("/poi/Nederland?skipZoom=true");

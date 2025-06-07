@@ -1075,6 +1075,36 @@ const ColorfulStyle: OverlayStyle = {
     },
     {
       source: "versatiles-shortbread",
+      id: "tunnel-street-busway:outline",
+      type: "line",
+      "source-layer": "streets",
+      filter: ["all", ["==", "kind", "busway"], ["==", "tunnel", true]],
+      paint: {
+        "line-color": "#ff14f1",
+        "line-width": {
+          stops: [
+            [12, 2],
+            [14, 3],
+            [16, 6],
+            [18, 26],
+            [19, 64],
+            [20, 128],
+          ],
+        },
+        "line-opacity": {
+          stops: [
+            [12, 0],
+            [13, 1],
+          ],
+        },
+      },
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+    },
+    {
+      source: "versatiles-shortbread",
       id: "tunnel-street-tertiary-link:outline",
       type: "line",
       "source-layer": "streets",
@@ -1676,6 +1706,36 @@ const ColorfulStyle: OverlayStyle = {
     },
     {
       source: "versatiles-shortbread",
+      id: "tunnel-street-busway",
+      type: "line",
+      "source-layer": "streets",
+      filter: ["all", ["==", "kind", "busway"], ["==", "tunnel", true]],
+      paint: {
+        "line-color": "#ffccfc",
+        "line-width": {
+          stops: [
+            [12, 1],
+            [14, 2],
+            [16, 5],
+            [18, 24],
+            [19, 60],
+            [20, 120],
+          ],
+        },
+        "line-opacity": {
+          stops: [
+            [12, 0],
+            [13, 1],
+          ],
+        },
+      },
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+    },
+    {
+      source: "versatiles-shortbread",
       id: "tunnel-street-track-bicycle",
       type: "line",
       "source-layer": "streets",
@@ -1826,6 +1886,41 @@ const ColorfulStyle: OverlayStyle = {
       filter: [
         "all",
         ["==", "kind", "unclassified"],
+        ["==", "bicycle", "designated"],
+        ["==", "tunnel", true],
+      ],
+      paint: {
+        "line-color": "#eff9ff",
+        "line-width": {
+          stops: [
+            [12, 1],
+            [14, 2],
+            [16, 5],
+            [18, 24],
+            [19, 60],
+            [20, 120],
+          ],
+        },
+        "line-opacity": {
+          stops: [
+            [12, 0],
+            [13, 1],
+          ],
+        },
+      },
+      layout: {
+        "line-join": "round",
+        "line-cap": "butt",
+      },
+    },
+    {
+      source: "versatiles-shortbread",
+      id: "tunnel-street-busway-bicycle",
+      type: "line",
+      "source-layer": "streets",
+      filter: [
+        "all",
+        ["==", "kind", "busway"],
         ["==", "bicycle", "designated"],
         ["==", "tunnel", true],
       ],
@@ -2926,6 +3021,41 @@ const ColorfulStyle: OverlayStyle = {
     },
     {
       source: "versatiles-shortbread",
+      id: "street-busway:outline",
+      type: "line",
+      "source-layer": "streets",
+      filter: [
+        "all",
+        ["==", "kind", "busway"],
+        ["!=", "bridge", true],
+        ["!=", "tunnel", true],
+      ],
+      paint: {
+        "line-color": "#ff70f7",
+        "line-width": {
+          stops: [
+            [12, 2],
+            [14, 3],
+            [16, 6],
+            [18, 26],
+            [19, 64],
+            [20, 128],
+          ],
+        },
+        "line-opacity": {
+          stops: [
+            [12, 0],
+            [13, 1],
+          ],
+        },
+      },
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+    },
+    {
+      source: "versatiles-shortbread",
       id: "street-tertiary-link:outline",
       type: "line",
       "source-layer": "streets",
@@ -3572,6 +3702,41 @@ const ColorfulStyle: OverlayStyle = {
     },
     {
       source: "versatiles-shortbread",
+      id: "street-busway",
+      type: "line",
+      "source-layer": "streets",
+      filter: [
+        "all",
+        ["==", "kind", "busway"],
+        ["!=", "bridge", true],
+        ["!=", "tunnel", true],
+      ],
+      paint: {
+        "line-color": "#ffccfc",
+        "line-width": {
+          stops: [
+            [12, 1],
+            [14, 2],
+            [16, 5],
+            [18, 24],
+            [19, 60],
+            [20, 120],
+          ],
+        },
+        "line-opacity": {
+          stops: [
+            [12, 0],
+            [13, 1],
+          ],
+        },
+      },
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+    },
+    {
+      source: "versatiles-shortbread",
       id: "street-track-bicycle",
       type: "line",
       "source-layer": "streets",
@@ -3727,6 +3892,42 @@ const ColorfulStyle: OverlayStyle = {
       filter: [
         "all",
         ["==", "kind", "unclassified"],
+        ["==", "bicycle", "designated"],
+        ["!=", "bridge", true],
+        ["!=", "tunnel", true],
+      ],
+      paint: {
+        "line-color": "#eff9ff",
+        "line-width": {
+          stops: [
+            [12, 1],
+            [14, 2],
+            [16, 5],
+            [18, 24],
+            [19, 60],
+            [20, 120],
+          ],
+        },
+        "line-opacity": {
+          stops: [
+            [12, 0],
+            [13, 1],
+          ],
+        },
+      },
+      layout: {
+        "line-join": "round",
+        "line-cap": "butt",
+      },
+    },
+    {
+      source: "versatiles-shortbread",
+      id: "street-busway-bicycle",
+      type: "line",
+      "source-layer": "streets",
+      filter: [
+        "all",
+        ["==", "kind", "busway"],
         ["==", "bicycle", "designated"],
         ["!=", "bridge", true],
         ["!=", "tunnel", true],
@@ -4836,6 +5037,36 @@ const ColorfulStyle: OverlayStyle = {
     },
     {
       source: "versatiles-shortbread",
+      id: "bridge-street-busway:outline",
+      type: "line",
+      "source-layer": "streets",
+      filter: ["all", ["==", "kind", "busway"], ["==", "bridge", true]],
+      paint: {
+        "line-color": "#ff14f1",
+        "line-width": {
+          stops: [
+            [12, 2],
+            [14, 3],
+            [16, 6],
+            [18, 26],
+            [19, 64],
+            [20, 128],
+          ],
+        },
+        "line-opacity": {
+          stops: [
+            [12, 0],
+            [13, 1],
+          ],
+        },
+      },
+      layout: {
+        "line-join": "round",
+        "line-cap": "butt",
+      },
+    },
+    {
+      source: "versatiles-shortbread",
       id: "bridge-street-tertiary-link:outline",
       type: "line",
       "source-layer": "streets",
@@ -5401,6 +5632,36 @@ const ColorfulStyle: OverlayStyle = {
       filter: ["all", ["==", "kind", "unclassified"], ["==", "bridge", true]],
       paint: {
         "line-color": "#ffffff",
+        "line-width": {
+          stops: [
+            [12, 1],
+            [14, 2],
+            [16, 5],
+            [18, 24],
+            [19, 60],
+            [20, 120],
+          ],
+        },
+        "line-opacity": {
+          stops: [
+            [12, 0],
+            [13, 1],
+          ],
+        },
+      },
+      layout: {
+        "line-join": "round",
+        "line-cap": "butt",
+      },
+    },
+    {
+      source: "versatiles-shortbread",
+      id: "bridge-street-busway",
+      type: "line",
+      "source-layer": "streets",
+      filter: ["all", ["==", "kind", "busway"], ["==", "bridge", true]],
+      paint: {
+        "line-color": "#ffccfc",
         "line-width": {
           stops: [
             [12, 1],
@@ -7218,6 +7479,33 @@ const ColorfulStyle: OverlayStyle = {
     },
     {
       source: "versatiles-shortbread",
+      id: "label-street-busway",
+      type: "symbol",
+      "source-layer": "street_labels",
+      filter: ["==", "kind", "busway"],
+      layout: {
+        "text-field": "{name}",
+        "text-font": ["noto_sans_regular"],
+        "symbol-placement": "line",
+        "text-anchor": "center",
+        "text-size": {
+          stops: [
+            [12, 10],
+            [15, 13],
+          ],
+        },
+      },
+      paint: {
+        "icon-color": "#333344",
+        "text-color": "#333344",
+        "text-halo-color": "rgba(255, 255, 255, 0.8)",
+        "text-halo-width": 2,
+        "text-halo-blur": 1,
+      },
+      minzoom: 12,
+    },
+    {
+      source: "versatiles-shortbread",
       id: "label-street-tertiary",
       type: "symbol",
       "source-layer": "street_labels",
@@ -7691,6 +7979,7 @@ const ColorfulStyle: OverlayStyle = {
           "secondary",
           "tertiary",
           "unclassified",
+          "busway",
           "residential",
           "living_street",
         ],
@@ -7737,6 +8026,7 @@ const ColorfulStyle: OverlayStyle = {
           "secondary",
           "tertiary",
           "unclassified",
+          "busway",
           "residential",
           "living_street",
         ],
