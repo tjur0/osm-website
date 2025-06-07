@@ -766,7 +766,7 @@ export const features: Feature[] = [
     id: generateFeatureUUID('shop', 'electronics'),
     key: 'shop',
     value: 'electronics',
-    name: 'Electornica winkel',
+    name: 'Elektronica winkel',
 
     pois: [],
   },

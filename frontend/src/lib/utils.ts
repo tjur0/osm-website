@@ -55,5 +55,5 @@ export function uniqueCaseInsensitive(arr: (string | undefined)[]) {
 
 export const getPageFromUrl = (url: string): string => {
   const urlObj = new URL(url);
-  return urlObj.pathname.split("/").pop() || "";
+  return urlObj.pathname.replaceAll("/", "") || "(Naam niet goed geformateerd)";
 };
