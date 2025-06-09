@@ -4,7 +4,7 @@ export function getName(poi: Poi, includePlace = true): string {
   if (!poi.tags) return '';
 
   const name = [
-    poi.tags['name:prefix'] ? poi.tags['name:prefix'] : poi.feature?.name,
+    poi.tags['name:prefix'],
     poi.tags['name'],
     poi.tags['name:suffix'],
     poi.tags['branch'],
@@ -12,5 +12,5 @@ export function getName(poi: Poi, includePlace = true): string {
     includePlace ? poi.street : null,
   ].join(' ');
 
-  return name.trim();
+  return name;
 }

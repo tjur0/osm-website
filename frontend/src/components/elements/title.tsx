@@ -30,7 +30,7 @@ export function Title({
   );
 
   return (
-    <div className="flex items-start md:items:center justify-between space-y-2 flex-col md:flex-row">
+    <div className="flex items-start md:items:center justify-between space-y-2 flex-col md:flex-row gap-1">
       <div>
         <div className="flex items-end gap-1 w-full">
           {size === "h1" && (

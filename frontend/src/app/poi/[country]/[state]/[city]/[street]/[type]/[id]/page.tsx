@@ -7,7 +7,6 @@ import TagTable from "@/components/poi/tag-table";
 import FormattedWebsite from "@/components/poi/formatted-website";
 import Wiki from "@/components/poi/wiki";
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
-import { Badge } from "@/components/ui/badge";
 import { nile } from "@/lib/db";
 import { getBBox } from "@/lib/getBBox";
 import { uniqueCaseInsensitive } from "@/lib/utils";
@@ -19,6 +18,7 @@ import Opinion from "@/components/poi/opinion";
 import FormattedFacebook from "@/components/poi/formatted-facebook";
 import FormattedInstagram from "@/components/poi/formatted-instagram";
 import FormattedX from "@/components/poi/formatted-x";
+import { PoiBadge } from "@/components/poi/poi-badge";
 
 // export async function generateStaticParams() {
 //   const response = await nile.db.query(
@@ -121,11 +121,7 @@ export default async function PoiPage({ params }: PoiPageProps) {
             <ArrowLeft />
           </Link>
           <div className="flex justify-end">
-            <Badge>
-              {poi.tags?.["name:prefix"]
-                ? poi.tags?.["name:prefix"]
-                : `${poi.feature}`}
-            </Badge>
+            <PoiBadge poi={poi} />
           </div>
         </div>
 
