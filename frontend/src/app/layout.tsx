@@ -31,6 +31,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteId = process.env.UMAMI_WEBSITE_ID
+  const scriptUrl = process.env.UMAMI_SCRIPT_URL
+
+  if (!websiteId || !scriptUrl) {
+    throw new Error("env UMAMI_WEBSITE_ID or UMAMI_WEBSITE_ID not set")
+  }
+
   return (
     <html lang="nl" suppressHydrationWarning>
       <head>
@@ -44,8 +51,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen md:overflow-hidden`}
       >
         <UmamiAnalyticsProvider
-          src="https://cloud.umami.is/script.js"
-          websiteId="1851f20d-2dc9-4192-ba6f-ec5cc26abe91"
+          src={scriptUrl}
+          websiteId={websiteId}
         >
           <ThemeProvider
             attribute="class"
