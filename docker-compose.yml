@@ -20,6 +20,13 @@ services:
       timeout: 5s
       retries: 5
 
+  nominatim:
+    image: mediagis/nominatim:5.1
+    environment:
+      - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
+    ports:
+      - "8080:8080"
+
   replication:
     image: replication:v1
     build:
@@ -62,6 +69,6 @@ services:
       - PG_MAINTENANCE_WORK_MEM=4GB
       - OSM2PGSQL_CACHE=40000
       - OSM2PGSQL_NUMPROC=16
-      - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
-      # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
+      # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
+      - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
       - EXTERNAL_DATA_SCRIPT_FLAGS

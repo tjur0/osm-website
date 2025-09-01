@@ -12,9 +12,7 @@ import { TagParsingService } from './tag-parsing/tag-parsing.service';
 @Module({
   imports: [
     TypeOrmModule.forFeature([Poi]),
-    TypeOrmModule.forFeature([Poi], 'osm-poi-index'),
     TypeOrmModule.forFeature([Feature]),
-    TypeOrmModule.forFeature([Feature], 'osm-poi-index'),
   ],
   controllers: [PoiController],
   providers: [

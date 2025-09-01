@@ -6,13 +6,13 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { PoiModule } from './poi/poi.module';
 import { FeatureModule } from './feature/feature.module';
 import typeorm from './config/typeorm';
-import osmPoiIndex from './config/osm-poi-index';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [typeorm, osmPoiIndex],
+      load: [typeorm],
     }),
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
@@ -24,19 +24,7 @@ import osmPoiIndex from './config/osm-poi-index';
         return options;
       },
     }),
-
-    TypeOrmModule.forRootAsync({
-      inject: [ConfigService],
-      name: 'osm-poi-index',
-      useFactory: async (configService: ConfigService) => {
-        const options =
-          configService.get<TypeOrmModuleOptions>('osm-poi-index');
-        if (!options) {
-          throw new Error('Write DB configuration is not defined');
-        }
-        return options;
-      },
-    }),
+    ScheduleModule.forRoot(),
     PoiModule,
     FeatureModule,
   ],

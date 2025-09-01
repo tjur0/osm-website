@@ -11,23 +11,10 @@ export class FeatureService {
     private readonly logger: Logger,
     @InjectRepository(Feature)
     private featureRepository: Repository<Feature>,
-    @InjectRepository(Feature, 'osm-poi-index')
-    private featureRemoteRepository: Repository<Feature>,
   ) {}
 
   async seedFeatures() {
     await this.featureRepository.upsert(features, ['id']);
-  }
-
-  async syncFeaturesToRemote() {
-    const features = await this.featureRepository.find();
-
-    await this.featureRemoteRepository.delete({});
-    await this.featureRemoteRepository.save(features);
-
-    this.logger.log(
-      `Synchronized ${features.length} features to remote database`,
-    );
   }
 
   async calculateImportance() {

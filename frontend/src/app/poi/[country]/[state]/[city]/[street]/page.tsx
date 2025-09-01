@@ -1,7 +1,7 @@
 import { Title } from "@/components/elements/title";
 import BBox from "@/components/map/bbox";
 import PoiCard from "@/components/poi/poi-card";
-import { nile } from "@/lib/db";
+import { pool } from "@/lib/db";
 import { getBBox } from "@/lib/getBBox";
 import { Poi } from "@/types/poi";
 import { ArrowLeft } from "lucide-react";
@@ -9,7 +9,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 // export async function generateStaticParams() {
-//   const response = await nile.db.query(
+//   const response = await nile.query(
 //     "SELECT DISTINCT country, state, city, street FROM pois"
 //   );
 
@@ -62,9 +62,9 @@ export default async function StreetIndexPage({
     street: decodeURIComponent(raw.street),
   };
 
-  const response = await nile.db.query(
+  const response = await pool.query(
     `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.country = $1 AND p.state = $2 AND p.city = $3 AND p.street = $4 ORDER BY f.importance DESC, p.name ASC`,
-    [country, state, city, street],
+    [country, state, city, street]
   );
 
   const pois = response.rows as Poi[];

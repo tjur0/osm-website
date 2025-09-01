@@ -49,11 +49,17 @@ export class Poi {
     nullable: true,
     onDelete: 'SET NULL',
   })
-  feature?: Feature;
+  feature?: Feature | null;
 
   @Column({ nullable: true })
   name?: string;
 
   @Column({ nullable: true })
   typeName?: string;
+
+  @Column({ type: 'int4' })
+  version: number;
+
+  @Column({ type: 'int4', nullable: true })
+  processedVersion?: number;
 }

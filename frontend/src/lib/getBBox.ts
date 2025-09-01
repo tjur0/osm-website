@@ -1,4 +1,4 @@
-import { nile } from "@/lib/db";
+import { pool } from "@/lib/db";
 
 export async function getBBox(params: {
   country?: string;
@@ -38,11 +38,16 @@ export async function getBBox(params: {
     values.push(typeof id === "string" ? Number(id) : id);
   }
 
+  where.push(`country IS NOT NULL`);
+  where.push(`state IS NOT NULL`);
+  where.push(`city IS NOT NULL`);
+  where.push(`street IS NOT NULL`);
+
   const whereClause = where.length > 0 ? `WHERE ${where.join(" AND ")}` : "";
 
-  const response = await nile.db.query(
+  const response = await pool.query(
     `SELECT MIN(ST_X(point)) AS min_lng, MIN(ST_Y(point)) AS min_lat, MAX(ST_X(point)) AS max_lng, MAX(ST_Y(point)) AS max_lat FROM pois ${whereClause}`,
-    values,
+    values
   );
 
   const { min_lng, min_lat, max_lng, max_lat } = response.rows[0] ?? {};

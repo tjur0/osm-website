@@ -3,6 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Poi } from '../entities/poi.entity';
 import { Feature } from 'src/feature/entities/feature.entity';
+import * as cliProgress from 'cli-progress';
+import * as colors from 'ansi-colors';
 
 @Injectable()
 export class ClassificationService {
@@ -16,11 +18,22 @@ export class ClassificationService {
 
   async classifyPois() {
     const features = await this.featureRepository.find();
-    this.logger.debug(`Found ${features.length} features`);
 
-    for (const feature of features) {
-      await this.classifyFeature(feature);
+    const progressBar = new cliProgress.SingleBar({
+      format: `Classifying poi's | ${colors.cyan('{bar}')} | {percentage}% | {value}/{total}`,
+      barCompleteChar: '\u2588',
+      barIncompleteChar: '\u2591',
+      hideCursor: true,
+    });
+
+    progressBar.start(features.length, 0);
+
+    for (let i = 0; i < features.length; i++) {
+      await this.classifyFeature(features[i]);
+      progressBar.increment();
     }
+
+    progressBar.stop();
 
     this.logger.debug(`Classified all pois`);
   }
@@ -39,11 +52,33 @@ export class ClassificationService {
       where: { feature: feature },
     });
 
-    this.logger.log(`Found ${poiCount} pois for feature ${feature.name}`);
+    // this.logger.log(`Found ${poiCount} pois for feature ${feature.name}`);
+  }
+
+  async getPoiFeatureType(poi: Poi): Promise<Feature | null> {
+    const features = await this.featureRepository.find();
+
+    for (const feature of features) {
+      const whereClause = await this.constructWhereClause(feature);
+
+      const result = await this.poiRepository.query(
+        `
+          SELECT * FROM pois
+          WHERE ${whereClause} AND id = $1
+        `,
+        [poi.id],
+      );
+
+      if (result.length > 0) {
+        return feature;
+      }
+    }
+
+    this.logger.warn(`Could not classify poi ${poi.id}`);
+    return null;
   }
 
   async constructWhereClause(feature: Feature) {
-    const whereClause = `tags @> '{"${feature.key}": "${feature.value}"}'`;
-    return whereClause;
+    return `tags @> '{"${feature.key}": "${feature.value}"}'`;
   }
 }

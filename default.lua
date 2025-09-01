@@ -176,7 +176,7 @@ end
 local poi_keys = {'amenity', 'shop', 'tourism', 'leisure', 'historic', 'office', 'craft', 'place', 'community_centre',
                   'man_made'}
 
--- tag-value pairs that should be excluded from POIs
+-- tag-value pairs that should be excluded FROM pois
 -- this is a pre selection
 local excluded_poi_tags = {
     amenity = {
@@ -210,6 +210,9 @@ local included_poi_tags = {
     },
     aeroway = {
         aerodrome = true
+    },
+    emergency = {
+        defibrillator = true
     }
 }
 

@@ -3035,4 +3035,11 @@ export const features: Feature[] = [
     name: 'Grote huishoudelijke apparaten winkel',
     pois: [],
   },
+  {
+    id: generateFeatureUUID('emergency', 'defibrillator'),
+    key: 'emergency',
+    value: 'defibrillator',
+    name: 'Defibrillator',
+    pois: [],
+  },
 ];

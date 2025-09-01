@@ -1,5 +1,7 @@
 docker compose -p osm-nl up --build
 
+<!-- start backend to run db migrations -->
+
 <!-- step 1 on wsl -->
 
 ogr2ogr -f GeoJSONSeq pois.ndjson PG:"host=localhost dbname=gis user=postgres" \

@@ -1,7 +1,7 @@
 import MissingPoi from "@/components/cta/missing-poi";
 import { Title } from "@/components/elements/title";
 import BBox from "@/components/map/bbox";
-import { nile } from "@/lib/db";
+import { pool } from "@/lib/db";
 import { getBBox } from "@/lib/getBBox";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -16,7 +16,9 @@ interface CountryPageProps {
 }
 
 export async function generateStaticParams() {
-  const response = await nile.db.query("SELECT DISTINCT country FROM pois");
+  const response = await pool.query(
+    "SELECT DISTINCT country FROM pois WHERE country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL"
+  );
   const countries = response.rows as { country: string }[];
 
   return countries.map(({ country }) => ({
@@ -44,9 +46,9 @@ export default async function CountryIndexPage({ params }: CountryPageProps) {
     country: decodeURIComponent(raw.country),
   };
 
-  const response = await nile.db.query(
+  const response = await pool.query(
     "SELECT DISTINCT state FROM pois WHERE country = $1 ORDER BY state",
-    [country],
+    [country]
   );
 
   const states = response.rows as { state: string }[];

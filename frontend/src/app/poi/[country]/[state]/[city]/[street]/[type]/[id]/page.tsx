@@ -7,7 +7,7 @@ import TagTable from "@/components/poi/tag-table";
 import FormattedWebsite from "@/components/poi/formatted-website";
 import Wiki from "@/components/poi/wiki";
 import RedirectFullPoiPage from "@/components/redirect-full-poi-path";
-import { nile } from "@/lib/db";
+import { pool } from "@/lib/db";
 import { getBBox } from "@/lib/getBBox";
 import { uniqueCaseInsensitive } from "@/lib/utils";
 import { Poi } from "@/types/poi";
@@ -21,7 +21,7 @@ import FormattedX from "@/components/poi/formatted-x";
 import { PoiBadge } from "@/components/poi/poi-badge";
 
 // export async function generateStaticParams() {
-//   const response = await nile.db.query(
+//   const response = await nile.query(
 //     'SELECT p.country, p.state, p.city, p.street, p.type, p.id, f.importance FROM pois p JOIN feature f ON f.id = p."featureId" where p.name is not null order by f.importance desc limit 1000'
 //   );
 
@@ -53,9 +53,9 @@ interface PoiPageProps {
 export async function generateMetadata({ params }: PoiPageProps) {
   const { type, id } = await params;
 
-  const response = await nile.db.query(
-    `SELECT name, "typeName", city, street FROM pois WHERE id = $1 AND type = $2`,
-    [id, type],
+  const response = await pool.query(
+    `SELECT name, "typeName", city, street FROM pois WHERE id = $1 AND type = $2 AND country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL`,
+    [id, type]
   );
   const poi = response.rows[0] as Poi;
 
@@ -88,9 +88,9 @@ export async function generateMetadata({ params }: PoiPageProps) {
 export default async function PoiPage({ params }: PoiPageProps) {
   const { country, state, city, street, type, id } = await params;
 
-  const response = await nile.db.query(
-    `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.id = $1 AND p.type = $2`,
-    [id, type],
+  const response = await pool.query(
+    `SELECT p.*, f.name as feature FROM pois p left join feature f on f.id = p."featureId" WHERE p.id = $1 AND p.type = $2 AND country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL`,
+    [id, type]
   );
 
   const poi = response.rows[0] as Poi;

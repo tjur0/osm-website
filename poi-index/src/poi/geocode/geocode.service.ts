@@ -3,9 +3,11 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { IsNull, Not, Repository } from 'typeorm';
 import { Poi } from '../entities/poi.entity';
 import { ReverseGeocodeResult } from './entities/reverse-geocode-result';
+import * as cliProgress from 'cli-progress';
+import * as colors from 'ansi-colors';
 
-const batchSize = 250;
-const concurrencyLimit = 15;
+const batchSize = 50;
+const concurrencyLimit = 10;
 
 const coordinatesOffset = [
   [0.0001, 0.0001],
@@ -53,10 +55,11 @@ export class GeocodeService {
       SET country = NULL,
           state = NULL,
           city = NULL,
-          street = NULL
+          street = NULL,
+          "geocodedAt" = NULL
     `);
 
-    console.log('Geocoding deleted from POIs');
+    console.log('Geocoding deleted FROM pois');
   }
 
   async geocodePoisBatch() {
@@ -64,55 +67,57 @@ export class GeocodeService {
       where: { geocodedAt: IsNull(), feature: Not(IsNull()) },
     });
 
-    console.log('POIs to geocode:', count);
+    const progressBar = new cliProgress.SingleBar({
+      format: `Reverse geocoding | ${colors.cyan('{bar}')} | {percentage}% | {value}/{total}`,
+      barCompleteChar: '\u2588',
+      barIncompleteChar: '\u2591',
+      hideCursor: true,
+    });
+
+    progressBar.start(count, 0);
 
     let totalProcessed = 0;
 
     while (true) {
-      const processed = await this.geocodePois();
+      const processed = await this.geocodePois(progressBar);
 
       totalProcessed += processed;
-
-      console.log(
-        `Processed ${processed} POIs (Total: ${totalProcessed}/${count})`,
-      );
 
       if (processed < batchSize) break;
     }
 
-    console.log('Geocoding complete.');
+    progressBar.stop();
   }
 
-  async geocodePois(): Promise<number> {
-    const now = new Date();
-
+  async geocodePois(progressBar: cliProgress.SingleBar): Promise<number> {
     const pois = await this.poiRepository.find({
       where: { geocodedAt: IsNull(), feature: Not(IsNull()) },
       take: batchSize,
     });
 
-    const updatedPois: Partial<Poi>[] = [];
+    if (pois.length === 0) {
+      return 0;
+    }
+
+    const updatedPois: Poi[] = [];
 
     for (let i = 0; i < pois.length; i += concurrencyLimit) {
       const batch = pois.slice(i, i + concurrencyLimit);
-      const promises = batch.map((poi) => this.reverseGeocodePoi(poi));
+
+      const promises = batch.map(async (poi) => {
+        await this.reverseGeocodePoi(poi);
+
+        poi.geocodedAt = new Date();
+        return poi;
+      });
 
       const results = await Promise.all(promises);
 
-      results.forEach((result) => {
-        if (result) updatedPois.push(result);
-      });
+      updatedPois.push(...results);
+      progressBar.increment(batch.length);
     }
 
-    if (updatedPois.length > 0) {
-      await this.poiRepository.save(updatedPois);
-    }
-
-    const then = new Date();
-    const diff = then.getTime() - now.getTime();
-    console.log('Time taken:', diff, 'ms');
-    const timePerPoi = pois.length > 0 ? diff / pois.length : 0;
-    console.log('Time per POI:', timePerPoi, 'ms');
+    await this.poiRepository.save(updatedPois);
 
     return pois.length;
   }
@@ -129,24 +134,14 @@ export class GeocodeService {
         const offset = coordinatesOffset[attempts];
         lat += offset[0];
         lon += offset[1];
-        attempts++;
       }
-    }
-
-    if (attempts > 0 && attempts < coordinatesOffset.length) {
-      console.log(
-        `Found geocode for POI ${poi.type} ${poi.id} after ${attempts} attempts`,
-      );
+      attempts++;
     }
 
     if (geocode === null) {
-      console.warn(
-        `Failed to geocode POI ${poi.type} ${poi.id} after ${attempts} attempts`,
-      );
       return null;
     }
 
-    geocode.geocodedAt = new Date();
     return geocode;
   }
 
@@ -156,6 +151,11 @@ export class GeocodeService {
     lon: number,
   ): Promise<Partial<Poi> | null> {
     const nominatimUrl = process.env.NOMINATIM_URL;
+
+    if (!nominatimUrl) {
+      console.error('NOMINATIM_URL is not defined');
+      return null;
+    }
 
     const url = `${nominatimUrl}/reverse?lat=${lat}&lon=${lon}&format=geocodejson&layer=address,poi`;
 
@@ -168,7 +168,6 @@ export class GeocodeService {
       console.warn(`Error fetching for POI ${poi.id}: ${response.statusText}`);
       return null;
     }
-
     const data = (await response.json()) as ReverseGeocodeResult;
 
     if (!data.features || data.features.length === 0) {
@@ -181,9 +180,9 @@ export class GeocodeService {
     const geocode = {
       id: poi.id,
       type: poi.type,
-      country: properties.country,
+      country: properties.country || 'Nederland',
       state: properties.state,
-      city: properties.city || properties.district || properties.name,
+      city: properties.city || properties.district,
       street: properties.street || properties.name,
     };
 

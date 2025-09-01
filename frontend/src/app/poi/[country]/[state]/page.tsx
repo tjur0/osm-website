@@ -1,16 +1,18 @@
 import { Title } from "@/components/elements/title";
 import BBox from "@/components/map/bbox";
-import { nile } from "@/lib/db";
+import { pool } from "@/lib/db";
 import { getBBox } from "@/lib/getBBox";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  const response = await nile.db.query(
-    "SELECT DISTINCT country, state FROM pois",
+  const response = await pool.query(
+    "SELECT DISTINCT country, state FROM pois WHERE country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL"
   );
   const states = response.rows as { country: string; state: string }[];
+
+  console.log(states);
 
   return states.map((state) => state);
 }
@@ -46,9 +48,9 @@ export default async function StateIndexPage({ params }: StateIndexPageProps) {
     state: decodeURIComponent(raw.state),
   };
 
-  const response = await nile.db.query(
-    "SELECT DISTINCT city FROM pois WHERE country = $1 AND state = $2 ORDER BY city",
-    [country, state],
+  const response = await pool.query(
+    "SELECT DISTINCT city FROM pois WHERE country = $1 AND state = $2 AND city IS NOT NULL AND street IS NOT NULL ORDER BY city",
+    [country, state]
   );
   const cities = response.rows as { city: string }[];
 

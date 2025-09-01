@@ -5,10 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Feature } from './entities/feature.entity';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([Feature]),
-    TypeOrmModule.forFeature([Feature], 'osm-poi-index'),
-  ],
+  imports: [TypeOrmModule.forFeature([Feature])],
   controllers: [FeatureController],
   providers: [FeatureService, Logger],
   exports: [FeatureService],

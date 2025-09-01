@@ -31,11 +31,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const websiteId = process.env.UMAMI_WEBSITE_ID
-  const scriptUrl = process.env.UMAMI_SCRIPT_URL
+  const websiteId = process.env.UMAMI_WEBSITE_ID;
+  const scriptUrl = process.env.UMAMI_SCRIPT_URL;
 
   if (!websiteId || !scriptUrl) {
-    throw new Error("env UMAMI_WEBSITE_ID or UMAMI_WEBSITE_ID not set")
+    throw new Error("env UMAMI_WEBSITE_ID or UMAMI_SCRIPT_URL not set");
   }
 
   return (
@@ -50,10 +50,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen md:overflow-hidden`}
       >
-        <UmamiAnalyticsProvider
-          src={scriptUrl}
-          websiteId={websiteId}
-        >
+        <UmamiAnalyticsProvider src={scriptUrl} websiteId={websiteId}>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
