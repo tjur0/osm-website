@@ -52,7 +52,8 @@ services:
     volumes:
       - .:/app
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       - PGHOST=db
       - PGUSER=postgres
