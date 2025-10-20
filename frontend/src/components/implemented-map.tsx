@@ -92,7 +92,7 @@ export default function ImplemtedMap() {
         maxZoom: 18,
       });
     },
-    [map, pathname, bbox]
+    [map, pathname, bbox],
   );
 
   useEffect(() => {
@@ -134,7 +134,7 @@ export default function ImplemtedMap() {
         router.push(
           `/poi/${country ?? "-"}/${state ?? "-"}/${city ?? "-"}/${
             street ?? "-"
-          }/${type}/${id}?skipZoom=true`
+          }/${type}/${id}?skipZoom=true`,
         );
       } else {
         router.push("/poi/Nederland?skipZoom=true");

@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const response = await pool.query(
-    "SELECT DISTINCT country, state, city FROM pois WHERE country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL"
+    "SELECT DISTINCT country, state, city FROM pois WHERE country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL",
   );
 
   const cities = response.rows as {
@@ -56,7 +56,7 @@ export default async function CityIndexPage({ params }: CityIndexPageProps) {
 
   const response = await pool.query(
     "SELECT DISTINCT street FROM pois WHERE country = $1 AND state = $2 AND city = $3 AND street IS NOT NULL ORDER BY street",
-    [country, state, city]
+    [country, state, city],
   );
   const streets = response.rows as {
     street: string;
