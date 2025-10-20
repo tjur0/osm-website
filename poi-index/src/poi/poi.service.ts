@@ -7,6 +7,7 @@ import { ClassificationService } from './classification/classification.service';
 import { GeocodeService } from './geocode/geocode.service';
 import { getName } from 'src/lib/tag-parsers/name';
 import { getTypeName } from 'src/lib/tag-parsers/typeName';
+import { poisFunction } from './sql/pois-function';
 
 @Injectable()
 export class PoiService {
@@ -21,7 +22,20 @@ export class PoiService {
     private readonly classificationService: ClassificationService,
     private readonly geocodeService: GeocodeService,
     private readonly logger: Logger,
-  ) {}
+  ) {
+    this.setupFunctions();
+  }
+
+  async setupFunctions() {
+    try {
+      await this.poiRepository.query(poisFunction);
+      await this.poiRepository.query(`SELECT public.pois(0, 0, 0) as mvt`);
+
+      this.logger.log('POI functions set up successfully.');
+    } catch (error) {
+      this.logger.error('Error setting up POI functions:', error);
+    }
+  }
 
   async setProcessedVersionToCurrent() {
     await this.poiRepository.query(`

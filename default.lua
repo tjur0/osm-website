@@ -22,6 +22,21 @@ tables.pois = osm2pgsql.define_table({
         column = 'version',
         type = 'int4'
     }, {
+        column = 'name',
+        type = 'text'
+    }, {
+        column = 'country',
+        type = 'text'
+    }, {
+        column = 'state',
+        type = 'text'
+    }, {
+        column = 'city',
+        type = 'text'
+    }, {
+        column = 'street',
+        type = 'text'
+    }, {
         column = 'point',
         type = 'point',
         projection = 4326,

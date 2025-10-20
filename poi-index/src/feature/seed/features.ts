@@ -1,12 +1,14 @@
 import { generateFeatureUUID } from 'src/lib/uuid';
 import { Feature } from '../entities/feature.entity';
+import { parse, formatHex } from 'culori';
 
-export const features: Feature[] = [
+const featuresWithoutColor: Feature[] = [
   {
     id: generateFeatureUUID('office', 'lawyer'),
     key: 'office',
     value: 'lawyer',
     name: 'Advocaat',
+    color: '',
 
     pois: [],
   },
@@ -15,6 +17,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'isolated_dwelling',
     name: 'Afgelegen woning',
+    color: '',
 
     pois: [],
   },
@@ -23,6 +26,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'agrarian',
     name: 'Agrarisch',
+    color: '',
 
     pois: [],
   },
@@ -31,6 +35,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'general',
     name: 'Algemene winkel',
+    color: '',
 
     pois: [],
   },
@@ -39,6 +44,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'handicraft',
     name: 'Ambachtwerkplaats',
+    color: '',
 
     pois: [],
   },
@@ -47,6 +53,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'antiques',
     name: 'Antiek',
+    color: '',
 
     pois: [],
   },
@@ -55,6 +62,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'pharmacy',
     name: 'Apotheek',
+    color: '',
 
     pois: [],
   },
@@ -63,6 +71,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'apartment',
     name: 'Appartement',
+    color: '',
 
     pois: [],
   },
@@ -71,6 +80,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'archaeological_site',
     name: 'Archeologische site',
+    color: '',
 
     pois: [],
   },
@@ -79,6 +89,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'archive',
     name: 'Archief',
+    color: '',
 
     pois: [],
   },
@@ -87,6 +98,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'architect',
     name: 'Architectenbureau',
+    color: '',
 
     pois: [],
   },
@@ -95,6 +107,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'attraction',
     name: 'Attractie',
+    color: '',
 
     pois: [],
   },
@@ -103,6 +116,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'theme_park',
     name: 'Attractiepark',
+    color: '',
 
     pois: [],
   },
@@ -111,6 +125,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'hifi',
     name: 'Audiospeciaalzaak',
+    color: '',
 
     pois: [],
   },
@@ -119,6 +134,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'car_parts',
     name: 'Auto-onderdelen',
+    color: '',
 
     pois: [],
   },
@@ -127,6 +143,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'car',
     name: 'Autogarage',
+    color: '',
 
     pois: [],
   },
@@ -135,6 +152,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'vending_machine',
     name: 'Automaat',
+    color: '',
 
     pois: [],
   },
@@ -143,6 +161,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'car_repair',
     name: 'Autoreparatie',
+    color: '',
 
     pois: [],
   },
@@ -151,6 +170,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'car_rental',
     name: 'Autoverhuur',
+    color: '',
 
     pois: [],
   },
@@ -159,6 +179,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'car_wash',
     name: 'Autowas',
+    color: '',
 
     pois: [],
   },
@@ -167,6 +188,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'waste_disposal',
     name: 'Aval container',
+    color: '',
 
     pois: [],
   },
@@ -175,6 +197,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'waste_transfer_station',
     name: 'Avalverwerking',
+    color: '',
 
     pois: [],
   },
@@ -183,6 +206,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'baby_goods',
     name: 'Baby artikelen',
+    color: '',
 
     pois: [],
   },
@@ -191,6 +215,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'bathroom_furnishing',
     name: 'Badkamerinrichting',
+    color: '',
 
     pois: [],
   },
@@ -199,6 +224,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'bakery',
     name: 'Bakker',
+    color: '',
 
     pois: [],
   },
@@ -207,6 +233,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'tyres',
     name: 'Bandenwinkel',
+    color: '',
 
     pois: [],
   },
@@ -215,6 +242,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'bank',
     name: 'Bank',
+    color: '',
 
     pois: [],
   },
@@ -223,6 +251,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'pastry',
     name: 'Banketbakkerij',
+    color: '',
 
     pois: [],
   },
@@ -231,6 +260,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'bench',
     name: 'Bankje',
+    color: '',
 
     pois: [],
   },
@@ -239,6 +269,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'bbq',
     name: 'Barbecue',
+    color: '',
 
     pois: [],
   },
@@ -247,6 +278,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'bed',
     name: 'Beddenwinkel',
+    color: '',
 
     pois: [],
   },
@@ -255,6 +287,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'company',
     name: 'Bedrijf',
+    color: '',
 
     pois: [],
   },
@@ -263,6 +296,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'tax_advisor',
     name: 'Belastingadviseur',
+    color: '',
 
     pois: [],
   },
@@ -271,6 +305,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'nature_reserve',
     name: 'Beschermd natuurgebied',
+    color: '',
 
     pois: [],
   },
@@ -279,6 +314,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'library',
     name: 'Bibliotheek',
+    color: '',
 
     pois: [],
   },
@@ -287,6 +323,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'biergarten',
     name: 'Biergarten',
+    color: '',
 
     pois: [],
   },
@@ -295,6 +332,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'cinema',
     name: 'Bioscoop',
+    color: '',
 
     pois: [],
   },
@@ -303,6 +341,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'blood_bank',
     name: 'Bloedbank',
+    color: '',
 
     pois: [],
   },
@@ -311,6 +350,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'florist',
     name: 'Bloemist',
+    color: '',
 
     pois: [],
   },
@@ -319,6 +359,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'accountant',
     name: 'Boekhouder',
+    color: '',
 
     pois: [],
   },
@@ -327,6 +368,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'books',
     name: 'Boekwinkel',
+    color: '',
 
     pois: [],
   },
@@ -335,6 +377,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'farm',
     name: 'Boerderijwinkel',
+    color: '',
 
     pois: [],
   },
@@ -343,6 +386,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'boat_storage',
     name: 'Bootopslag',
+    color: '',
 
     pois: [],
   },
@@ -351,6 +395,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'boat_rental',
     name: 'Bootverhuur',
+    color: '',
 
     pois: [],
   },
@@ -359,6 +404,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'brothel',
     name: 'Bordeel',
+    color: '',
 
     pois: [],
   },
@@ -367,6 +413,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'boat',
     name: 'Botenwinkel',
+    color: '',
 
     pois: [],
   },
@@ -375,6 +422,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'builder',
     name: 'Bouwbedrijf',
+    color: '',
 
     pois: [],
   },
@@ -383,6 +431,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'construction_company',
     name: 'Bouwbedrijf',
+    color: '',
 
     pois: [],
   },
@@ -391,6 +440,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'hardware',
     name: 'Bouwmarkt',
+    color: '',
 
     pois: [],
   },
@@ -399,6 +449,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'bowling_alley',
     name: 'Bowlingbaan',
+    color: '',
 
     pois: [],
   },
@@ -407,6 +458,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'fire_station',
     name: 'Brandweerkazerne',
+    color: '',
 
     pois: [],
   },
@@ -415,6 +467,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'letter_box',
     name: 'Brievenbus',
+    color: '',
 
     pois: [],
   },
@@ -423,6 +476,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'brewery',
     name: 'Brouwerij',
+    color: '',
 
     pois: [],
   },
@@ -431,6 +485,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'outdoor',
     name: 'Buitensportwinkel',
+    color: '',
 
     pois: [],
   },
@@ -439,6 +494,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'bus_station',
     name: 'Busstation',
+    color: '',
 
     pois: [],
   },
@@ -447,6 +503,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'neighbourhood',
     name: 'Buurt',
+    color: '',
 
     pois: [],
   },
@@ -455,6 +512,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'convenience',
     name: 'Buurtwinkel',
+    color: '',
 
     pois: [],
   },
@@ -463,6 +521,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'gift',
     name: 'Cadeauwinkel',
+    color: '',
 
     pois: [],
   },
@@ -471,6 +530,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'cafe',
     name: 'Café',
+    color: '',
 
     pois: [],
   },
@@ -479,6 +539,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'camp_site',
     name: 'Campeerplaats',
+    color: '',
 
     pois: [],
   },
@@ -487,6 +548,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'caravan',
     name: 'Caravan',
+    color: '',
 
     pois: [],
   },
@@ -495,6 +557,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'caravan_site',
     name: 'Caravanplaats',
+    color: '',
 
     pois: [],
   },
@@ -503,6 +566,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'car_pooling',
     name: 'Carpoolen',
+    color: '',
 
     pois: [],
   },
@@ -511,6 +575,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'casino',
     name: 'Casino',
+    color: '',
 
     pois: [],
   },
@@ -519,6 +584,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'caterer',
     name: 'Cateraar',
+    color: '',
 
     pois: [],
   },
@@ -527,6 +593,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'chalet',
     name: 'Chalet',
+    color: '',
 
     pois: [],
   },
@@ -535,6 +602,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'chocolate',
     name: 'Chocolaterie',
+    color: '',
 
     pois: [],
   },
@@ -543,6 +611,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'bar',
     name: 'Club',
+    color: '',
 
     pois: [],
   },
@@ -551,6 +620,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'cannabis',
     name: 'Coffeeshop',
+    color: '',
 
     pois: [],
   },
@@ -559,6 +629,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'computer',
     name: 'Computerwinkel',
+    color: '',
 
     pois: [],
   },
@@ -567,6 +638,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'conference_centre',
     name: 'Congrescentrum',
+    color: '',
 
     pois: [],
   },
@@ -575,6 +647,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'consulting',
     name: 'Consultancybureau',
+    color: '',
 
     pois: [],
   },
@@ -583,6 +656,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'cosmetics',
     name: 'Cosmetica',
+    color: '',
 
     pois: [],
   },
@@ -591,6 +665,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'coworking',
     name: 'Coworking',
+    color: '',
 
     pois: [],
   },
@@ -599,6 +674,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'crematorium',
     name: 'Crematorium',
+    color: '',
 
     pois: [],
   },
@@ -607,6 +683,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'arts_centre',
     name: 'Cultuurcentrum',
+    color: '',
 
     pois: [],
   },
@@ -615,6 +692,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'dance',
     name: 'Dans',
+    color: '',
 
     pois: [],
   },
@@ -623,6 +701,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'car_sharing',
     name: 'Deelauto',
+    color: '',
 
     pois: [],
   },
@@ -631,6 +710,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'deli',
     name: 'Delicatessen',
+    color: '',
 
     pois: [],
   },
@@ -639,6 +719,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'veterinary',
     name: 'Dierenarts',
+    color: '',
 
     pois: [],
   },
@@ -647,6 +728,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'animal_boarding',
     name: 'Dierenpension',
+    color: '',
 
     pois: [],
   },
@@ -655,6 +737,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'animal_training',
     name: 'Dierentraining',
+    color: '',
 
     pois: [],
   },
@@ -663,6 +746,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'zoo',
     name: 'Dierentuin',
+    color: '',
 
     pois: [],
   },
@@ -671,6 +755,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'pet_grooming',
     name: 'Dierenverzorging',
+    color: '',
 
     pois: [],
   },
@@ -679,6 +764,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'pet',
     name: 'Dierenwinkel',
+    color: '',
 
     pois: [],
   },
@@ -687,6 +773,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'diplomatic',
     name: 'Diplomatiek',
+    color: '',
 
     pois: [],
   },
@@ -695,6 +782,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'doityourself',
     name: 'Doe-het-zelf winkel',
+    color: '',
 
     pois: [],
   },
@@ -703,6 +791,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'doctors',
     name: 'Dokterspraktijk',
+    color: '',
 
     pois: [],
   },
@@ -711,6 +800,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'village',
     name: 'Dorp',
+    color: '',
 
     pois: [],
   },
@@ -719,6 +809,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'shower',
     name: 'Douches',
+    color: '',
 
     pois: [],
   },
@@ -727,6 +818,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'beverages',
     name: 'Dranken',
+    color: '',
 
     pois: [],
   },
@@ -735,6 +827,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'drinking_water',
     name: 'Drinkwaterpunt',
+    color: '',
 
     pois: [],
   },
@@ -743,6 +836,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'chemist',
     name: 'Drogist',
+    color: '',
 
     pois: [],
   },
@@ -751,6 +845,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'island',
     name: 'Eiland',
+    color: '',
 
     pois: [],
   },
@@ -759,6 +854,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'islet',
     name: 'Eilandje',
+    color: '',
 
     pois: [],
   },
@@ -767,6 +863,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'electronics',
     name: 'Elektronica winkel',
+    color: '',
 
     pois: [],
   },
@@ -775,6 +872,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'electronics_repair',
     name: 'Electronicareparatie',
+    color: '',
 
     pois: [],
   },
@@ -783,6 +881,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'electrician',
     name: 'Elektricien',
+    color: '',
 
     pois: [],
   },
@@ -791,6 +890,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'heritage',
     name: 'Erfgoed',
+    color: '',
 
     pois: [],
   },
@@ -799,6 +899,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'erotic',
     name: 'Erotische winkel',
+    color: '',
 
     pois: [],
   },
@@ -807,6 +908,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'escape_game',
     name: 'Escape room',
+    color: '',
 
     pois: [],
   },
@@ -815,6 +917,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'events_venue',
     name: 'Evenementenlocatie',
+    color: '',
 
     pois: [],
   },
@@ -823,6 +926,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'fast_food',
     name: 'Fastfood',
+    color: '',
 
     pois: [],
   },
@@ -831,6 +935,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'party',
     name: 'Feestwinkel',
+    color: '',
 
     pois: [],
   },
@@ -839,6 +944,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'bicycle_parking',
     name: 'Fietsenstalling',
+    color: '',
 
     pois: [],
   },
@@ -847,6 +953,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'bicycle',
     name: 'Fietsenwinkel',
+    color: '',
 
     pois: [],
   },
@@ -855,6 +962,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'bicycle_repair_station',
     name: 'Fietsreparatiestation',
+    color: '',
 
     pois: [],
   },
@@ -863,6 +971,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'bicycle_rental',
     name: 'Fietsverhuur',
+    color: '',
 
     pois: [],
   },
@@ -871,6 +980,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'financial_advisor',
     name: 'Financieel adviseur',
+    color: '',
 
     pois: [],
   },
@@ -879,6 +989,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'financial',
     name: 'Financieele diensten',
+    color: '',
 
     pois: [],
   },
@@ -887,6 +998,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'fitness_centre',
     name: 'Fitnesscentrum',
+    color: '',
 
     pois: [],
   },
@@ -895,6 +1007,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'fitness_station',
     name: 'Fitnessstation',
+    color: '',
 
     pois: [],
   },
@@ -903,6 +1016,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'fountain',
     name: 'Fontein',
+    color: '',
 
     pois: [],
   },
@@ -911,6 +1025,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'photographer',
     name: 'Fotograaf',
+    color: '',
 
     pois: [],
   },
@@ -919,6 +1034,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'frame',
     name: 'Fotolijstwinkel',
+    color: '',
 
     pois: [],
   },
@@ -927,6 +1043,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'photo',
     name: 'Fotowinkel',
+    color: '',
 
     pois: [],
   },
@@ -935,6 +1052,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'gallery',
     name: 'Galerij',
+    color: '',
 
     pois: [],
   },
@@ -943,6 +1061,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'memorial',
     name: 'Gedenkteken',
+    color: '',
 
     pois: [],
   },
@@ -951,6 +1070,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'give_box',
     name: 'Geefdoos',
+    color: '',
 
     pois: [],
   },
@@ -959,6 +1079,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'hamlet',
     name: 'Gehucht',
+    color: '',
 
     pois: [],
   },
@@ -967,6 +1088,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'atm',
     name: 'Geldautomaat',
+    color: '',
 
     pois: [],
   },
@@ -975,6 +1097,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'common',
     name: 'Gemeenschappelijk',
+    color: '',
 
     pois: [],
   },
@@ -983,6 +1106,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'community_centre',
     name: 'Gemeenschapscentrum',
+    color: '',
 
     pois: [],
   },
@@ -991,6 +1115,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'townhall',
     name: 'Gemeentehuis',
+    color: '',
 
     pois: [],
   },
@@ -999,6 +1124,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'tool_hire',
     name: 'Gereedschapverhuur',
+    color: '',
 
     pois: [],
   },
@@ -1007,6 +1133,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'recycling',
     name: 'Gescheiden afval inzameling',
+    color: '',
 
     pois: [],
   },
@@ -1015,6 +1142,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'prison',
     name: 'Gevangenis',
+    color: '',
 
     pois: [],
   },
@@ -1023,6 +1151,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'health_food',
     name: 'Gezondheidsvoeding',
+    color: '',
 
     pois: [],
   },
@@ -1031,6 +1160,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'healthcare',
     name: 'Gezondheidszorg',
+    color: '',
 
     pois: [],
   },
@@ -1039,6 +1169,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'healthcare',
     name: 'Gezondheidszorg',
+    color: '',
 
     pois: [],
   },
@@ -1047,6 +1178,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'glaziery',
     name: 'Glaszetter',
+    color: '',
 
     pois: [],
   },
@@ -1055,6 +1187,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'golf_course',
     name: 'Golfbaan',
+    color: '',
 
     pois: [],
   },
@@ -1063,6 +1196,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'curtain',
     name: 'Gordijnenwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1071,6 +1205,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'greengrocer',
     name: 'Groentewinkel',
+    color: '',
 
     pois: [],
   },
@@ -1079,6 +1214,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'wholesale',
     name: 'Groothandel',
+    color: '',
 
     pois: [],
   },
@@ -1087,6 +1223,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'hvac',
     name: 'HVAC',
+    color: '',
 
     pois: [],
   },
@@ -1095,6 +1232,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'hackerspace',
     name: 'Hackerspace',
+    color: '',
 
     pois: [],
   },
@@ -1103,6 +1241,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'trade',
     name: 'Handel',
+    color: '',
 
     pois: [],
   },
@@ -1111,6 +1250,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'harbour_master',
     name: 'Havenmeester',
+    color: '',
 
     pois: [],
   },
@@ -1119,6 +1259,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'fishing',
     name: 'Hengelsportwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1127,6 +1268,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'fort',
     name: 'Historich fort',
+    color: '',
 
     pois: [],
   },
@@ -1135,6 +1277,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'building',
     name: 'Historich gebouw',
+    color: '',
 
     pois: [],
   },
@@ -1143,6 +1286,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'house',
     name: 'Historich huis',
+    color: '',
 
     pois: [],
   },
@@ -1151,6 +1295,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'cannon',
     name: 'Historich kanon',
+    color: '',
 
     pois: [],
   },
@@ -1159,6 +1304,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'castle',
     name: 'Historich kasteel',
+    color: '',
 
     pois: [],
   },
@@ -1167,6 +1313,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'manor',
     name: 'Historich landhuis',
+    color: '',
 
     pois: [],
   },
@@ -1175,6 +1322,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'ship',
     name: 'Historich schip',
+    color: '',
 
     pois: [],
   },
@@ -1183,6 +1331,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'aircraft',
     name: 'Historich vliegtuig',
+    color: '',
 
     pois: [],
   },
@@ -1191,6 +1340,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'wayside_cross',
     name: 'Historich wegkruis',
+    color: '',
 
     pois: [],
   },
@@ -1199,6 +1349,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'bridge',
     name: 'Historiche Brug',
+    color: '',
 
     pois: [],
   },
@@ -1207,6 +1358,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'farm',
     name: 'Historiche boerderij',
+    color: '',
 
     pois: [],
   },
@@ -1215,6 +1367,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'bomb_crater',
     name: 'Historiche bomkrater',
+    color: '',
 
     pois: [],
   },
@@ -1223,6 +1376,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'boundary_stone',
     name: 'Historiche grenssteen',
+    color: '',
 
     pois: [],
   },
@@ -1231,6 +1385,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'church',
     name: 'Historiche kerk',
+    color: '',
 
     pois: [],
   },
@@ -1239,6 +1394,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'warehouse',
     name: 'Historiche magazijn',
+    color: '',
 
     pois: [],
   },
@@ -1247,6 +1403,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'ruins',
     name: 'Historiche ruïne',
+    color: '',
 
     pois: [],
   },
@@ -1255,6 +1412,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'citywalls',
     name: 'Historiche stadsmuur',
+    color: '',
 
     pois: [],
   },
@@ -1263,6 +1421,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'city_gate',
     name: 'Historiche stadspoort',
+    color: '',
 
     pois: [],
   },
@@ -1271,6 +1430,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'tomb',
     name: 'Historiche tombe',
+    color: '',
 
     pois: [],
   },
@@ -1279,6 +1439,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'water_pump',
     name: 'Historiche waterpomp',
+    color: '',
 
     pois: [],
   },
@@ -1287,6 +1448,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'wayside_shrine',
     name: 'Historiche wegkapel',
+    color: '',
 
     pois: [],
   },
@@ -1295,6 +1457,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'tower',
     name: 'Historische toren',
+    color: '',
 
     pois: [],
   },
@@ -1303,6 +1466,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'college',
     name: 'Hogeschool',
+    color: '',
 
     pois: [],
   },
@@ -1311,6 +1475,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'dog_toilet',
     name: 'Hondentoilet',
+    color: '',
 
     pois: [],
   },
@@ -1319,6 +1484,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'dog_park',
     name: 'Hondenuitlaatplaats',
+    color: '',
 
     pois: [],
   },
@@ -1327,6 +1493,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'hearing_aids',
     name: 'Hoorwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1335,6 +1502,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'watches',
     name: 'Horlogewinkel',
+    color: '',
 
     pois: [],
   },
@@ -1343,6 +1511,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'hostel',
     name: 'Hostel',
+    color: '',
 
     pois: [],
   },
@@ -1351,6 +1520,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'hotel',
     name: 'Hotel',
+    color: '',
 
     pois: [],
   },
@@ -1359,6 +1529,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'gardener',
     name: 'Hoveniers',
+    color: '',
 
     pois: [],
   },
@@ -1367,6 +1538,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'houseware',
     name: 'Huishoudwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1375,6 +1547,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'ice_cream',
     name: 'IJssalon',
+    color: '',
 
     pois: [],
   },
@@ -1383,6 +1556,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'ice_cream',
     name: 'IJssalon',
+    color: '',
 
     pois: [],
   },
@@ -1391,6 +1565,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'beekeeper',
     name: 'Imker',
+    color: '',
 
     pois: [],
   },
@@ -1399,6 +1574,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'information',
     name: 'Informatie',
+    color: '',
 
     pois: [],
   },
@@ -1407,6 +1583,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'engineer',
     name: 'Ingenieurbureau',
+    color: '',
 
     pois: [],
   },
@@ -1415,6 +1592,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'marina',
     name: 'Jachthaven',
+    color: '',
 
     pois: [],
   },
@@ -1423,6 +1601,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'hunting_stand',
     name: 'Jachtstand',
+    color: '',
 
     pois: [],
   },
@@ -1431,6 +1610,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'jewelry',
     name: 'Juwelier',
+    color: '',
 
     pois: [],
   },
@@ -1439,6 +1619,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'ticket_validator',
     name: 'Kaartjesautomaat',
+    color: '',
 
     pois: [],
   },
@@ -1447,6 +1628,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'ticket',
     name: 'Kaartverkoop',
+    color: '',
 
     pois: [],
   },
@@ -1455,6 +1637,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'cheese',
     name: 'Kaaswinkel',
+    color: '',
 
     pois: [],
   },
@@ -1463,6 +1646,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'camp_pitch',
     name: 'Kampeerplaats',
+    color: '',
 
     pois: [],
   },
@@ -1471,6 +1655,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'stationery',
     name: 'Kantoorartikelen',
+    color: '',
 
     pois: [],
   },
@@ -1479,6 +1664,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'hairdresser',
     name: 'Kapper',
+    color: '',
 
     pois: [],
   },
@@ -1487,6 +1673,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'hairdresser_supply',
     name: 'Kappersbenodigdheden',
+    color: '',
 
     pois: [],
   },
@@ -1495,6 +1682,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'grave_yard',
     name: 'Kerkhof',
+    color: '',
 
     pois: [],
   },
@@ -1503,6 +1691,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'childcare',
     name: 'Kindcentrum',
+    color: '',
 
     pois: [],
   },
@@ -1511,6 +1700,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'newsagent',
     name: 'Kiosk',
+    color: '',
 
     pois: [],
   },
@@ -1519,6 +1709,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'kiosk',
     name: 'Kiosk',
+    color: '',
 
     pois: [],
   },
@@ -1527,6 +1718,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'tailor',
     name: 'Kledingmaker',
+    color: '',
 
     pois: [],
   },
@@ -1535,6 +1727,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'tailor',
     name: 'Kledingmaker',
+    color: '',
 
     pois: [],
   },
@@ -1543,6 +1736,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'clothes',
     name: 'Kledingwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1551,6 +1745,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'dressing_room',
     name: 'Kleedkamer',
+    color: '',
 
     pois: [],
   },
@@ -1559,6 +1754,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'kindergarten',
     name: 'Kleuterschool',
+    color: '',
 
     pois: [],
   },
@@ -1567,6 +1763,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'clinic',
     name: 'Kliniek',
+    color: '',
 
     pois: [],
   },
@@ -1575,6 +1772,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'clock',
     name: 'Klok',
+    color: '',
 
     pois: [],
   },
@@ -1583,6 +1781,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'monastery',
     name: 'Klooster',
+    color: '',
 
     pois: [],
   },
@@ -1591,6 +1790,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'coffee',
     name: 'Koffiehuis',
+    color: '',
 
     pois: [],
   },
@@ -1599,6 +1799,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'kitchen',
     name: 'Kookwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1607,6 +1808,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'copyshop',
     name: 'Kopieerwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1615,6 +1817,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'second_hand',
     name: 'Kringloopwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1623,6 +1826,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'pub',
     name: 'Kroeg',
+    color: '',
 
     pois: [],
   },
@@ -1631,6 +1835,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'craft',
     name: 'Kunstbenodigheden winkel',
+    color: '',
 
     pois: [],
   },
@@ -1639,6 +1844,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'artwork',
     name: 'Kunstwerk',
+    color: '',
 
     pois: [],
   },
@@ -1647,6 +1853,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'art',
     name: 'Kunstwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1655,6 +1862,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'loading_dock',
     name: 'Laadkade',
+    color: '',
 
     pois: [],
   },
@@ -1663,6 +1871,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'leather',
     name: 'Lederwaren',
+    color: '',
 
     pois: [],
   },
@@ -1671,6 +1880,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'logistics',
     name: 'Logistiek',
+    color: '',
 
     pois: [],
   },
@@ -1679,6 +1889,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'plumber',
     name: 'Loodgieter',
+    color: '',
 
     pois: [],
   },
@@ -1687,6 +1898,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'plant_hire',
     name: 'Machnieverhuur',
+    color: '',
 
     pois: [],
   },
@@ -1695,6 +1907,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'estate_agent',
     name: 'Makelaardij',
+    color: '',
 
     pois: [],
   },
@@ -1703,6 +1916,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'horse_riding',
     name: 'Manage',
+    color: '',
 
     pois: [],
   },
@@ -1711,6 +1925,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'marketplace',
     name: 'Markt',
+    color: '',
 
     pois: [],
   },
@@ -1719,6 +1934,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'massage',
     name: 'Massage',
+    color: '',
 
     pois: [],
   },
@@ -1727,6 +1943,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'medical_supply',
     name: 'Medische benodigdheden',
+    color: '',
 
     pois: [],
   },
@@ -1735,6 +1952,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'metal_construction',
     name: 'Metaalconstructie bedrijf',
+    color: '',
 
     pois: [],
   },
@@ -1743,6 +1961,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'furniture',
     name: 'Meubelwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1751,6 +1970,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'miniature_golf',
     name: 'Midgetgolf',
+    color: '',
 
     pois: [],
   },
@@ -1759,6 +1979,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'mobile_phone',
     name: 'Mobiele telefoon winkel',
+    color: '',
 
     pois: [],
   },
@@ -1767,6 +1988,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'fashion_accessories',
     name: 'Modeaccessoires',
+    color: '',
 
     pois: [],
   },
@@ -1775,6 +1997,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'model',
     name: 'Modelbouwwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1783,6 +2006,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'monument',
     name: 'Monumentaal gedenkteken',
+    color: '',
 
     pois: [],
   },
@@ -1791,6 +2015,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'motorcycle_parking',
     name: 'Motorfiets parkeren',
+    color: '',
 
     pois: [],
   },
@@ -1799,6 +2024,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'motorcycle',
     name: 'Motorfiets winkel',
+    color: '',
 
     pois: [],
   },
@@ -1807,6 +2033,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'museum',
     name: 'Museum',
+    color: '',
 
     pois: [],
   },
@@ -1815,6 +2042,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'musical_instrument',
     name: 'Muziek instrumenten winkel',
+    color: '',
 
     pois: [],
   },
@@ -1823,6 +2051,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'bandstand',
     name: 'Muziekkoepel',
+    color: '',
 
     pois: [],
   },
@@ -1831,6 +2060,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'music_school',
     name: 'Muziekschool',
+    color: '',
 
     pois: [],
   },
@@ -1839,6 +2069,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'music',
     name: 'Muziekwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1847,6 +2078,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'sewing',
     name: 'Naaiwinkel',
+    color: '',
 
     pois: [],
   },
@@ -1855,6 +2087,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'nightclub',
     name: 'Nachtclub',
+    color: '',
 
     pois: [],
   },
@@ -1863,6 +2096,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'ngo',
     name: 'Niet-gouvernementele organisatie',
+    color: '',
 
     pois: [],
   },
@@ -1871,6 +2105,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'notary',
     name: 'Notaris',
+    color: '',
 
     pois: [],
   },
@@ -1879,6 +2114,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'educational_institution',
     name: 'Onderwijsinstelling',
+    color: '',
 
     pois: [],
   },
@@ -1887,6 +2123,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'research',
     name: 'Onderzoek',
+    color: '',
 
     pois: [],
   },
@@ -1895,6 +2132,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'public_bookcase',
     name: 'Open boekenkast',
+    color: '',
 
     pois: [],
   },
@@ -1903,6 +2141,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'charging_station',
     name: 'Oplaadpunt',
+    color: '',
 
     pois: [],
   },
@@ -1911,6 +2150,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'storage_rental',
     name: 'Opslagverhuur',
+    color: '',
 
     pois: [],
   },
@@ -1919,6 +2159,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'optician',
     name: 'Opticien',
+    color: '',
 
     pois: [],
   },
@@ -1927,6 +2168,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'indoor_play',
     name: 'Overdekt speelparadijs',
+    color: '',
 
     pois: [],
   },
@@ -1935,6 +2177,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'government',
     name: 'Overheidsinstelling',
+    color: '',
 
     pois: [],
   },
@@ -1943,6 +2186,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'parcel_locker',
     name: 'Pakketkluis',
+    color: '',
 
     pois: [],
   },
@@ -1951,6 +2195,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'perfumery',
     name: 'Parfumerie',
+    color: '',
 
     pois: [],
   },
@@ -1959,6 +2204,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'park',
     name: 'Park',
+    color: '',
 
     pois: [],
   },
@@ -1967,6 +2213,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'parking',
     name: 'Parkeerplaats',
+    color: '',
 
     pois: [],
   },
@@ -1975,6 +2222,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'parking_entrance',
     name: 'Parkeerplaats ingang',
+    color: '',
 
     pois: [],
   },
@@ -1983,6 +2231,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'guest_house',
     name: 'Pension',
+    color: '',
 
     pois: [],
   },
@@ -1991,6 +2240,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'compressed_air',
     name: 'Perslucht',
+    color: '',
 
     pois: [],
   },
@@ -1999,6 +2249,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'picnic_site',
     name: 'Picknickplaats',
+    color: '',
 
     pois: [],
   },
@@ -2007,6 +2258,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'picnic_table',
     name: 'Picknicktafel',
+    color: '',
 
     pois: [],
   },
@@ -2015,6 +2267,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'square',
     name: 'Plein',
+    color: '',
 
     pois: [],
   },
@@ -2023,6 +2276,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'polder',
     name: 'Polder',
+    color: '',
 
     pois: [],
   },
@@ -2031,6 +2285,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'police',
     name: 'Politie',
+    color: '',
 
     pois: [],
   },
@@ -2039,6 +2294,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'post_box',
     name: 'Postbus',
+    color: '',
 
     pois: [],
   },
@@ -2047,6 +2303,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'post_depot',
     name: 'Postdepot',
+    color: '',
 
     pois: [],
   },
@@ -2055,6 +2312,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'post_office',
     name: 'Postkantoor',
+    color: '',
 
     pois: [],
   },
@@ -2063,6 +2321,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'pottery',
     name: 'Pottenbakkerij',
+    color: '',
 
     pois: [],
   },
@@ -2071,6 +2330,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'waste_basket',
     name: 'Prullenbak',
+    color: '',
 
     pois: [],
   },
@@ -2079,6 +2339,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'window_construction',
     name: 'Raamconstructie',
+    color: '',
 
     pois: [],
   },
@@ -2087,6 +2348,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'window_blind',
     name: 'Raamdecoratie',
+    color: '',
 
     pois: [],
   },
@@ -2095,6 +2357,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'courthouse',
     name: 'Rechtbank',
+    color: '',
 
     pois: [],
   },
@@ -2103,6 +2366,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'advertising_agency',
     name: 'Reclamebureau',
+    color: '',
 
     pois: [],
   },
@@ -2111,6 +2375,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'recreation_ground',
     name: 'Recreatiegebied',
+    color: '',
 
     pois: [],
   },
@@ -2119,6 +2384,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'travel_agency',
     name: 'Reisbureau',
+    color: '',
 
     pois: [],
   },
@@ -2127,6 +2393,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'travel_agent',
     name: 'Reisbureau',
+    color: '',
 
     pois: [],
   },
@@ -2135,6 +2402,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'place_of_worship',
     name: 'Religieuze faciliteit',
+    color: '',
 
     pois: [],
   },
@@ -2143,6 +2411,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'repair',
     name: 'Reparatie',
+    color: '',
 
     pois: [],
   },
@@ -2151,6 +2420,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'resort',
     name: 'Resort',
+    color: '',
 
     pois: [],
   },
@@ -2159,6 +2429,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'restaurant',
     name: 'Restaurant',
+    color: '',
 
     pois: [],
   },
@@ -2167,6 +2438,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'driving_school',
     name: 'Rijschool',
+    color: '',
 
     pois: [],
   },
@@ -2175,6 +2447,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'smoking_area',
     name: 'Rookerszone',
+    color: '',
 
     pois: [],
   },
@@ -2183,6 +2456,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'sanitary_dump_station',
     name: 'Sanitaire dumpstation',
+    color: '',
 
     pois: [],
   },
@@ -2191,6 +2465,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'sauna',
     name: 'Sauna',
+    color: '',
 
     pois: [],
   },
@@ -2199,6 +2474,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'ice_rink',
     name: 'Schaatsbaan',
+    color: '',
 
     pois: [],
   },
@@ -2207,6 +2483,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'slipway',
     name: 'Scheepshelling',
+    color: '',
 
     pois: [],
   },
@@ -2215,6 +2492,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'painter',
     name: 'Schilder',
+    color: '',
 
     pois: [],
   },
@@ -2223,6 +2501,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'shoes',
     name: 'Schoenenwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2231,6 +2510,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'shoemaker',
     name: 'Schoenmaker',
+    color: '',
 
     pois: [],
   },
@@ -2239,6 +2519,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'shoe_repair',
     name: 'Schoenreparatie',
+    color: '',
 
     pois: [],
   },
@@ -2247,6 +2528,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'school',
     name: 'School',
+    color: '',
 
     pois: [],
   },
@@ -2255,6 +2537,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'schoolyard',
     name: 'Schoolplein',
+    color: '',
 
     pois: [],
   },
@@ -2263,6 +2546,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'beauty',
     name: 'Schoonheidssalon',
+    color: '',
 
     pois: [],
   },
@@ -2271,6 +2555,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'shelter',
     name: 'Schuilplaats',
+    color: '',
 
     pois: [],
   },
@@ -2279,6 +2564,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'scooter',
     name: 'Scooter',
+    color: '',
 
     pois: [],
   },
@@ -2287,6 +2573,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'butcher',
     name: 'Slager',
+    color: '',
 
     pois: [],
   },
@@ -2295,6 +2582,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'alcohol',
     name: 'Slijterij',
+    color: '',
 
     pois: [],
   },
@@ -2303,6 +2591,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'locksmith',
     name: 'Slotenmaker',
+    color: '',
 
     pois: [],
   },
@@ -2311,6 +2600,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'smartshop',
     name: 'Smartshop',
+    color: '',
 
     pois: [],
   },
@@ -2319,6 +2609,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'confectionery',
     name: 'Snoepwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2327,6 +2618,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'social_facility',
     name: 'Sociale faciliteit',
+    color: '',
 
     pois: [],
   },
@@ -2335,6 +2627,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'it',
     name: 'Softwarebedrijf',
+    color: '',
 
     pois: [],
   },
@@ -2343,6 +2636,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'toys',
     name: 'Speelgoedwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2351,6 +2645,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'amusement_arcade',
     name: 'Speelhal',
+    color: '',
 
     pois: [],
   },
@@ -2359,6 +2654,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'playground',
     name: 'Speeltuin',
+    color: '',
 
     pois: [],
   },
@@ -2367,6 +2663,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'games',
     name: 'Spelletjeswinkel',
+    color: '',
 
     pois: [],
   },
@@ -2375,6 +2672,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'sports_centre',
     name: 'Sportcentrum',
+    color: '',
 
     pois: [],
   },
@@ -2383,6 +2681,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'sports_hall',
     name: 'Sporthal',
+    color: '',
 
     pois: [],
   },
@@ -2391,6 +2690,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'sports',
     name: 'Sportwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2399,6 +2699,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'town',
     name: 'Plaats',
+    color: '',
 
     pois: [],
   },
@@ -2407,6 +2708,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'city',
     name: 'Stad',
+    color: '',
 
     pois: [],
   },
@@ -2415,6 +2717,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'stadium',
     name: 'Stadion',
+    color: '',
 
     pois: [],
   },
@@ -2423,6 +2726,7 @@ export const features: Feature[] = [
     key: 'historic',
     value: 'stone',
     name: 'Steen',
+    color: '',
 
     pois: [],
   },
@@ -2431,6 +2735,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'foundation',
     name: 'Stichting',
+    color: '',
 
     pois: [],
   },
@@ -2439,6 +2744,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'upholsterer',
     name: 'Stoffeerder',
+    color: '',
 
     pois: [],
   },
@@ -2447,6 +2753,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'fabric',
     name: 'Stoffenwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2455,6 +2762,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'vacuum_cleaner',
     name: 'Stofzuiger',
+    color: '',
 
     pois: [],
   },
@@ -2463,6 +2771,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'dry_cleaning',
     name: 'Stomerij',
+    color: '',
 
     pois: [],
   },
@@ -2471,6 +2780,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'studio',
     name: 'Studio',
+    color: '',
 
     pois: [],
   },
@@ -2479,6 +2789,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'supermarket',
     name: 'Supermarkt',
+    color: '',
 
     pois: [],
   },
@@ -2487,6 +2798,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'tobacco',
     name: 'Tabakswinkel',
+    color: '',
 
     pois: [],
   },
@@ -2495,6 +2807,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'dentist',
     name: 'Tandartspraktijk',
+    color: '',
 
     pois: [],
   },
@@ -2503,6 +2816,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'fuel',
     name: 'Tankstation',
+    color: '',
 
     pois: [],
   },
@@ -2511,6 +2825,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'carpet',
     name: 'Tapijtwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2519,6 +2834,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'bag',
     name: 'Tassenwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2527,6 +2843,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'tattoo',
     name: 'Tatoeagestudio',
+    color: '',
 
     pois: [],
   },
@@ -2535,6 +2852,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'taxi',
     name: 'Taxistandplaats',
+    color: '',
 
     pois: [],
   },
@@ -2543,6 +2861,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'tiles',
     name: 'Tegelwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2551,6 +2870,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'telecommunication',
     name: 'Telecommunicatie',
+    color: '',
 
     pois: [],
   },
@@ -2559,6 +2879,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'telecommunication',
     name: 'Telecommunicatiebedrijf',
+    color: '',
 
     pois: [],
   },
@@ -2567,6 +2888,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'outdoor_seating',
     name: 'Terras',
+    color: '',
 
     pois: [],
   },
@@ -2575,6 +2897,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'theatre',
     name: 'Theater',
+    color: '',
 
     pois: [],
   },
@@ -2583,6 +2906,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'tea',
     name: 'Theewinkel',
+    color: '',
 
     pois: [],
   },
@@ -2591,6 +2915,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'therapist',
     name: 'Therapeut',
+    color: '',
 
     pois: [],
   },
@@ -2599,6 +2924,7 @@ export const features: Feature[] = [
     key: 'craft',
     value: 'carpenter',
     name: 'Timmerman',
+    color: '',
 
     pois: [],
   },
@@ -2607,6 +2933,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'toilets',
     name: 'Toiletten',
+    color: '',
 
     pois: [],
   },
@@ -2615,6 +2942,7 @@ export const features: Feature[] = [
     key: 'railway',
     value: 'station',
     name: 'Treinstation',
+    color: '',
 
     pois: [],
   },
@@ -2623,6 +2951,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'bleachers',
     name: 'Tribune',
+    color: '',
 
     pois: [],
   },
@@ -2631,6 +2960,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'garden_centre',
     name: 'Tuincentrum',
+    color: '',
 
     pois: [],
   },
@@ -2639,6 +2969,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'charity',
     name: 'Twede handswinkel',
+    color: '',
 
     pois: [],
   },
@@ -2647,6 +2978,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'funeral_hall',
     name: 'Uitvaartcentrum',
+    color: '',
 
     pois: [],
   },
@@ -2655,6 +2987,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'funeral_directors',
     name: 'Uitvaartverzorging',
+    color: '',
 
     pois: [],
   },
@@ -2663,6 +2996,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'employment_agency',
     name: 'Uitzendbureau',
+    color: '',
 
     pois: [],
   },
@@ -2671,6 +3005,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'viewpoint',
     name: 'Uitzichtpunt',
+    color: '',
 
     pois: [],
   },
@@ -2679,6 +3014,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'university',
     name: 'Universiteit',
+    color: '',
 
     pois: [],
   },
@@ -2687,6 +3023,7 @@ export const features: Feature[] = [
     key: 'tourism',
     value: 'holiday_village',
     name: 'Vakantiedorp',
+    color: '',
 
     pois: [],
   },
@@ -2695,6 +3032,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'ferry_terminal',
     name: 'Veerboot terminal',
+    color: '',
 
     pois: [],
   },
@@ -2703,6 +3041,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'association',
     name: 'Vereniging',
+    color: '',
 
     pois: [],
   },
@@ -2711,6 +3050,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'paint',
     name: 'Verfwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2719,6 +3059,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'rental',
     name: 'Verhuur',
+    color: '',
 
     pois: [],
   },
@@ -2727,6 +3068,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'traffic_engineering',
     name: 'Verkeersadviesbureau',
+    color: '',
 
     pois: [],
   },
@@ -2735,6 +3077,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'lighting',
     name: 'Verlichting',
+    color: '',
 
     pois: [],
   },
@@ -2743,6 +3086,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'nursing_home',
     name: 'Verpleeghuis',
+    color: '',
 
     pois: [],
   },
@@ -2751,6 +3095,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'binoculars',
     name: 'Verrekijkerwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2759,6 +3104,7 @@ export const features: Feature[] = [
     key: 'office',
     value: 'insurance',
     name: 'Verzekeringsmaatschappij',
+    color: '',
 
     pois: [],
   },
@@ -2767,6 +3113,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'seafood',
     name: 'Vishandel',
+    color: '',
 
     pois: [],
   },
@@ -2775,6 +3122,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'fishing',
     name: 'Visplek',
+    color: '',
 
     pois: [],
   },
@@ -2783,6 +3131,8 @@ export const features: Feature[] = [
     key: 'aeroway',
     value: 'aerodrome',
     name: 'Vliegveld',
+    color: '',
+
     pois: [],
   },
   {
@@ -2790,6 +3140,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'flooring',
     name: 'Vloeren',
+    color: '',
 
     pois: [],
   },
@@ -2798,6 +3149,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'nutrition_supplements',
     name: 'Voedingssupplementen',
+    color: '',
 
     pois: [],
   },
@@ -2806,6 +3158,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'food_court',
     name: 'Voedselhal',
+    color: '',
 
     pois: [],
   },
@@ -2814,6 +3167,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'bird_hide',
     name: 'Vogelhut',
+    color: '',
 
     pois: [],
   },
@@ -2822,6 +3176,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'variety_store',
     name: 'Voordeelwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2830,6 +3185,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'suburb',
     name: 'Voorstad',
+    color: '',
 
     pois: [],
   },
@@ -2838,6 +3194,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'firepit',
     name: 'Vuurplaats',
+    color: '',
 
     pois: [],
   },
@@ -2846,6 +3203,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'department_store',
     name: 'Warenhuis',
+    color: '',
 
     pois: [],
   },
@@ -2854,6 +3212,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'laundry',
     name: 'Wasserette',
+    color: '',
 
     pois: [],
   },
@@ -2862,6 +3221,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'water_park',
     name: 'Waterpark',
+    color: '',
 
     pois: [],
   },
@@ -2870,6 +3230,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'water_point',
     name: 'Waterpunt',
+    color: '',
 
     pois: [],
   },
@@ -2878,6 +3239,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'water_sports',
     name: 'Watersportwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2886,6 +3248,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'weighbridge',
     name: 'Weegbrug',
+    color: '',
 
     pois: [],
   },
@@ -2894,6 +3257,7 @@ export const features: Feature[] = [
     key: 'place',
     value: 'quarter',
     name: 'Wijk',
+    color: '',
 
     pois: [],
   },
@@ -2902,6 +3266,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'wine',
     name: 'Wijnwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2910,6 +3275,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'mall',
     name: 'Winkelcentrum',
+    color: '',
 
     pois: [],
   },
@@ -2918,6 +3284,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'trolley_bay',
     name: 'Winkelwagentjes',
+    color: '',
 
     pois: [],
   },
@@ -2926,6 +3293,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'bureau_de_change',
     name: 'Wisselkantoor',
+    color: '',
 
     pois: [],
   },
@@ -2934,6 +3302,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'interior_decoration',
     name: 'Woondecoratie winkel',
+    color: '',
 
     pois: [],
   },
@@ -2942,6 +3311,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'hospital',
     name: 'Ziekenhuis',
+    color: '',
 
     pois: [],
   },
@@ -2950,6 +3320,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'tanning_salon',
     name: 'Zonnebank',
+    color: '',
 
     pois: [],
   },
@@ -2958,6 +3329,7 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'grit_bin',
     name: 'Zoutcontainer',
+    color: '',
 
     pois: [],
   },
@@ -2966,6 +3338,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'dairy',
     name: 'Zuivelwinkel',
+    color: '',
 
     pois: [],
   },
@@ -2974,6 +3347,7 @@ export const features: Feature[] = [
     key: 'leisure',
     value: 'swimming_area',
     name: 'Zwemgebied',
+    color: '',
 
     pois: [],
   },
@@ -2982,6 +3356,8 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'animal_shelter',
     name: 'Dierenasiel',
+    color: '',
+
     pois: [],
   },
   {
@@ -2989,6 +3365,7 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'estate_agent',
     name: 'Makelaardij',
+    color: '',
 
     pois: [],
   },
@@ -2997,6 +3374,8 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'reception_desk',
     name: 'Receptie',
+    color: '',
+
     pois: [],
   },
   {
@@ -3004,6 +3383,8 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'lounger',
     name: 'Ligstoel',
+    color: '',
+
     pois: [],
   },
 
@@ -3012,6 +3393,8 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'gold_buyer',
     name: 'Goudwisselkantoor',
+    color: '',
+
     pois: [],
   },
   {
@@ -3019,6 +3402,8 @@ export const features: Feature[] = [
     key: 'office',
     value: 'newspaper',
     name: 'Krantenredactie',
+    color: '',
+
     pois: [],
   },
   {
@@ -3026,6 +3411,8 @@ export const features: Feature[] = [
     key: 'amenity',
     value: 'telephone',
     name: 'Telefooncel',
+    color: '',
+
     pois: [],
   },
   {
@@ -3033,6 +3420,8 @@ export const features: Feature[] = [
     key: 'shop',
     value: 'appliance',
     name: 'Grote huishoudelijke apparaten winkel',
+    color: '',
+
     pois: [],
   },
   {
@@ -3040,6 +3429,36 @@ export const features: Feature[] = [
     key: 'emergency',
     value: 'defibrillator',
     name: 'Defibrillator',
+    color: '',
+
     pois: [],
   },
 ];
+
+const COLORS_OKLCH = [
+  'oklch(57.7% 0.245 27.325)',
+  'oklch(66.6% 0.179 58.318)',
+  'oklch(64.8% 0.2 131.684)',
+  'oklch(60% 0.118 184.704)',
+  'oklch(54.6% 0.245 262.881)',
+  'oklch(55.8% 0.288 302.321)',
+  'oklch(59.2% 0.249 0.584)',
+];
+
+const COLORS = COLORS_OKLCH.map((oklch) => {
+  const color = parse(oklch);
+  if (!color) return '#000000';
+  return formatHex(color);
+});
+
+const getColorForKey = (key: string): string => {
+  const index = featuresWithoutColor.findIndex(
+    (feature) => feature.key === key,
+  );
+  return COLORS[index % COLORS.length];
+};
+
+export const features = featuresWithoutColor.map((feature) => ({
+  ...feature,
+  color: getColorForKey(feature.key),
+}));

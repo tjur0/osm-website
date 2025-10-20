@@ -17,6 +17,12 @@ test $i -gt $MAXCOUNT && echo "Timeout while waiting for PostgreSQL to be runnin
 
 case "$1" in
   import)
+    # Checking if database already exists
+    if psql -c "SELECT 1 FROM pg_database WHERE datname = 'gis';" | grep -q 1; then
+      echo "Database 'gis' already exists. Cancelling import script."
+      exit 0
+    fi
+
     # Creating default database
     psql -c "SELECT 1 FROM pg_database WHERE datname = 'gis';" | grep -q 1 || createdb gis
     psql -d gis -c 'CREATE EXTENSION IF NOT EXISTS postgis;'

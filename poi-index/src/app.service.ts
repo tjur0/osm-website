@@ -17,16 +17,24 @@ export class AppService {
     private readonly classificationService: ClassificationService,
     private readonly tagParsingService: TagParsingService,
     private readonly logger: Logger,
-  ) {
-    this.main();
-  }
+  ) {}
 
   async main() {
-    await this.initalSetup();
-
     await this.periodicCalculation();
 
     await this.start();
+  }
+
+  async initialSetup() {
+    this.logger.log('Starting initial setup...');
+    await this.featureService.seedFeatures();
+    await this.classificationService.classifyPois();
+    await this.geocodeService.geocodePoisBatch();
+    await this.tagParsingService.addNameToPois();
+    await this.tagParsingService.addTypeNameToPois();
+    await this.poiService.setProcessedVersionToCurrent();
+
+    this.logger.log('Initial setup completed. Exiting process.');
   }
 
   async start() {
@@ -34,27 +42,19 @@ export class AppService {
       try {
         await this.poiService.processAllPois();
       } catch (error) {
-        console.error('An error occurred during POI processing:', error);
+        this.logger.error(
+          `An error occurred during POI processing: ${error.message}`,
+        );
       }
 
       await new Promise((resolve) => setTimeout(resolve, 10000));
     }
   }
 
-  async initalSetup() {
-    // await this.featureService.seedFeatures();
-    // await this.classificationService.classifyPois();
-    await this.geocodeService.geocodePoisBatch();
-    await this.tagParsingService.addNameToPois();
-    await this.tagParsingService.addTypeNameToPois();
-    await this.poiService.setProcessedVersionToCurrent();
-  }
-
   // things that are not poi specific, but need to be done regularly
   @Cron('0 * * * *')
   async periodicCalculation() {
     await this.featureService.calculateImportance();
-    // await this.geocodeService.deleteGeocoding();
     await this.geocodeService.deleteAllNonDutchPois();
   }
 }

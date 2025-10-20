@@ -1,12 +1,6 @@
 import { Logo } from "@/components/logo";
 import Link from "next/link";
-import {
-  BookUser,
-  CalendarSearch,
-  MapPin,
-  ScrollText,
-  Search,
-} from "lucide-react";
+import { BookUser, CalendarSearch, MapPin, ScrollText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
 
@@ -15,7 +9,7 @@ export default function Header() {
     <>
       <Logo />
       <div className="flex flex-col gap-2 items-center">
-        <Link href={"/search"} className="size-12">
+        {/* <Link href={"/search"} className="size-12">
           <Button
             variant="ghost"
             className="size-12"
@@ -24,10 +18,10 @@ export default function Header() {
           >
             <div className="size-12 p-3">
               <Search className="text-gray-200 size-6" />
-              <span className="sr-only">Zoeken</span>
+              <span className= "sr-only">Zoeken</span>
             </div>
           </Button>
-        </Link>
+        </Link> */}
         <Link href={"/poi/Nederland"} className="size-12">
           <Button
             variant="ghost"

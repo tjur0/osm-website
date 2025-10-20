@@ -1,23 +1,35 @@
-keep_alive: 75
-listen_addresses: "0.0.0.0:3000"
-base_path: /tiles
-worker_processes: 8
-cache_size_mb: 1024
-preferred_encoding: gzip
-web_ui: enableforall
-
 postgres:
-  connection_string: "postgresql://postgres:postgres@db:5432/gis"
-  default_srid: 3857
+  # --- Keep your connection details ---
+  connection_string: "postgres://postgres@db:5432/gis"
+  # ssl_cert: './postgresql.crt'
+  # ssl_key: './postgresql.key'
+  # ssl_root_cert: './root.crt'
+  default_srid: 4326
   pool_size: 20
-  # max_feature_count: 1000
-  auto_bounds: skip
-  auto_publish:
-    from_schemas:
-      - public
-    tables:
-      source_id_format: "table.{schema}.{table}.{column}"
-      id_columns: id
-      clip_geom: true
-      buffer: 64
-      extent: 4096
+  max_feature_count: null
+  auto_bounds: quick
+
+  tables:
+    table.public.pois.point:
+      schema: public
+      table: pois
+      id_column: id
+      geometry_column: point
+      srid: 4326
+      geometry_type: POINT
+      buffer: 254
+      properties:
+        id: text
+        type: text
+        name: text
+        country: text
+        state: text
+        city: text
+        street: text
+
+  functions:
+    pois:
+      schema: public
+      function: pois
+      minzoom: 0
+      maxzoom: 22

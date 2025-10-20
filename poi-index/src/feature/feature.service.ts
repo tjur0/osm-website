@@ -2,8 +2,8 @@ import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Feature } from './entities/feature.entity';
-import { features } from './seed/features';
 import { calculateFeatureImportance } from './sql/calculate-feature-importace';
+import { features } from './seed/features';
 
 @Injectable()
 export class FeatureService {

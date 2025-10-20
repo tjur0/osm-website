@@ -15,6 +15,9 @@ export class Feature {
   @Column()
   name: string;
 
+  @Column()
+  color: string;
+
   //   @Column({ nullable: true })
   //   wikiUrl?: string;
 

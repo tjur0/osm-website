@@ -39,18 +39,24 @@ export default function RedirectFullPoiPage({
       type: decodeURIComponent(type),
     };
 
+    console.log(decoded.country);
+
     if (
-      decoded.country !== poi.country ||
-      decoded.state !== poi.state ||
-      decoded.city !== poi.city ||
-      decoded.street !== poi.street ||
-      decoded.type !== poi.type
+      (decoded.country !== poi.country ||
+        decoded.state !== poi.state ||
+        decoded.city !== poi.city ||
+        decoded.street !== poi.street ||
+        decoded.type !== poi.type) &&
+      (decoded.country !== "-" ||
+        decoded.state !== "-" ||
+        decoded.city !== "-" ||
+        decoded.street !== "-")
     ) {
       const encoded = {
-        country: encodeURIComponent(poi.country),
-        state: encodeURIComponent(poi.state),
-        city: encodeURIComponent(poi.city),
-        street: encodeURIComponent(poi.street),
+        country: encodeURIComponent(poi.country || "-"),
+        state: encodeURIComponent(poi.state || "-"),
+        city: encodeURIComponent(poi.city || "-"),
+        street: encodeURIComponent(poi.street || "-"),
       };
 
       const path = `/poi/${encoded.country}/${encoded.state}/${encoded.city}/${encoded.street}/${poi.type}/${poi.id}`;

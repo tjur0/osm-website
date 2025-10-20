@@ -7,3 +7,16 @@ export const pool = new Pool({
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
 });
+
+export async function testConnection() {
+  const client = await pool.connect();
+  try {
+    await client.query("SELECT 1");
+    console.log("Database connection successful");
+  } catch (error) {
+    console.error("Database connection error:", error);
+    throw error;
+  } finally {
+    client.release();
+  }
+}

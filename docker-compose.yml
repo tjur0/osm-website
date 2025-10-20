@@ -23,7 +23,9 @@ services:
   nominatim:
     image: mediagis/nominatim:5.1
     environment:
-      - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
+      - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
+      # - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
+      # - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
     ports:
       - "8080:8080"
 
@@ -69,6 +71,77 @@ services:
       - PG_MAINTENANCE_WORK_MEM=4GB
       - OSM2PGSQL_CACHE=40000
       - OSM2PGSQL_NUMPROC=16
-      # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
-      - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
+      - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
+      # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
+      # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
       - EXTERNAL_DATA_SCRIPT_FLAGS
+
+  martin:
+    image: martin:v1
+    build:
+      context: .
+      dockerfile: Dockerfile.martin
+    volumes:
+      - .:/app
+    ports:
+      - "3456:3000"
+    depends_on:
+      import:
+        condition: service_completed_successfully
+      setup:
+        condition: service_completed_successfully
+      db:
+        condition: service_healthy
+    environment:
+      - PGHOST=db
+      - PGUSER=postgres
+      - PG_WORK_MEM
+      - PG_MAINTENANCE_WORK_MEM
+      - OSM2PGSQL_CACHE
+      - OSM2PGSQL_NUMPROC
+
+  setup:
+    build:
+      context: .
+      dockerfile: Dockerfile.setup
+    tty: true
+    environment:
+      - PORT=3001
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_NAME=gis
+      - NODE_ENV=production
+      - NOMINATIM_URL=http://nominatim:8080
+    depends_on:
+      import:
+        condition: service_completed_successfully
+      db:
+        condition: service_healthy
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    tty: true
+    environment:
+      - PORT=3001
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_NAME=gis
+      - NODE_ENV=production
+      - NOMINATIM_URL=http://nominatim:8080
+    depends_on:
+      import:
+        condition: service_completed_successfully
+      setup:
+        condition: service_completed_successfully
+      db:
+        condition: service_healthy
+      martin:
+        condition: service_healthy
+    ports:
+      - "3001:3001"
