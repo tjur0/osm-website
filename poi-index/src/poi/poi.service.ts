@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { IsNull, Not, Raw, Repository } from 'typeorm';
+import { IsNull, Raw, Repository } from 'typeorm';
 import { Poi } from './entities/poi.entity';
 import { join } from 'path';
 import { ClassificationService } from './classification/classification.service';

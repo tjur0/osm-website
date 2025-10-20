@@ -23,8 +23,8 @@ services:
   nominatim:
     image: mediagis/nominatim:5.1
     environment:
-      - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
-      # - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
+      # - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
+      - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
       # - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
     ports:
       - "8080:8080"
@@ -71,8 +71,8 @@ services:
       - PG_MAINTENANCE_WORK_MEM=4GB
       - OSM2PGSQL_CACHE=40000
       - OSM2PGSQL_NUMPROC=16
-      - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
-      # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
+      # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
+      - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
       # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
       - EXTERNAL_DATA_SCRIPT_FLAGS
 

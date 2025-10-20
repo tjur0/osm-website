@@ -62,7 +62,8 @@ export default function ImplemtedMap() {
   const overlays = useMemo(() => {
     const overlays = [ColorfulStyle];
 
-    const isPoiPath = pathname.startsWith("/poi");
+    // const isPoiPath = pathname.startsWith("/poi");
+    const isPoiPath = true;
 
     if (PoiStyle && isPoiPath) {
       overlays.push(PoiStyle);
@@ -91,7 +92,7 @@ export default function ImplemtedMap() {
         maxZoom: 18,
       });
     },
-    [map, pathname, bbox],
+    [map, pathname, bbox]
   );
 
   useEffect(() => {
@@ -131,7 +132,9 @@ export default function ImplemtedMap() {
           features[0].properties;
 
         router.push(
-          `/poi/${country}/${state}/${city}/${street}/${type}/${id}?skipZoom=true`,
+          `/poi/${country ?? "-"}/${state ?? "-"}/${city ?? "-"}/${
+            street ?? "-"
+          }/${type}/${id}?skipZoom=true`
         );
       } else {
         router.push("/poi/Nederland?skipZoom=true");

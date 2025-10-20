@@ -1,10 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { IsNull, Not, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { Poi } from '../entities/poi.entity';
-import { getName } from 'src/lib/tag-parsers/name';
-
-const batchSize = 400;
 
 @Injectable()
 export class TagParsingService {

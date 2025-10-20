@@ -538,7 +538,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('tourism', 'camp_site'),
     key: 'tourism',
     value: 'camp_site',
-    name: 'Campeerplaats',
+    name: 'Camping',
     color: '',
 
     pois: [],
@@ -3435,27 +3435,33 @@ const featuresWithoutColor: Feature[] = [
   },
 ];
 
-const COLORS_OKLCH = [
-  'oklch(57.7% 0.245 27.325)',
-  'oklch(66.6% 0.179 58.318)',
-  'oklch(64.8% 0.2 131.684)',
-  'oklch(60% 0.118 184.704)',
-  'oklch(54.6% 0.245 262.881)',
-  'oklch(55.8% 0.288 302.321)',
-  'oklch(59.2% 0.249 0.584)',
-];
+const colorMapOklch = {
+  shop: 'oklch(49.6% 0.265 301.924)', // purple 700
+  amenity: 'oklch(66.6% 0.179 58.318)', // amber 600
+  emergency: 'oklch(79.5% 0.184 86.047)', // yellow 500
+  leisure: 'oklch(64.8% 0.2 131.684)', // lime 600
+  craft: 'oklch(43.2% 0.095 166.913)', // emerald 800
+  club: 'oklch(50% 0.134 242.749)', // sky 700
+  tourism: 'oklch(54.6% 0.245 262.881)', // blue 600
+  historic: 'oklch(37.4% 0.01 67.558)', // stone 700
+  place: 'oklch(58.6% 0.253 17.585)', // rose 600
+  office: 'oklch(27.9% 0.041 260.031)', // slate 800
+};
 
-const COLORS = COLORS_OKLCH.map((oklch) => {
-  const color = parse(oklch);
-  if (!color) return '#000000';
-  return formatHex(color);
-});
+const defaultColorHex = formatHex(parse('oklch(37.1% 0 0)')); // neutral 700
+
+const colorMapHex = Object.fromEntries(
+  Object.entries(colorMapOklch).map(([key, oklch]) => {
+    const color = parse(oklch);
+    if (!color) {
+      return [key, defaultColorHex];
+    }
+    return [key, formatHex(color)];
+  }),
+);
 
 const getColorForKey = (key: string): string => {
-  const index = featuresWithoutColor.findIndex(
-    (feature) => feature.key === key,
-  );
-  return COLORS[index % COLORS.length];
+  return colorMapHex[key] || defaultColorHex;
 };
 
 export const features = featuresWithoutColor.map((feature) => ({

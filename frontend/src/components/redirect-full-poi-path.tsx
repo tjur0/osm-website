@@ -39,8 +39,6 @@ export default function RedirectFullPoiPage({
       type: decodeURIComponent(type),
     };
 
-    console.log(decoded.country);
-
     if (
       (decoded.country !== poi.country ||
         decoded.state !== poi.state ||

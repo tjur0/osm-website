@@ -180,7 +180,7 @@ export class GeocodeService {
   }
 
   async reverseGeocodePoi(poi: Poi): Promise<Partial<Poi> | null> {
-    let [lon, lat] = poi.point.coordinates;
+    const [lon, lat] = poi.point.coordinates;
 
     return await this.attemptReverseGeocodePoi(poi, lat, lon);
   }

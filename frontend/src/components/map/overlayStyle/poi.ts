@@ -5,8 +5,10 @@ import { OverlayStyle } from "../style-specification-types";
 const TILES_URL = process.env.NEXT_PUBLIC_TILES_URL;
 const SOURCE_LAYER = "pois";
 
-if(!TILES_URL) {
-  throw new Error("NEXT_PUBLIC_TILES_URL is not defined in environment variables");
+if (!TILES_URL) {
+  throw new Error(
+    "NEXT_PUBLIC_TILES_URL is not defined in environment variables"
+  );
 }
 
 export function getPoisOverylay(filter): OverlayStyle {
@@ -41,7 +43,7 @@ export function getPoisOverylay(filter): OverlayStyle {
         "source-layer": SOURCE_LAYER,
         paint: {
           "circle-radius": 6,
-          "circle-color": "#fff",
+          "circle-color": "#000",
         },
         minzoom: 0,
         maxzoom: 22,

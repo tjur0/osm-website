@@ -42,6 +42,9 @@ export class AppService {
   }
 
   async start() {
+    this.logger.log('Starting main POI processing loop...');
+    await this.geocodeService.waitForGeocoderAvailability();
+
     while (true) {
       try {
         await this.poiService.processAllPois();
