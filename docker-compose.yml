@@ -23,8 +23,8 @@ services:
   nominatim:
     image: mediagis/nominatim:5.1
     environment:
-      # - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
-      - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
+      - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
+      # - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
       # - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
     ports:
       - "8080:8080"
@@ -71,8 +71,8 @@ services:
       - PG_MAINTENANCE_WORK_MEM=4GB
       - OSM2PGSQL_CACHE=40000
       - OSM2PGSQL_NUMPROC=16
-      # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
-      - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
+      - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands.osm.pbf
+      # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
       # - OSM2PGSQL_DATAFILE=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
       - EXTERNAL_DATA_SCRIPT_FLAGS
 
@@ -104,7 +104,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.setup
-    tty: true
     environment:
       - PORT=3001
       - DATABASE_HOST=db
@@ -124,7 +123,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.backend
-    tty: true
     environment:
       - PORT=3001
       - DATABASE_HOST=db
@@ -145,3 +143,24 @@ services:
         condition: service_healthy
     ports:
       - "3001:3001"
+
+  geocode:
+    build:
+      context: .
+      dockerfile: Dockerfile.geocode
+    environment:
+      - PORT=3001
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_NAME=gis
+      - NODE_ENV=production
+      - NOMINATIM_URL=http://nominatim:8080
+    depends_on:
+      setup:
+        condition: service_completed_successfully
+      import:
+        condition: service_completed_successfully
+      db:
+        condition: service_healthy

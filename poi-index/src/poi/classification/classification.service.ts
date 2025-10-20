@@ -4,7 +4,6 @@ import { Repository } from 'typeorm';
 import { Poi } from '../entities/poi.entity';
 import { Feature } from 'src/feature/entities/feature.entity';
 import * as cliProgress from 'cli-progress';
-import * as colors from 'ansi-colors';
 
 @Injectable()
 export class ClassificationService {
@@ -20,10 +19,10 @@ export class ClassificationService {
     const features = await this.featureRepository.find();
 
     const progressBar = new cliProgress.SingleBar({
-      format: `Classifying poi's | ${colors.cyan('{bar}')} | {percentage}% | {value}/{total}`,
-      barCompleteChar: '\u2588',
-      barIncompleteChar: '\u2591',
+      format: `Classifying poi's | [{bar}] | ETA: {eta}s | {percentage}% | {value}/{total}`,
+      barIncompleteChar: ' ',
       hideCursor: true,
+      noTTYOutput: true,
     });
 
     progressBar.start(features.length, 0);

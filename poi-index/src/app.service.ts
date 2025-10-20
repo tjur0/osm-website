@@ -29,12 +29,16 @@ export class AppService {
     this.logger.log('Starting initial setup...');
     await this.featureService.seedFeatures();
     await this.classificationService.classifyPois();
-    await this.geocodeService.geocodePoisBatch();
     await this.tagParsingService.addNameToPois();
     await this.tagParsingService.addTypeNameToPois();
     await this.poiService.setProcessedVersionToCurrent();
-
     this.logger.log('Initial setup completed. Exiting process.');
+  }
+
+  async geocodeSetup() {
+    this.logger.log('Starting geocoding setup...');
+    await this.geocodeService.geocodePoisBatch();
+    this.logger.log('Geocoding setup completed. Exiting process.');
   }
 
   async start() {

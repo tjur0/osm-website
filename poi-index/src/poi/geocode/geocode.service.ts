@@ -4,7 +4,6 @@ import { IsNull, Not, Repository } from 'typeorm';
 import { Poi } from '../entities/poi.entity';
 import { ReverseGeocodeResult } from './entities/reverse-geocode-result';
 import * as cliProgress from 'cli-progress';
-import * as colors from 'ansi-colors';
 
 const batchSize = 50;
 const concurrencyLimit = 10;
@@ -94,8 +93,7 @@ export class GeocodeService {
 
       this.logger.debug('Geocoder validation succeeded');
       return true;
-    } catch (error) {
-      this.logger.error('Geocoder validation failed:', error);
+    } catch (_error) {
       return false;
     }
   }
@@ -123,10 +121,10 @@ export class GeocodeService {
     this.logger.debug(`Starting geocoding for ${count} POIs`);
 
     const progressBar = new cliProgress.SingleBar({
-      format: `Reverse geocoding | ${colors.cyan('{bar}')} | {percentage}% | {value}/{total}`,
-      barCompleteChar: '\u2588',
-      barIncompleteChar: '\u2591',
+      format: `Reverse geocoding | [{bar}] | ETA: {eta}s | {percentage}% | {value}/{total}`,
+      barIncompleteChar: ' ',
       hideCursor: true,
+      noTTYOutput: true,
     });
 
     progressBar.start(count, 0);
