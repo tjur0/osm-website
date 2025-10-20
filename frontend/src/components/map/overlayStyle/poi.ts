@@ -5,6 +5,10 @@ import { OverlayStyle } from "../style-specification-types";
 const TILES_URL = process.env.NEXT_PUBLIC_TILES_URL;
 const SOURCE_LAYER = "pois";
 
+if(!TILES_URL) {
+  throw new Error("NEXT_PUBLIC_TILES_URL is not defined in environment variables");
+}
+
 export function getPoisOverylay(filter): OverlayStyle {
   return {
     id: "design",
