@@ -27,7 +27,7 @@ services:
       - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/flevoland-latest.osm.pbf
       # - PBF_URL=https://download.openstreetmap.fr/extracts/europe/netherlands/gelderland-latest.osm.pbf
     ports:
-      - "8080:8080"
+      - "8088:8080"
 
   replication:
     image: replication:v1
@@ -112,7 +112,7 @@ services:
       - DATABASE_PASSWORD=postgres
       - DATABASE_NAME=gis
       - NODE_ENV=production
-      - NOMINATIM_URL=http://nominatim:8080
+      - NOMINATIM_URL=http://nominatim:8088
     depends_on:
       import:
         condition: service_completed_successfully
@@ -156,7 +156,7 @@ services:
       - DATABASE_PASSWORD=postgres
       - DATABASE_NAME=gis
       - NODE_ENV=production
-      - NOMINATIM_URL=http://nominatim:8080
+      - NOMINATIM_URL=http://nominatim:8088
     depends_on:
       setup:
         condition: service_completed_successfully
