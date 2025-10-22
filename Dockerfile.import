@@ -10,4 +10,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN mkdir -p /app
 WORKDIR /app
 
+COPY . .
+
+RUN chmod +x scripts/docker-startup.sh
+
 CMD sh scripts/docker-startup.sh import
