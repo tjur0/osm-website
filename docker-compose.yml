@@ -130,7 +130,7 @@ services:
       - DATABASE_PASSWORD=postgres
       - DATABASE_NAME=gis
       - NODE_ENV=production
-      - NOMINATIM_URL=http://nominatim:8080
+      - NOMINATIM_URL=http://nominatim:8088
     depends_on:
       import:
         condition: service_completed_successfully
