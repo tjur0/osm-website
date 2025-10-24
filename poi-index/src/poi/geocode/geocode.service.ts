@@ -125,6 +125,7 @@ export class GeocodeService {
       barIncompleteChar: ' ',
       hideCursor: true,
       noTTYOutput: true,
+      etaBuffer: 500,
     });
 
     progressBar.start(count, 0);
@@ -234,7 +235,14 @@ export class GeocodeService {
     const response = await fetch(url, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
+    }).catch((error) => {
+      this.logger.error(`Error fetching geocoder URL: ${error.message}`);
+      return null;
     });
+
+    if (!response) {
+      return null;
+    }
 
     return (await response.json()) as ReverseGeocodeResult;
   }

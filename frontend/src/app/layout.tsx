@@ -8,7 +8,6 @@ import { BBoxProvider } from "@/providers/bbox-provider";
 import { UmamiAnalyticsProvider } from "@/providers/umami-analytics-provider";
 import { Window } from "@/components/elements/window";
 import SkipLink from "@/components/elements/skip-link";
-import { testConnection } from "@/lib/db";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,8 +37,6 @@ export default function RootLayout({
   if (!websiteId || !scriptUrl) {
     throw new Error("env UMAMI_WEBSITE_ID or UMAMI_SCRIPT_URL not set");
   }
-
-  testConnection();
 
   return (
     <html lang="nl" suppressHydrationWarning>
