@@ -1,6 +1,5 @@
 postgres:
-  # --- Keep your connection details ---
-  connection_string: "postgres://postgres@db:5432/gis"
+  connection_string: "${DATABASE_URL}"
   # ssl_cert: './postgresql.crt'
   # ssl_key: './postgresql.key'
   # ssl_root_cert: './root.crt'
