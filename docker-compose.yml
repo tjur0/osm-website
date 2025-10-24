@@ -44,6 +44,7 @@ services:
     environment:
       - PGHOST=db
       - PGUSER=postgres
+      - PGPASSWORD=postgres
       - REPLICATION_INTERVAL=60
       - PG_MAX_WAL_SIZE=4GB
       - PG_CHECKPOINT_TIMEOUT=30min
