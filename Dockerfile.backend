@@ -4,6 +4,7 @@ WORKDIR /app
 COPY poi-index/package*.json ./
 
 RUN npm ci
+RUN npm install -g @nestjs/cli
 
 COPY poi-index ./
 
