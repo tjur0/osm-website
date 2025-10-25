@@ -10,4 +10,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN mkdir -p /app
 WORKDIR /app
 
+COPY . .
+
+RUN chmod +x scripts/replication.sh
+
 CMD sh scripts/replication.sh

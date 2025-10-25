@@ -8,23 +8,23 @@ postgres:
   max_feature_count: null
   auto_bounds: quick
 
-  tables:
-    table.public.pois.point:
-      schema: public
-      table: pois
-      id_column: id
-      geometry_column: point
-      srid: 4326
-      geometry_type: POINT
-      buffer: 254
-      properties:
-        id: text
-        type: text
-        name: text
-        country: text
-        state: text
-        city: text
-        street: text
+  # tables:
+  #   table.public.pois.point:
+  #     schema: public
+  #     table: pois
+  #     id_column: id
+  #     geometry_column: point
+  #     srid: 4326
+  #     geometry_type: POINT
+  #     buffer: 254
+  #     properties:
+  #       id: text
+  #       type: text
+  #       name: text
+  #       country: text
+  #       state: text
+  #       city: text
+  #       street: text
 
   functions:
     pois:
