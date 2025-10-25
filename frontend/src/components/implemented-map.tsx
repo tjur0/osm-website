@@ -34,19 +34,19 @@ export default function ImplemtedMap() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const filter: ["all" | "any" | "none", ...any[]] = ["all"];
 
-    if (country) {
+    if (country && country !== "-") {
       filter.push(["==", ["get", "country"], country]);
     }
 
-    if (state) {
+    if (state && state !== "-") {
       filter.push(["==", ["get", "state"], state]);
     }
 
-    if (city) {
+    if (city && city !== "-") {
       filter.push(["==", ["get", "city"], city]);
     }
 
-    if (street) {
+    if (street && street !== "-") {
       filter.push(["==", ["get", "street"], street]);
     }
 
@@ -92,7 +92,7 @@ export default function ImplemtedMap() {
         maxZoom: 18,
       });
     },
-    [map, pathname, bbox],
+    [map, pathname, bbox]
   );
 
   useEffect(() => {
@@ -134,7 +134,7 @@ export default function ImplemtedMap() {
         router.push(
           `/poi/${country ?? "-"}/${state ?? "-"}/${city ?? "-"}/${
             street ?? "-"
-          }/${type}/${id}?skipZoom=true`,
+          }/${type}/${id}?skipZoom=true`
         );
       } else {
         router.push("/poi/Nederland?skipZoom=true");
