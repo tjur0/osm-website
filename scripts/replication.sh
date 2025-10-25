@@ -18,7 +18,8 @@ test $i -gt $MAXCOUNT && echo "Timeout while waiting for PostgreSQL to be runnin
 osm2pgsql-replication init \
   --database gis \
   --username $PGUSER \
-  --host $PGHOST
+  --host $PGHOST \
+  --osm-file $OSM_PBF_FILE
 
 # Run replication loop
 while true; do
