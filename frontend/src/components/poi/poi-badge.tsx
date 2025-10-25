@@ -1,5 +1,5 @@
 import { Poi } from "@/types/poi";
-import { Badge } from "../ui/badge";
+import { ColorBadge } from "./color-badge";
 
 interface PoiBadgeProps {
   poi: Poi;
@@ -7,12 +7,8 @@ interface PoiBadgeProps {
 
 export function PoiBadge({ poi }: PoiBadgeProps) {
   return (
-    <Badge className="flex items-center gap-2">
-      <div
-        className="size-3 rounded-full -ml-0.5"
-        style={{ backgroundColor: poi.color }}
-      ></div>
+    <ColorBadge color={poi.color}>
       {poi.tags?.["name:prefix"] ? poi.tags?.["name:prefix"] : `${poi.feature}`}
-    </Badge>
+    </ColorBadge>
   );
 }
