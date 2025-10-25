@@ -2968,7 +2968,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('shop', 'charity'),
     key: 'shop',
     value: 'charity',
-    name: 'Twede handswinkel',
+    name: 'Kringloopwinkel',
     color: '',
 
     pois: [],
