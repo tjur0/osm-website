@@ -54,8 +54,8 @@ export async function generateMetadata({ params }: PoiPageProps) {
   const { type, id } = await params;
 
   const response = await pool.query(
-    `SELECT name, "typeName", city, street FROM pois WHERE id = $1 AND type = $2 AND country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL`,
-    [id, type],
+    `SELECT name, "typeName", city, street FROM pois WHERE id = $1 AND type = $2`,
+    [id, type]
   );
   const poi = response.rows[0] as Poi;
 
@@ -90,7 +90,7 @@ export default async function PoiPage({ params }: PoiPageProps) {
 
   const response = await pool.query(
     `SELECT p.*, f.name as feature, f.color as color FROM pois p left join feature f on f.id = p."featureId" WHERE p.id = $1 AND p.type = $2`,
-    [id, type],
+    [id, type]
   );
 
   const poi = response.rows[0] as Poi;
