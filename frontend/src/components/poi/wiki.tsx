@@ -72,18 +72,20 @@ export default function Wiki({ poi }: WikiProps) {
 
   return (
     <div className="flex flex-col items-center justify-center gap-2">
-      <div className="flex gap-4 overflow-auto min-h-[260px] items-center horizontal-scroll">
-        {imageUrls.map((url, index) => (
-          <Image
-            key={index}
-            alt={imageAlts[index]}
-            width={318}
-            height={260}
-            src={url}
-            className="rounded shadow object-cover"
-          />
-        ))}
-      </div>
+      {imageUrls.length > 0 && (
+        <div className="flex gap-4 overflow-auto min-h-[260px] items-center horizontal-scroll">
+          {imageUrls.map((url, index) => (
+            <Image
+              key={index}
+              alt={imageAlts[index]}
+              width={318}
+              height={260}
+              src={url}
+              className="rounded shadow object-cover"
+            />
+          ))}
+        </div>
+      )}
       <div className="flex w-full p-2">
         {wikiUrl && (
           <Link

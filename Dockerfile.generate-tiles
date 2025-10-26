@@ -1,0 +1,62 @@
+ARG TARGETARCH=amd64
+ARG GDAL_VERSION=ubuntu-small-latest
+ARG PMTILES_VERSION=1.28.2
+
+FROM ghcr.io/osgeo/gdal:${GDAL_VERSION} AS builder
+
+ARG TARGETARCH
+ARG PMTILES_VERSION
+
+RUN PMTILES_ARCH_TAG="${TARGETARCH}"; \
+    if [ "${TARGETARCH}" = "amd64" ]; then PMTILES_ARCH_TAG="x86_64"; fi; \
+    PMTILES_DOWNLOAD_URL="https://github.com/protomaps/go-pmtiles/releases/download/v${PMTILES_VERSION}/go-pmtiles_${PMTILES_VERSION}_Linux_${PMTILES_ARCH_TAG}.tar.gz"; \
+    echo "Resolved PMTiles URL: $PMTILES_DOWNLOAD_URL"; \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+        wget make g++ libsqlite3-dev zlib1g-dev curl && \
+    rm -rf /var/lib/apt/lists/*; \
+    mkdir -p /tmp/pmtiles_install && \
+    cd /tmp/pmtiles_install && \
+    echo "Downloading PMTiles CLI..." && \
+    curl -L ${PMTILES_DOWNLOAD_URL} | tar xz -C. && \
+    mv pmtiles /usr/local/bin/pmtiles && \
+    chmod +x /usr/local/bin/pmtiles && \
+    cd / && \
+    rm -rf /tmp/pmtiles_install
+
+WORKDIR /usr/src/tippecanoe
+RUN wget -qO- https://github.com/mapbox/tippecanoe/archive/refs/tags/1.36.0.tar.gz | tar xz --strip-components=1
+RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
+RUN make
+
+# --- Final Image ---
+FROM ghcr.io/osgeo/gdal:${GDAL_VERSION}
+
+COPY --from=builder /usr/src/tippecanoe/tippecanoe /usr/local/bin/tippecanoe
+COPY --from=builder /usr/local/bin/pmtiles /usr/local/bin/pmtiles
+COPY --from=builder /usr/local/bin/mc /usr/local/bin/mc
+
+ENV PATH="/usr/local/bin:$PATH"
+RUN chmod +x /usr/local/bin/tippecanoe /usr/local/bin/pmtiles /usr/local/bin/mc
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    wget \
+    zlib1g-dev \
+    libsqlite3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/mapbox/tippecanoe.git /tmp/tippecanoe \
+    && cd /tmp/tippecanoe \
+    && make -j \
+    && make install \
+    && rm -rf /tmp/tippecanoe
+
+WORKDIR /app
+COPY generate_tiles.sh .    
+RUN chmod +x generate_tiles.sh
+RUN mkdir -p /app/output
+VOLUME /app/output
+
+CMD ["/app/generate_tiles.sh"]
