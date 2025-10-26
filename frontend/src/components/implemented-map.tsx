@@ -9,7 +9,7 @@ import maplibregl, {
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import { useBBox } from "@/providers/bbox-provider";
-import { getPoisOverylay } from "./map/overlayStyle/poi";
+import { getPoisOverlay } from "./map/overlayStyle/poi";
 import ColorfulStyle from "./map/overlayStyle/colorful";
 
 export default function ImplemtedMap() {
@@ -20,6 +20,16 @@ export default function ImplemtedMap() {
   const [map, setMap] = useState<maplibregl.Map | null>(null);
 
   const [clicked, setClicked] = useState(false);
+
+  const [poiSource, setPoiSource] = useState<"live" | "pmtiles">("pmtiles");
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "p") {
+      setPoiSource("pmtiles");
+    } else if (event.key === "l") {
+      setPoiSource("live");
+    }
+  });
 
   const PoiStyle = useMemo(() => {
     const segments = pathname.split("/").map(decodeURIComponent);
@@ -56,8 +66,8 @@ export default function ImplemtedMap() {
     }
 
     // lets only start showing the selection after state has been selected
-    return getPoisOverylay(filter.length > 2 && filter);
-  }, [pathname, map]);
+    return getPoisOverlay(filter.length > 2 && filter, poiSource);
+  }, [pathname, map, poiSource]);
 
   const overlays = useMemo(() => {
     const overlays = [ColorfulStyle];

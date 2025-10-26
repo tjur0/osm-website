@@ -4,7 +4,7 @@ docker compose -p osm-nl up --build
 
 <!-- step 1 on wsl -->
 
-ogr2ogr -f GeoJSONSeq pois.ndjson PG:"host=localhost dbname=gis user=postgres" \
+ogr2ogr -f GeoJSONSeq pois.ndjson PG:"host=localhost dbname=gis user=postgres password=" \
  -lco RS=YES \
  -sql "
 SELECT
@@ -17,7 +17,8 @@ p.country,
 p.state,
 p.city,
 p.street,
-f.importance
+f.importance,
+f.color
 FROM pois p
 JOIN feature f ON f.id = p.\"featureId\"
 WHERE p.country = 'Nederland'
@@ -26,19 +27,18 @@ WHERE p.country = 'Nederland'
 <!-- step 2 on wsl -->
 
 tippecanoe -o pois.mbtiles \
+ --layer=pois \
  --read-parallel \
  -Z0 -z16 \
  --drop-densest-as-needed \
  --maximum-tile-bytes=25000 \
  --force \
  --base-zoom=0 \
- -J filter.json \
  pois.ndjson
 
 <!-- step 3 on windows with .\pmtiles.exe in ../  -->
 
-cd ../
-.\pmtiles.exe convert .\osm-website\pois.mbtiles .\osm-website\pois.pmtiles
+.\pmtiles.exe convert .\pois.mbtiles .\pois.pmtiles
 
 <!-- nominatim -->
 

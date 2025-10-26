@@ -2,24 +2,34 @@
 // @ts-nocheck
 import { OverlayStyle } from "../style-specification-types";
 
+const PMTILES_URL = process.env.NEXT_PUBLIC_PMTILES_URL;
 const TILES_URL = process.env.NEXT_PUBLIC_TILES_URL;
 const SOURCE_LAYER = "pois";
 
 if (!TILES_URL) {
   throw new Error(
-    "NEXT_PUBLIC_TILES_URL is not defined in environment variables",
+    "NEXT_PUBLIC_TILES_URL is not defined in environment variables"
   );
 }
 
-export function getPoisOverylay(filter): OverlayStyle {
+export function getPoisOverlay(filter, sourceName): OverlayStyle {
+  const source = `osm-tiles-source-${sourceName}`;
+
   return {
     id: "design",
     order: 100,
     sources: {
-      "osm-tiles-source": {
+      "osm-tiles-source-live": {
         type: "vector",
         url: `${TILES_URL}`,
         baseUrl: `${TILES_URL}`,
+        attribution: "OpenStreetMap",
+      },
+      "osm-tiles-source-pmtiles": {
+        type: "vector",
+        vector: "pmtiles",
+        url: `pmtiles://${PMTILES_URL}`,
+        baseUrl: `${PMTILES_URL}`,
         attribution: "OpenStreetMap",
       },
     },
@@ -27,7 +37,7 @@ export function getPoisOverylay(filter): OverlayStyle {
       {
         id: "points",
         type: "circle",
-        source: "osm-tiles-source",
+        source: source,
         "source-layer": SOURCE_LAYER,
         paint: {
           "circle-radius": 10,
@@ -39,7 +49,7 @@ export function getPoisOverylay(filter): OverlayStyle {
       {
         id: "points-outline",
         type: "circle",
-        source: "osm-tiles-source",
+        source: source,
         "source-layer": SOURCE_LAYER,
         paint: {
           "circle-radius": 6,
@@ -51,7 +61,7 @@ export function getPoisOverylay(filter): OverlayStyle {
       {
         id: "points-color",
         type: "circle",
-        source: "osm-tiles-source",
+        source: source,
         "source-layer": SOURCE_LAYER,
         paint: {
           "circle-radius": 4,
@@ -63,7 +73,7 @@ export function getPoisOverylay(filter): OverlayStyle {
       {
         id: "points-selection-outline",
         type: "circle",
-        source: "osm-tiles-source",
+        source: source,
         "source-layer": SOURCE_LAYER,
         paint: {
           "circle-radius": 9,
@@ -76,7 +86,7 @@ export function getPoisOverylay(filter): OverlayStyle {
       {
         id: "points-selection-outline-white",
         type: "circle",
-        source: "osm-tiles-source",
+        source: source,
         "source-layer": SOURCE_LAYER,
         paint: {
           "circle-radius": 7,
@@ -89,7 +99,7 @@ export function getPoisOverylay(filter): OverlayStyle {
       {
         id: "points-selection-color",
         type: "circle",
-        source: "osm-tiles-source",
+        source: source,
         "source-layer": SOURCE_LAYER,
         paint: {
           "circle-radius": 4,
@@ -102,7 +112,7 @@ export function getPoisOverylay(filter): OverlayStyle {
       {
         id: "points-label",
         type: "symbol",
-        source: "osm-tiles-source",
+        source: source,
         "source-layer": SOURCE_LAYER,
         layout: {
           "text-field": [

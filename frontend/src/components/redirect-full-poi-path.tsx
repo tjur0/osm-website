@@ -40,15 +40,9 @@ export default function RedirectFullPoiPage({
     };
 
     if (
-      (decoded.country !== poi.country ||
-        decoded.state !== poi.state ||
-        decoded.city !== poi.city ||
-        decoded.street !== poi.street ||
-        decoded.type !== poi.type) &&
-      (decoded.country !== "-" ||
-        decoded.state !== "-" ||
-        decoded.city !== "-" ||
-        decoded.street !== "-")
+      decodedIsNotEmpty(decoded) &&
+      decodedDoesNotMatchPoi(decoded, poi) &&
+      poiHasGeocoded(poi)
     ) {
       const encoded = {
         country: encodeURIComponent(poi.country || "-"),
@@ -65,3 +59,34 @@ export default function RedirectFullPoiPage({
 
   return null;
 }
+
+const decodedIsNotEmpty = (decoded: { [key: string]: string }) => {
+  return (
+    decoded.country !== "-" ||
+    decoded.state !== "-" ||
+    decoded.city !== "-" ||
+    decoded.street !== "-"
+  );
+};
+
+const decodedDoesNotMatchPoi = (
+  decoded: { [key: string]: string },
+  poi: Poi
+) => {
+  return (
+    decoded.country !== poi.country ||
+    decoded.state !== poi.state ||
+    decoded.city !== poi.city ||
+    decoded.street !== poi.street ||
+    decoded.type !== poi.type
+  );
+};
+
+const poiHasGeocoded = (poi: Poi) => {
+  return (
+    poi.country !== null &&
+    poi.state !== null &&
+    poi.city !== null &&
+    poi.street !== null
+  );
+};
