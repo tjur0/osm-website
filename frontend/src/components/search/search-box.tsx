@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Input } from "../ui/input";
 
-const debounceTime = 500;
+const debounceTime = 400;
 
 export function SearchBox() {
   const [searchQuery, setSearchQuery] = useState<string>("");
