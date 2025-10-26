@@ -71,7 +71,7 @@ const decodedIsNotEmpty = (decoded: { [key: string]: string }) => {
 
 const decodedDoesNotMatchPoi = (
   decoded: { [key: string]: string },
-  poi: Poi
+  poi: Poi,
 ) => {
   return (
     decoded.country !== poi.country ||
