@@ -18,6 +18,8 @@ import {
 import { enablePmTiles } from "./pmtiles";
 import { OverlayStyle } from "./style-specification-types";
 
+const LOADING_DEBOUNCE_MS = 100;
+
 interface MapProps {
   overlays: OverlayStyle[];
   center?: [number, number];
@@ -25,6 +27,7 @@ interface MapProps {
   map: maplibregl.Map | null;
   setMap: React.Dispatch<React.SetStateAction<maplibregl.Map | null>>;
   setFocused: React.Dispatch<React.SetStateAction<boolean>>;
+  setLoading?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export function Map({
@@ -34,11 +37,14 @@ export function Map({
   map,
   setMap,
   setFocused,
+  setLoading,
 }: MapProps) {
   const isLoaded = useRef(false);
   const mapContainer = useRef(null);
   const [activeOverlays, setActiveOverlays] = useState<OverlayStyle[]>([]);
   const [isStyleLoaded, setIsStyleLoaded] = useState(false);
+  const loadingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     for (const overlay of getRemovedOverlays(activeOverlays, overlays)) {
@@ -85,6 +91,36 @@ export function Map({
     map.on("error", (e) => {
       console.error("Map error:", e);
     });
+
+    if (setLoading) {
+      const debouncedSetLoading = (isLoading: boolean) => {
+        // Clear any existing timeouts
+        if (loadingTimeoutRef.current) {
+          clearTimeout(loadingTimeoutRef.current);
+          loadingTimeoutRef.current = null;
+        }
+        if (hideTimeoutRef.current) {
+          clearTimeout(hideTimeoutRef.current);
+          hideTimeoutRef.current = null;
+        }
+
+        loadingTimeoutRef.current = setTimeout(() => {
+          setLoading(isLoading);
+        }, LOADING_DEBOUNCE_MS);
+      };
+
+      map.on("dataloading", () => debouncedSetLoading(true));
+      map.on("data", () => {
+        const style = map.getStyle();
+        if (style && style.sources) {
+          const allLoaded = Object.keys(style.sources).every((sourceId) =>
+            map.isSourceLoaded(sourceId),
+          );
+          if (allLoaded) debouncedSetLoading(false);
+        }
+      });
+      map.on("idle", () => debouncedSetLoading(false));
+    }
 
     setMap(map);
   }, []);
@@ -137,6 +173,13 @@ export function Map({
   useEffect(() => {
     return () => {
       if (map) map.remove();
+
+      if (loadingTimeoutRef.current) {
+        clearTimeout(loadingTimeoutRef.current);
+      }
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
     };
   }, [map]);
 
@@ -231,7 +274,7 @@ export function Map({
   }, [createMap]);
 
   return (
-    <div className="map-wrap h-full w-full">
+    <div className="map-wrap h-full w-full relative">
       <div
         ref={mapContainer}
         onFocus={() => setFocused(true)}

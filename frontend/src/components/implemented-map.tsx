@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useBBox } from "@/providers/bbox-provider";
 import { getPoisOverlay } from "./map/overlayStyle/poi";
 import ColorfulStyle from "./map/overlayStyle/colorful";
+import { Loader2 } from "lucide-react";
 
 export default function ImplemtedMap() {
   const pathname = usePathname();
@@ -22,6 +23,8 @@ export default function ImplemtedMap() {
   const [clicked, setClicked] = useState(false);
 
   const [poiSource, setPoiSource] = useState<"live" | "pmtiles">("pmtiles");
+
+  const [loading, setLoading] = useState(false);
 
   if (typeof window !== "undefined") {
     document.addEventListener("keydown", (event) => {
@@ -131,8 +134,6 @@ export default function ImplemtedMap() {
         | QueryRenderedFeaturesOptions
         | undefined;
     }) => {
-      if (!map.isStyleLoaded()) return;
-      if (!map.getLayer("points")) return;
       setClicked(true);
 
       const features = map.queryRenderedFeatures(e.point, {
@@ -189,12 +190,22 @@ export default function ImplemtedMap() {
         map={map}
         setMap={setMap}
         setFocused={setFocused}
+        setLoading={setLoading}
       />
 
       <div className="right-0 bottom-0 absolute z-10 m-2 flex flex-col gap-2">
+        {loading && (
+          <div className="p-1 pt-0 px-3 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500">
+            <span className="text-white font-bold select-none text-xs inline-flex items-center gap-1.5">
+              <Loader2 className="size-3 animate-spin stroke-[3]" />
+              Laden...
+            </span>
+          </div>
+        )}
+
         {focused && (
           <div className="p-1 pt-0 px-3 rounded-full bg-gradient-to-r from-red-500 to-purple-500">
-            <span className="text-md text-white font-bold select-none text-xs">
+            <span className="text-white font-bold select-none text-xs">
               Kaart geselecteerd
             </span>
           </div>
@@ -202,7 +213,7 @@ export default function ImplemtedMap() {
 
         <Link href="https://www.openstreetmap.org/copyright" target="_blank">
           <div className="z-10 p-1 pt-0 px-3 rounded-full bg-gradient-to-r from-green-500 to-orange-500">
-            <span className="text-md text-white font-bold select-none text-xs">
+            <span className="text-white font-bold select-none text-xs">
               Mogelijk gemaakt door OpenStreetMap data
             </span>
           </div>
