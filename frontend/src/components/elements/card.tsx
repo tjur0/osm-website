@@ -10,7 +10,7 @@ export default async function Card({ className, children }: CardProps) {
     <div
       className={twMerge(
         "bg-white/10 border border-white/20 rounded-lg p-4 shadow-lg",
-        className,
+        className
       )}
     >
       {children}

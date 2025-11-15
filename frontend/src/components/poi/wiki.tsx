@@ -29,7 +29,7 @@ export default function Wiki({ poi }: WikiProps) {
     async function fetchWikiData() {
       try {
         const res = await fetch(
-          `https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${wikidataId}&format=json&origin=*&props=claims|sitelinks`,
+          `https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${wikidataId}&format=json&origin=*&props=claims|sitelinks`
         );
         const data = await res.json();
         const entity = data?.entities?.[wikidataId];
@@ -38,7 +38,7 @@ export default function Wiki({ poi }: WikiProps) {
         if (title) {
           setWikiTitle(title);
           setWikiUrl(
-            `https://nl.wikipedia.org/wiki/${encodeURIComponent(title)}`,
+            `https://nl.wikipedia.org/wiki/${encodeURIComponent(title)}`
           );
         }
 

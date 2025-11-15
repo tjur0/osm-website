@@ -73,7 +73,7 @@ export function Map({
     });
 
     const maplibreglCtrlBottomRight = document.querySelector(
-      ".maplibregl-ctrl-bottom-right",
+      ".maplibregl-ctrl-bottom-right"
     );
     if (maplibreglCtrlBottomRight) {
       maplibreglCtrlBottomRight.remove();
@@ -114,7 +114,7 @@ export function Map({
         const style = map.getStyle();
         if (style && style.sources) {
           const allLoaded = Object.keys(style.sources).every((sourceId) =>
-            map.isSourceLoaded(sourceId),
+            map.isSourceLoaded(sourceId)
           );
           if (allLoaded) debouncedSetLoading(false);
         }
@@ -148,7 +148,7 @@ export function Map({
     if (!map || !isStyleLoaded) return;
 
     const sortedOverlays = [...activeOverlays].sort(
-      (a, b) => a.order - b.order,
+      (a, b) => a.order - b.order
     );
 
     sortedOverlays.forEach((overlay) => {
@@ -210,16 +210,16 @@ export function Map({
 
     if (existingOverlay.sources !== overlay.sources) {
       const removedSources = Object.keys(existingOverlay.sources).filter(
-        (sourceId) => !(sourceId in overlay.sources),
+        (sourceId) => !(sourceId in overlay.sources)
       );
       const addedSources = Object.keys(overlay.sources).filter(
-        (sourceId) => !(sourceId in existingOverlay.sources),
+        (sourceId) => !(sourceId in existingOverlay.sources)
       );
       const changedSources = Object.keys(overlay.sources).filter(
         (sourceId) =>
           sourceId in existingOverlay.sources &&
           sourceId in overlay.sources &&
-          existingOverlay.sources[sourceId] !== overlay.sources[sourceId],
+          existingOverlay.sources[sourceId] !== overlay.sources[sourceId]
       );
       removedSources.forEach((sourceId) => {
         if (map.getSource(sourceId)) {
@@ -263,7 +263,7 @@ export function Map({
     }
 
     setActiveOverlays((prev) =>
-      prev.map((o) => (o.id === overlay.id ? overlay : o)),
+      prev.map((o) => (o.id === overlay.id ? overlay : o))
     );
   };
 

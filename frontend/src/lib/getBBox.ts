@@ -42,7 +42,7 @@ export async function getBBox(params: {
 
   const response = await pool.query(
     `SELECT MIN(ST_X(point)) AS min_lng, MIN(ST_Y(point)) AS min_lat, MAX(ST_X(point)) AS max_lng, MAX(ST_Y(point)) AS max_lat FROM pois ${whereClause}`,
-    values,
+    values
   );
 
   const { min_lng, min_lat, max_lng, max_lat } = response.rows[0] ?? {};

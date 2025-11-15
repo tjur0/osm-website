@@ -8,7 +8,7 @@ const SOURCE_LAYER = "pois";
 
 if (!TILES_URL) {
   throw new Error(
-    "NEXT_PUBLIC_TILES_URL is not defined in environment variables",
+    "NEXT_PUBLIC_TILES_URL is not defined in environment variables"
   );
 }
 

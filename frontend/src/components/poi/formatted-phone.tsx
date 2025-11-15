@@ -32,7 +32,7 @@ export const formatPhoneNumber = (phone: string): string => {
     /(\+?\d{2,3})(\d{3})(\d{3,4})(\d{0,4})/,
     (_match, p1, p2, p3, p4) => {
       return [p1, p2, p3, p4].filter(Boolean).join(" ");
-    },
+    }
   );
 };
 

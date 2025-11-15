@@ -4,7 +4,7 @@ import { SourceSpecificationVector } from "./style-specification-types";
 
 export const enablePmTiles = (
   map: maplibregl.Map,
-  source: SourceSpecificationVector,
+  source: SourceSpecificationVector
 ) => {
   if (!map) throw new Error("Map is not initialized");
   if (!source.baseUrl || source.vector !== "pmtiles") {

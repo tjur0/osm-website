@@ -26,7 +26,7 @@ export function Title({
 
   const titleClassName = cn(
     "font-bold tracking-tight truncate text-ellipsis pb-1 line-clamp-2",
-    sizes[size],
+    sizes[size]
   );
 
   return (

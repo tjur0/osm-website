@@ -7,7 +7,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (!process.env.BASE_URL) throw new Error("BASE_URL is not defined");
 
   const response = await pool.query(
-    "SELECT COUNT(*) as count FROM pois WHERE country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL",
+    "SELECT COUNT(*) as count FROM pois WHERE country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL"
   );
   const { count } = response.rows[0] as { count: number };
 
@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: `${process.env.BASE_URL}/poi/sitemap/${id}.xml`,
         lastModified: new Date().toISOString(),
       };
-    },
+    }
   );
 
   return poiSitemapUrls;

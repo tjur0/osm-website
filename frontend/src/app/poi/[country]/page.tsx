@@ -17,7 +17,7 @@ interface CountryPageProps {
 
 export async function generateStaticParams() {
   const response = await pool.query(
-    "SELECT DISTINCT country FROM pois WHERE country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL",
+    "SELECT DISTINCT country FROM pois WHERE country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL"
   );
   const countries = response.rows as { country: string }[];
 
@@ -48,7 +48,7 @@ export default async function CountryIndexPage({ params }: CountryPageProps) {
 
   const response = await pool.query(
     "SELECT DISTINCT state FROM pois WHERE country = $1 ORDER BY state",
-    [country],
+    [country]
   );
 
   const states = response.rows as { state: string }[];

@@ -18,7 +18,7 @@ export default async function TagTable({ poi }: TagTableProps) {
   if (!poi.tags || Object.keys(poi.tags).length === 0) return null;
 
   const sortedTags = Object.entries(poi.tags).sort(([keyA], [keyB]) =>
-    keyA.localeCompare(keyB),
+    keyA.localeCompare(keyB)
   );
 
   return (

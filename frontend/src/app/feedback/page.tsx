@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Title } from "@/components/elements/title";
 
 export default function Feedback() {
   const [feedback, setFeedback] = useState("");
@@ -40,7 +41,7 @@ export default function Feedback() {
               [questionId]: feedback,
             },
           }),
-        },
+        }
       );
 
       if (response.ok) {
@@ -60,7 +61,7 @@ export default function Feedback() {
         <ArrowLeft />
       </Link>
 
-      <h1 className="text-3xl font-bold">Feedback</h1>
+      <Title size="h1" title="Feedback" />
 
       {submitted ? (
         <div className="bg-green-100 dark:bg-green-900/20 border border-green-400 dark:border-green-600 text-green-700 dark:text-green-300 px-4 py-3 rounded-lg">

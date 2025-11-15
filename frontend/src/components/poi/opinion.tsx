@@ -15,7 +15,7 @@ export default function Opinion({ poi }: OpinionProps) {
   const { track } = useUmami();
 
   const [userOpinion, setUserOpinion] = useState<"like" | "dislike" | null>(
-    null,
+    null
   );
 
   const storageKey = `poi-opinion-${poi.id}-${poi.type}`;
@@ -61,7 +61,7 @@ export default function Opinion({ poi }: OpinionProps) {
             "size-8",
             userOpinion === "like"
               ? "bg-green-400 dark:bg-green-800 text-white"
-              : "",
+              : ""
           )}
           onClick={() => handleClick("like")}
           disabled={!!userOpinion}
@@ -76,7 +76,7 @@ export default function Opinion({ poi }: OpinionProps) {
             "size-8",
             userOpinion === "dislike"
               ? "bg-red-400 dark:bg-red-800 text-white"
-              : "",
+              : ""
           )}
           onClick={() => handleClick("dislike")}
           disabled={!!userOpinion}

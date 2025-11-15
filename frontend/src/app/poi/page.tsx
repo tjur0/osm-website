@@ -21,7 +21,7 @@ export const metadata = {
 
 export default async function PoiIndexPage() {
   const response = await pool.query(
-    "SELECT DISTINCT country FROM pois WHERE country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL ORDER BY country",
+    "SELECT DISTINCT country FROM pois WHERE country IS NOT NULL AND state IS NOT NULL AND city IS NOT NULL AND street IS NOT NULL ORDER BY country"
   );
 
   const countries = response.rows as { country: string }[];

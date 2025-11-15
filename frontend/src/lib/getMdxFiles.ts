@@ -26,7 +26,7 @@ export async function getMdxFile(slug: string, subFolder = "") {
     process.cwd(),
     "content",
     subFolder,
-    `${slug}.mdx`,
+    `${slug}.mdx`
   );
   const fileContents = fs.readFileSync(filePath, "utf-8");
 

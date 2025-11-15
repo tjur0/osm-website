@@ -135,7 +135,7 @@ export default async function EventDetailPage({
 
   const events: Event[] = await getAllEvents();
   const eventClasses: EventClass[] = events.map(
-    (event) => new EventClass(event),
+    (event) => new EventClass(event)
   );
 
   const event = eventClasses.find((event) => event.id === id);
