@@ -1,6 +1,12 @@
 import { Logo } from "@/components/logo";
 import Link from "next/link";
-import { BookUser, CalendarSearch, MapPin, ScrollText } from "lucide-react";
+import {
+  BookUser,
+  CalendarSearch,
+  MapPin,
+  ScrollText,
+  MessageCircleHeart,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
 
@@ -71,6 +77,19 @@ export default function Header() {
             <div className="size-12 p-3">
               <BookUser className="text-gray-200 size-6" />
               <span className="sr-only">Contact</span>
+            </div>
+          </Button>
+        </Link>
+        <Link href={"/feedback"} className="size-12">
+          <Button
+            variant="ghost"
+            className="size-12 p-3"
+            aria-label="Feedback"
+            asChild
+          >
+            <div className="size-12 p-3">
+              <MessageCircleHeart className="text-gray-200 size-6" />
+              <span className="sr-only">Feedback</span>
             </div>
           </Button>
         </Link>
