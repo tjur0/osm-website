@@ -34,8 +34,8 @@ BEGIN
       f.name as "feature",
       f.color as "color",
       ST_AsMVTGeom(
-        p.point,
-        tile_bbox_4326,
+        ST_Transform(p.point, 3857),
+        tile_bbox_3857,
         4096, 64, true
       ) AS geom
       
