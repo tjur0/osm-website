@@ -40,7 +40,7 @@ export default function Feedback() {
               [questionId]: feedback,
             },
           }),
-        }
+        },
       );
 
       if (response.ok) {
