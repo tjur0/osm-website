@@ -32,3 +32,5 @@ postgres:
       function: pois
       minzoom: 0
       maxzoom: 22
+      query_parameters:
+        - feature_ids

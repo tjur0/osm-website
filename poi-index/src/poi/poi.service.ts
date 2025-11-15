@@ -8,6 +8,7 @@ import { GeocodeService } from './geocode/geocode.service';
 import { getName } from 'src/lib/tag-parsers/name';
 import { getTypeName } from 'src/lib/tag-parsers/typeName';
 import { poisFunction } from './sql/pois-function';
+import { dropPoisFunctions } from './sql/drop-pois-functions';
 
 @Injectable()
 export class PoiService {
@@ -28,6 +29,7 @@ export class PoiService {
 
   async setupFunctions() {
     try {
+      await this.poiRepository.query(dropPoisFunctions);
       await this.poiRepository.query(poisFunction);
       await this.poiRepository.query(`SELECT public.pois(0, 0, 0) as mvt`);
 
