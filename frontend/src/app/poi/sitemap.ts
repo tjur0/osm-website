@@ -16,21 +16,24 @@ export async function generateSitemaps() {
 
   console.log("Total pages:", pages);
 
-  return Array.from({ length: pages }, (_, i) => i).map((id) => ({
-    id,
+  return Array.from({ length: pages }, (_, i) => ({
+    id: i.toString(),
   }));
 }
 
 export default async function sitemap({
   id,
 }: {
-  id: string;
+  id: string | Promise<string>;
 }): Promise<MetadataRoute.Sitemap> {
   if (!process.env.BASE_URL) throw new Error("BASE_URL is not defined");
 
-  const pageId = parseInt(id, 10);
+
+  const resolvedId = await (id instanceof Promise ? id : id);
+  const pageId = parseInt(resolvedId, 10);
+
   if (isNaN(pageId)) {
-    throw new Error(`Invalid page id: ${id}`);
+    throw new Error(`Invalid page id: ${resolvedId}`);
   }
 
   const offset = pageId * PAGE_SIZE;
