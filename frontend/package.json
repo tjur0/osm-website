@@ -2,6 +2,9 @@
   "name": "openstreetmap-website",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "browserslist": [
     "defaults and supports es6-module",
     "not IE 11",
