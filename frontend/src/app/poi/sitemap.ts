@@ -28,7 +28,6 @@ export default async function sitemap({
 }): Promise<MetadataRoute.Sitemap> {
   if (!process.env.BASE_URL) throw new Error("BASE_URL is not defined");
 
-
   const resolvedId = await (id instanceof Promise ? id : id);
   const pageId = parseInt(resolvedId, 10);
 
