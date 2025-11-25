@@ -5,9 +5,14 @@ const PAGE_SIZE = 40000;
 
 export async function generateSitemaps() {
   const response = await pool.query("SELECT COUNT(*) as count FROM pois");
-  const { count } = response.rows[0] as { count: number };
+  const { count } = response.rows[0] as { count: string };
 
-  const pages = Math.ceil(count / PAGE_SIZE);
+  const totalCount = parseInt(count, 10);
+  if (isNaN(totalCount)) {
+    throw new Error(`Invalid count from database: ${count}`);
+  }
+
+  const pages = Math.ceil(totalCount / PAGE_SIZE);
 
   console.log("Total pages:", pages);
 
@@ -19,13 +24,18 @@ export async function generateSitemaps() {
 export default async function sitemap({
   id,
 }: {
-  id: number;
+  id: string;
 }): Promise<MetadataRoute.Sitemap> {
   if (!process.env.BASE_URL) throw new Error("BASE_URL is not defined");
 
-  const offset = id * PAGE_SIZE;
+  const pageId = parseInt(id, 10);
+  if (isNaN(pageId)) {
+    throw new Error(`Invalid page id: ${id}`);
+  }
 
-  console.log("Generating sitemap for page", id, "with offset", offset);
+  const offset = pageId * PAGE_SIZE;
+
+  console.log("Generating sitemap for page", pageId, "with offset", offset);
 
   const response = await pool.query(
     `
