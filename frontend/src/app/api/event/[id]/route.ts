@@ -3,6 +3,8 @@ import jsdom from "jsdom";
 import { notFound } from "next/navigation";
 import { EventDetail } from "@/types/event";
 
+export const dynamic = "force-dynamic";
+
 const getEventHTML = async (id: string) => {
   const response = await fetch(`https://osmcal.org/event/${id}`, {
     cache: "force-cache",
@@ -63,10 +65,11 @@ const getEventParticipants = async (id: string) => {
 };
 
 // GET: /api/event/[id]
-export async function GET(request: Request) {
-  const url = new URL(request.url);
-  const pathname = url.pathname;
-  const id = pathname.split("/").pop();
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
 
   if (!id) return notFound();
 
@@ -76,12 +79,12 @@ export async function GET(request: Request) {
   const { JSDOM } = jsdom;
   const dom = new JSDOM(html);
   const doc = dom.window.document;
+
   if (!doc) return notFound();
 
   const name = doc.querySelector("h1")?.textContent ?? "Event name";
 
   const startDescription = doc.querySelector(".event-single-date");
-  // get all elements after the start description until the div ends
 
   const description: Element[] = [];
   let nextElement = startDescription?.nextElementSibling;
