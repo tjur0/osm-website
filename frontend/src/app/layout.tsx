@@ -8,6 +8,7 @@ import { BBoxProvider } from "@/providers/bbox-provider";
 import { UmamiAnalyticsProvider } from "@/providers/umami-analytics-provider";
 import { Window } from "@/components/elements/window";
 import SkipLink from "@/components/elements/skip-link";
+import { PoiBadgeList } from "@/components/poi/poi-badge-list";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -87,6 +88,12 @@ export default function RootLayout({
                     </main>
                   </div>
                 </Window>
+              </div>
+
+              <div className="absolute z-10 top-6 left-6 md:left-[532px] right-6 pointer-events-none">
+                <div className="pointer-events-auto w-fit max-w-full">
+                  <PoiBadgeList />
+                </div>
               </div>
             </BBoxProvider>
           </ThemeProvider>
