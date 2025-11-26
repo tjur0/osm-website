@@ -49,7 +49,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen md:overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full md:overflow-hidden`}
       >
         <UmamiAnalyticsProvider src={scriptUrl} websiteId={websiteId}>
           <ThemeProvider
@@ -61,23 +61,23 @@ export default function RootLayout({
             <BBoxProvider>
               <SkipLink />
 
-              <div className="md:absolute top-0 left-0 w-full h-[70dvh] md:h-[100dvh] z-0">
-                <div className="fixed md:absolute w-full h-[100lvh] md:h-[100dvh]">
+              <div className="md:absolute top-0 left-0 w-full h-[70dvh] md:h-dvh z-0">
+                <div className="fixed md:absolute w-full h-lvh md:h-dvh">
                   <ImplemtedMap />
                 </div>
               </div>
 
-              <div className="absolute z-10 flex h-screen md:p-6">
-                <Window className="md:w-[500px] w-screen min-h-[100lvh] md:min-h-[500px] h-fit md:h-full justify-start">
+              <div className="absolute z-10 flex h-screen md:p-6 w-full">
+                <Window className="md:w-[500px] w-full min-h-lvh md:min-h-[500px] h-fit md:h-full justify-start">
                   <div
                     aria-hidden
-                    className="md:hidden mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-700 dark:bg-gray-300 my-4"
+                    className="md:hidden mx-auto w-12 h-1.5 shrink-0 rounded-full bg-gray-700 dark:bg-gray-300 my-4"
                   />
                   <div className="flex gap-4 w-full h-full">
                     <div className="min-w-[60px] h-full flex flex-col justify-start md:justify-between gap-2">
                       <Header />
                     </div>
-                    {/* <div className="bg-gray-200 opacity-30 w-[2px] h-full" /> */}
+                    <div className="bg-gray-200 opacity-30 w-[2px] h-full" />
                     <main
                       tabIndex={-1}
                       id="main"
@@ -90,7 +90,7 @@ export default function RootLayout({
                 </Window>
               </div>
 
-              <div className="absolute z-10 top-6 left-6 md:left-[532px] right-6 pointer-events-none">
+              <div className="fixed top-4 left-4 md:top-6 md:left-[532px] right-6 pointer-events-none">
                 <div className="pointer-events-auto w-fit max-w-full">
                   <PoiBadgeList />
                 </div>
