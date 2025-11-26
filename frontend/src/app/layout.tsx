@@ -69,7 +69,7 @@ export default function RootLayout({
                 </div>
               </div>
 
-              <div className="absolute z-10 flex h-screen md:p-6 w-full">
+              <div className="absolute z-10 flex h-screen md:p-6 w-full md:w-auto">
                 <Window className="md:w-[500px] w-full min-h-lvh md:min-h-[500px] h-fit md:h-full justify-start">
                   <div
                     aria-hidden
@@ -79,7 +79,7 @@ export default function RootLayout({
                     <div className="min-w-[60px] h-full flex flex-col justify-start md:justify-between gap-2">
                       <Header />
                     </div>
-                    <div className="bg-gray-200 opacity-30 w-0.5 h-full" />
+                    {/* <div className="bg-gray-200 opacity-30 w-0.5 h-full" /> */}
                     <main
                       tabIndex={-1}
                       id="main"
