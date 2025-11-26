@@ -104,7 +104,7 @@ export default function ImplemtedMap() {
           right: padding,
         },
         duration: animated ? 500 : 0,
-        maxZoom: 18,
+        maxZoom: 17,
       });
     },
     [map, pathname, bbox]

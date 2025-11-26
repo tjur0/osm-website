@@ -8,6 +8,7 @@ import { BBoxProvider } from "@/providers/bbox-provider";
 import { UmamiAnalyticsProvider } from "@/providers/umami-analytics-provider";
 import { Window } from "@/components/elements/window";
 import SkipLink from "@/components/elements/skip-link";
+import { ScrollDown } from "@/components/elements/scroll-down";
 import { PoiBadgeList } from "@/components/poi/poi-badge-list";
 
 const geistSans = Geist({
@@ -60,8 +61,9 @@ export default function RootLayout({
           >
             <BBoxProvider>
               <SkipLink />
+              <ScrollDown pixels={250} />
 
-              <div className="md:absolute top-0 left-0 w-full h-[70dvh] md:h-dvh z-0">
+              <div className="md:absolute top-0 left-0 w-full h-[90dvh] md:h-dvh z-0">
                 <div className="fixed md:absolute w-full h-lvh md:h-dvh">
                   <ImplemtedMap />
                 </div>
@@ -77,7 +79,7 @@ export default function RootLayout({
                     <div className="min-w-[60px] h-full flex flex-col justify-start md:justify-between gap-2">
                       <Header />
                     </div>
-                    <div className="bg-gray-200 opacity-30 w-[2px] h-full" />
+                    <div className="bg-gray-200 opacity-30 w-0.5 h-full" />
                     <main
                       tabIndex={-1}
                       id="main"
