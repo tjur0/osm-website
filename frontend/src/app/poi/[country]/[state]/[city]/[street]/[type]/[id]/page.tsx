@@ -154,7 +154,7 @@ export default async function PoiPage({ params }: PoiPageProps) {
           <FormattedX poi={poi} />
         </div>
 
-        <Opinion poi={poi} />
+        {/* <Opinion poi={poi} /> */}
 
         <div className="hidden md:block">
           <Title size="h2" title="Tags" />
