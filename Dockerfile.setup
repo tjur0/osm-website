@@ -1,5 +1,5 @@
 FROM node:22 AS builder
-WORKDIR /app/poi-index
+WORKDIR /app
 
 COPY poi-index/package*.json ./
 
@@ -7,20 +7,20 @@ RUN npm ci
 
 COPY poi-index ./
 
-RUN npx nest build
+RUN npm run build
 
 FROM node:22-slim AS runner
-WORKDIR /app/poi-index
+WORKDIR /app
 
 COPY poi-index/package*.json ./
 RUN npm ci --only=production
 
-COPY --from=builder /app/poi-index/dist ./dist
+COPY --from=builder /app/dist ./dist
  
 COPY poi-index/tsconfig.json ./
 COPY poi-index/.env* ./
 
-COPY --from=builder /app/poi-index/node_modules/tsconfig-paths ./node_modules/tsconfig-paths
-COPY --from=builder /app/poi-index/node_modules/json5 ./node_modules/json5
+COPY --from=builder /app/node_modules/tsconfig-paths ./node_modules/tsconfig-paths
+COPY --from=builder /app/node_modules/json5 ./node_modules/json5
 
 CMD ["npm", "run", "start:setup:prod"]
