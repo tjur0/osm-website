@@ -22,7 +22,7 @@ export default function ImplemtedMap() {
 
   const [clicked, setClicked] = useState(false);
 
-  const [poiSource, setPoiSource] = useState<"live" | "pmtiles">("pmtiles");
+  const [poiSource, setPoiSource] = useState<"live" | "pmtiles">("live");
 
   const [loading, setLoading] = useState(false);
 
