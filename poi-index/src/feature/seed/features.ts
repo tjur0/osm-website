@@ -1348,7 +1348,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'bridge'),
     key: 'historic',
     value: 'bridge',
-    name: 'Historiche Brug',
+    name: 'Historische Brug',
     color: '',
 
     pois: [],
@@ -1357,7 +1357,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'farm'),
     key: 'historic',
     value: 'farm',
-    name: 'Historiche boerderij',
+    name: 'Historische boerderij',
     color: '',
 
     pois: [],
@@ -1366,7 +1366,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'bomb_crater'),
     key: 'historic',
     value: 'bomb_crater',
-    name: 'Historiche bomkrater',
+    name: 'Historische bomkrater',
     color: '',
 
     pois: [],
@@ -1375,7 +1375,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'boundary_stone'),
     key: 'historic',
     value: 'boundary_stone',
-    name: 'Historiche grenssteen',
+    name: 'Historische grenssteen',
     color: '',
 
     pois: [],
@@ -1384,7 +1384,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'church'),
     key: 'historic',
     value: 'church',
-    name: 'Historiche kerk',
+    name: 'Historische kerk',
     color: '',
 
     pois: [],
@@ -1393,7 +1393,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'warehouse'),
     key: 'historic',
     value: 'warehouse',
-    name: 'Historiche magazijn',
+    name: 'Historische magazijn',
     color: '',
 
     pois: [],
@@ -1402,7 +1402,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'ruins'),
     key: 'historic',
     value: 'ruins',
-    name: 'Historiche ruïne',
+    name: 'Historische ruïne',
     color: '',
 
     pois: [],
@@ -1411,7 +1411,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'citywalls'),
     key: 'historic',
     value: 'citywalls',
-    name: 'Historiche stadsmuur',
+    name: 'Historische stadsmuur',
     color: '',
 
     pois: [],
@@ -1420,7 +1420,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'city_gate'),
     key: 'historic',
     value: 'city_gate',
-    name: 'Historiche stadspoort',
+    name: 'Historische stadspoort',
     color: '',
 
     pois: [],
@@ -1429,7 +1429,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'tomb'),
     key: 'historic',
     value: 'tomb',
-    name: 'Historiche tombe',
+    name: 'Historische tombe',
     color: '',
 
     pois: [],
@@ -1438,7 +1438,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'water_pump'),
     key: 'historic',
     value: 'water_pump',
-    name: 'Historiche waterpomp',
+    name: 'Historische waterpomp',
     color: '',
 
     pois: [],
@@ -1447,7 +1447,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('historic', 'wayside_shrine'),
     key: 'historic',
     value: 'wayside_shrine',
-    name: 'Historiche wegkapel',
+    name: 'Historische wegkapel',
     color: '',
 
     pois: [],
