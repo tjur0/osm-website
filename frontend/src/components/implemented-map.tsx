@@ -25,6 +25,7 @@ export default function ImplemtedMap() {
   const [poiSource, setPoiSource] = useState<"live" | "pmtiles">("live");
 
   const [loading, setLoading] = useState(false);
+  const [selectedPoi, setSelectedPoi] = useState(null);
 
   if (typeof window !== "undefined") {
     document.addEventListener("keydown", (event) => {
@@ -36,15 +37,27 @@ export default function ImplemtedMap() {
     });
   }
 
-  const PoiStyle = useMemo(() => {
-    const segments = pathname.split("/").map(decodeURIComponent);
+  const segments = pathname.split("/").map(decodeURIComponent);
 
-    const country = segments[2];
-    const state = segments[3];
-    const city = segments[4];
-    const street = segments[5];
-    const type = segments[6];
-    const id = segments[7];
+  const country = segments[2];
+  const state = segments[3];
+  const city = segments[4];
+  const street = segments[5];
+  const type = segments[6];
+  const id = segments[7];
+
+  useEffect(() => {
+    if (type && id) {
+      fetch(`/api/poi/${type}/${id}`)
+        .then((res) => res.json())
+        .then((data) => setSelectedPoi(data))
+        .catch((err) => console.error("Failed to fetch POI", err));
+    } else {
+      setSelectedPoi(null);
+    }
+  }, [type, id]);
+
+  const PoiStyle = useMemo(() => {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const filter: ["all" | "any" | "none", ...any[]] = ["all"];
@@ -67,12 +80,12 @@ export default function ImplemtedMap() {
 
     if (type && id) {
       filter.push(["==", ["get", "type"], type]);
-      filter.push(["==", ["get", "id"], Number(id)]);
+      filter.push(["==", ["get", "id"], id]);
     }
 
     // lets only start showing the selection after state has been selected
-    return getPoisOverlay(filter.length > 2 && filter, poiSource);
-  }, [pathname, map, poiSource]);
+    return getPoisOverlay(filter.length > 2 && filter, poiSource, selectedPoi);
+  }, [pathname, map, poiSource, selectedPoi]);
 
   const overlays = useMemo(() => {
     const overlays = [ColorfulStyle];
