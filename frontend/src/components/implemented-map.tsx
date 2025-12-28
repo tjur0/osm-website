@@ -58,7 +58,6 @@ export default function ImplemtedMap() {
   }, [type, id]);
 
   const PoiStyle = useMemo(() => {
-
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const filter: ["all" | "any" | "none", ...any[]] = ["all"];
 

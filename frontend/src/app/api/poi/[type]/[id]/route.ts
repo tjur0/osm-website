@@ -17,10 +17,9 @@ export interface Poi {
   area?: { type: string; coordinates: number[][][] };
 }
 
-
 export async function GET(
   request: NextRequest,
-  { params }: { params: { type: string; id: string } }
+  { params }: { params: Promise<{ type: string; id: string }> }
 ): Promise<NextResponse> {
   const { type, id } = await params;
 
@@ -43,6 +42,9 @@ export async function GET(
     return NextResponse.json(poi);
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
