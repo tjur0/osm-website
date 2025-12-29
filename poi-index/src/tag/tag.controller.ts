@@ -38,16 +38,11 @@ export class TagController {
     });
 
     if (tag === null) {
-      // this takes long so lets not await it, it is not critical to have tag created immediately
-      await this.tagService.createTag(key, value);
-
-      return null;
+      return await this.tagService.createTag(key, value);
     }
 
     if (!tag.wikiLink) {
-      tag.wikiLink = await this.tagService.getWikiLink(key, value ?? null);
-      tag.wikiLinkLastChecked = new Date();
-      await this.tagRepository.save(tag);
+      this.tagService.getWikiLink(key, value ?? null);
     }
 
     return tag;
