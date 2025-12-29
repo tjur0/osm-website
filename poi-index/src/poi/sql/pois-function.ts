@@ -38,6 +38,7 @@ BEGIN
       p.street,
       f.name as "feature",
       f.color as "color",
+      f.importance as "importance",
       ST_AsMVTGeom(
         ST_Transform(p.point, 3857),
         tile_bbox_3857,
