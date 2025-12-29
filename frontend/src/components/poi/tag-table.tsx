@@ -6,6 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import TagWikiLink from "./tag-wiki-link";
 // import TagWikiLink from "./tag-wiki-link";
 
 interface TagTableProps {
@@ -34,12 +35,10 @@ export default async function TagTable({ poi }: TagTableProps) {
           {sortedTags.map(([key, value]) => (
             <TableRow key={`${key}:${value}`}>
               <TableCell>
-                {/* <TagWikiLink tagKey={key} label={key} /> */}
-                <span>{key}</span>
+                <TagWikiLink tagKey={key} label={key} />
               </TableCell>
               <TableCell>
-                {/* <TagWikiLink tagKey={key} value={value} label={value} /> */}
-                <span>{value}</span>
+                <TagWikiLink tagKey={key} value={value} label={value} />
               </TableCell>
             </TableRow>
           ))}

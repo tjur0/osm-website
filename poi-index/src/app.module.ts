@@ -7,6 +7,7 @@ import { PoiModule } from './poi/poi.module';
 import { FeatureModule } from './feature/feature.module';
 import typeorm from './config/typeorm';
 import { ScheduleModule } from '@nestjs/schedule';
+import { TagModule } from './tag/tag.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { ScheduleModule } from '@nestjs/schedule';
     ScheduleModule.forRoot(),
     PoiModule,
     FeatureModule,
+    TagModule,
   ],
   controllers: [AppController],
   providers: [AppService, Logger],

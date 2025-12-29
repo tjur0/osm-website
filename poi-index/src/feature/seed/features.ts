@@ -3067,7 +3067,7 @@ const featuresWithoutColor: Feature[] = [
     id: generateFeatureUUID('office', 'traffic_engineering'),
     key: 'office',
     value: 'traffic_engineering',
-    name: 'Verkeersadviesbureau',
+    name: 'Verkeerskundigadviesbureau',
     color: '',
 
     pois: [],

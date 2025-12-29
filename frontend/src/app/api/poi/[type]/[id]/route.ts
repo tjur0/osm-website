@@ -23,14 +23,10 @@ export async function GET(
 ): Promise<NextResponse> {
   const { type, id } = await params;
 
-  const poiId = parseInt(id, 10);
-
-  console.log(`Fetching POI with ID: ${id} and Type: ${type}`);
-
   try {
     const response = await pool.query(
       `SELECT p.id, p.type, f.name as feature, f.color as color, p.tags, p.country, p.state, p.city, p.street, p.name, p."typeName", p.point::json as point, p.area::json as area FROM pois p left join feature f on f.id = p."featureId" WHERE p.id = $1 AND p.type = $2`,
-      [poiId, type]
+      [id, type]
     );
 
     const poi = response.rows[0] as Poi;
