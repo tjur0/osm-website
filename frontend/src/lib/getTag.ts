@@ -1,8 +1,8 @@
 export async function getTag(key: string, value?: string | null) {
-  const base = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const base = process.env.API_BASE_URL;
 
   if (!base) {
-    throw new Error("NEXT_PUBLIC_API_BASE_URL is not defined");
+    return null;
   }
 
   const params = new URLSearchParams({ key });
