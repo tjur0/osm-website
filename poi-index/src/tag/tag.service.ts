@@ -23,10 +23,7 @@ export class TagService {
     tag.key = key;
     tag.value = value;
     tag.type = await this.getTagType(key, value || '');
-    const wiki = await this.getWikiLink(key, value || null);
-    tag.wikiLink = wiki;
-    tag.wikiLinkLastChecked = new Date();
-
+    
     return this.tagRepository.save(tag);
   }
 
